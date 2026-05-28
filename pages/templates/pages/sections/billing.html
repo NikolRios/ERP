@@ -1,0 +1,30 @@
+<section class="section reveal" id="{{ section.id }}">
+  <div class="section-heading">
+    <h2>{{ section.title }}</h2>
+    <p>{{ section.description }}</p>
+  </div>
+  <div class="split">
+    <div class="visual-panel">
+      <h3 style="font-size:24px;margin-bottom:16px;">{{ section.calculator_title }}</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <label>Horas <input id="hours" type="number" value="20" min="0" style="width:100%;height:42px;margin-top:6px;border:1px solid var(--line);border-radius:8px;padding:0 10px;background:var(--sage);color:var(--ink);"></label>
+        <label>Tarifa <input id="rate" type="number" value="95" min="0" style="width:100%;height:42px;margin-top:6px;border:1px solid var(--line);border-radius:8px;padding:0 10px;background:var(--sage);color:var(--ink);"></label>
+      </div>
+      <div class="invoice-total" style="margin:16px 0;"><span>Total estimado</span><span id="total">$1,900</span></div>
+      <button class="btn btn-primary" id="sendInvoice">Enviar factura demo</button>
+    </div>
+    <div>
+      <div class="feature-list" style="margin-top:0;">
+        {% for feature in section.features %}
+          <div class="feature">
+            <span>✓</span>
+            <div>
+              <strong>{{ feature.title }}</strong>
+              <p>{{ feature.description }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<section class="section reveal" id="{{ section.id }}">
+  <div class="section-heading">
+    <h2>{{ section.title }}</h2>
+    <p>{{ section.description }}</p>
+  </div>
+  <div class="module-grid">
+    {% for item in section.items %}
+      <article class="module-card">
+        <div class="module-icon module-icon--{{ forloop.counter }}">{{ item.initial }}</div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <ul>
+          {% for feature in item.features %}
+            <li>{{ feature }}</li>
+          {% endfor %}
+        </ul>
+        {% if item.cta_label %}
+          <a class="text-cta" href="{{ item.cta_href }}">{{ item.cta_label }}</a>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>

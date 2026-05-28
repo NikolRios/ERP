@@ -1,0 +1,20 @@
+<section class="pricing-band reveal" id="{{ section.id }}">
+  <div class="section">
+    <div>
+      <div class="eyebrow" style="background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.24);color:#fff;">{{ section.eyebrow }}</div>
+      <h2>{{ section.title }}</h2>
+      <p style="margin-top:18px;">{{ section.description }}</p>
+    </div>
+    <div class="price-card">
+      <strong>{{ section.plan }}</strong>
+      <div class="price"><strong>{{ section.price }}</strong><span>{{ section.period }}</span></div>
+      <ul>
+        {% for feature in section.features %}
+          <li>{{ feature }}</li>
+        {% endfor %}
+      </ul>
+      <button class="btn btn-primary" style="width:100%;" id="pricingCta">{{ section.primary_cta }}</button>
+      <button class="btn btn-secondary price-secondary" id="salesCta">{{ section.secondary_cta }}</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UniSuite - {{ section.title }}</title>
+  <link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/nav.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/section_page.css' %}">
+  {% if active_slug == "pricing" %}
+    <link rel="stylesheet" href="{% static 'pages/css/pricing.css' %}">
+  {% endif %}
+</head>
+<body>
+  {% include "pages/partials/nav.html" %}
+
+  <main class="section-page">
+    {% if section.coming_soon %}
+      <section class="coming-soon">
+        <div class="eyebrow">{{ active_label }}</div>
+        <h1>Construyendo pagina</h1>
+        <p>Proximamente montaremos aqui la informacion completa de {{ active_label }}.</p>
+        <a class="btn btn-secondary" href="/">Volver al inicio</a>
+      </section>
+    {% else %}
+      {% include section_template with section=section %}
+    {% endif %}
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 UniSuite. Concepto visual para landing SaaS.</span>
+      <span>Apps · Plataforma · Precio · Soporte</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <strong>Listo</strong>
+    <span id="toastText">Tu demo esta lista para configurarse.</span>
+  </div>
+
+  <script src="{% static 'pages/js/app.js' %}" defer></script>
+  <script src="{% static 'pages/js/section_page.js' %}" defer></script>
+  {% if active_slug == "pricing" %}
+    <script src="{% static 'pages/js/pricing.js' %}" defer></script>
+  {% endif %}
+</body>
+</html>

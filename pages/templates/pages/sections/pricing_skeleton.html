@@ -1,0 +1,47 @@
+<section class="pricing-shell">
+  <div class="pricing-glow one" aria-hidden="true"></div>
+  <div class="pricing-glow two" aria-hidden="true"></div>
+  <div class="pricing-hero">
+    <div class="eyebrow">{{ section.eyebrow }}</div>
+    <h1>{{ section.title }}</h1>
+    <p>{{ section.description }}</p>
+    <div class="billing-toggle" aria-label="Periodo de facturacion">
+      {% for period in section.billing_periods %}
+        <button{% if forloop.first %} class="active"{% endif %}>{{ period }}</button>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="plan-tabs" aria-label="Filtros de planes">
+    {% for tab in section.tabs %}
+      <button{% if forloop.first %} class="active"{% endif %}>{{ tab }}</button>
+    {% endfor %}
+  </div>
+
+  <div class="pricing-cards">
+    {% for plan in section.plans %}
+      <article class="plan-card{% if plan.featured %} featured{% endif %}">
+        <h2>{{ plan.name }}</h2>
+        <span class="popular">{{ plan.tag }}</span>
+        <div class="plan-placeholder">
+          <strong>{{ plan.price }}</strong>
+          <span>{{ plan.period }}</span>
+        </div>
+        <button class="btn btn-primary">{{ plan.cta }}</button>
+        <a href="#">{{ plan.secondary_cta }}</a>
+        <ul>
+          {% for feature in plan.features %}
+            <li>{{ feature }} <span>i</span></li>
+          {% endfor %}
+        </ul>
+        <button class="see-features">Ver todas las funciones</button>
+        <div class="plan-addons">
+          <strong>{{ plan.addons_title }}</strong>
+          {% for addon in plan.addons %}
+            <p>{{ addon }} <span>i</span></p>
+          {% endfor %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

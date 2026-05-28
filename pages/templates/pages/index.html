@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UniSuite - Gestion simple para negocios en crecimiento</title>
+  <link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/nav.css' %}">
+</head>
+<body>
+  {% include "pages/partials/nav.html" %}
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Suite modular + contabilidad simple + soporte conectado</div>
+          <h1>Todo tu negocio en una sola plataforma facil de vender, usar y escalar.</h1>
+          <p class="hero-copy">
+            UniSuite combina facturacion amigable, apps de servicio para equipos y modulos ERP flexibles para que ventas, finanzas, inventario y soporte trabajen con la misma informacion.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="heroCta">Empezar prueba gratis</button>
+            <a href="/plataforma/" class="btn btn-secondary">Ver como funciona</a>
+          </div>
+          <p class="hero-note">Sin tarjeta de credito. Configuracion guiada. Datos listos para importar.</p>
+          <div class="trust-row">
+            <div class="trust-item"><strong data-count="15" data-suffix=" min">0</strong><span>para emitir tu primera factura</span></div>
+            <div class="trust-item"><strong data-count="40" data-suffix="+">0</strong><span>apps listas para activar</span></div>
+            <div class="trust-item"><strong data-count="24" data-suffix="/7">0</strong><span>flujos y automatizaciones</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    {% include "pages/sections/apps.html" with section=sections.apps %}
+    {% include "pages/sections/platform.html" with section=sections.platform %}
+    {% include "pages/sections/billing.html" with section=sections.billing %}
+    {% include "pages/sections/pricing.html" with section=sections.pricing %}
+    {% include "pages/sections/clients.html" with section=sections.clients %}
+
+    <section class="cta reveal">
+      <div class="cta-box">
+        <div>
+          <h2>Unifica ventas, finanzas y operaciones desde esta semana.</h2>
+          <p style="margin-top:12px;">Agenda una demo o inicia una prueba con datos demo para explorar la suite completa.</p>
+        </div>
+        <button class="btn btn-primary" id="finalCta">Crear cuenta gratis</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 UniSuite. Concepto visual para landing SaaS.</span>
+      <span>Apps · Plataforma · Precio · Soporte</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <strong>Listo</strong>
+    <span id="toastText">Tu demo esta lista para configurarse.</span>
+  </div>
+
+  <script src="{% static 'pages/js/app.js' %}" defer></script>
+</body>
+</html>

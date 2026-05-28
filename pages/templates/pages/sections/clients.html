@@ -1,0 +1,22 @@
+<section class="section reveal" id="{{ section.id }}">
+  <div class="section-heading">
+    <h2>{{ section.title }}</h2>
+    <p>{{ section.description }}</p>
+  </div>
+  <div class="testimonial-carousel" aria-label="Testimonios de clientes">
+    <div class="testimonial-track">
+      {% for testimonial in section.testimonials %}
+        <blockquote class="quote">
+          <p>"{{ testimonial.quote }}"</p>
+          <footer>{{ testimonial.author }}</footer>
+        </blockquote>
+      {% endfor %}
+      {% for testimonial in section.testimonials %}
+        <blockquote class="quote" aria-hidden="true">
+          <p>"{{ testimonial.quote }}"</p>
+          <footer>{{ testimonial.author }}</footer>
+        </blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>

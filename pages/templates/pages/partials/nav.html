@@ -1,0 +1,40 @@
+<header class="site-header">
+  <nav class="nav" aria-label="Navegacion principal">
+    <a href="/" class="brand" aria-label="UniSuite home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      UniSuite
+    </a>
+    <div class="nav-links">
+      {% for item in nav_items %}
+        <div class="nav-item">
+          <a href="{{ item.href }}" class="nav-link{% if item.slug == active_slug %} active{% endif %}">
+            {{ item.label }}
+            <span aria-hidden="true">⌄</span>
+          </a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-grid">
+              {% for column in item.dropdown.columns %}
+                <div>
+                  <strong>{{ column.title }}</strong>
+                  {% for link in column.links %}
+                    <a href="{{ item.href }}">{{ link }}</a>
+                  {% endfor %}
+                </div>
+              {% endfor %}
+              <aside>
+                <strong>{{ item.dropdown.aside_title }}</strong>
+                <p>{{ item.dropdown.aside_text }}</p>
+                <a class="btn btn-secondary btn-quiet" href="{{ item.href }}">Ver pagina</a>
+              </aside>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">☼</button>
+      <a class="btn btn-secondary" href="/precio/">Ver planes</a>
+      <a class="btn btn-primary" id="demoBtn" href="/precio/">Probar gratis</a>
+    </div>
+  </nav>
+</header>

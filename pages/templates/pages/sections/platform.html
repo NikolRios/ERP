@@ -1,0 +1,38 @@
+<section class="section reveal" id="{{ section.id }}">
+  <div class="split">
+    <div>
+      <div class="eyebrow">{{ section.eyebrow }}</div>
+      <h2>{{ section.title }}</h2>
+      <p style="margin-top:18px;">{{ section.description }}</p>
+      <div class="feature-list">
+        {% for feature in section.features %}
+          <div class="feature">
+            <span>{{ feature.number }}</span>
+            <div>
+              <strong>{{ feature.title }}</strong>
+              <p>{{ feature.description }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="soft-purchase">
+        <span>{{ section.purchase_note }}</span>
+        <button class="btn btn-secondary btn-quiet" id="erpFitCta">{{ section.purchase_cta }}</button>
+      </div>
+    </div>
+    <div class="visual-panel">
+      <div class="workflow">
+        {% for step in section.workflow %}
+          <div class="workflow-row">
+            <span>{{ step.key }}</span>
+            <div>
+              <strong>{{ step.title }}</strong>
+              <small>{{ step.description }}</small>
+            </div>
+            <em class="status">{{ step.status }}</em>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
