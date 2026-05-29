@@ -5,7 +5,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure-local-unisuite-dev-key"
 DEBUG = True
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "testserver"]
+ALLOWED_HOSTS = [
+    ".onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://erp-t4iw.onrender.com",
+    "https://*.onrender.com",
+]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
