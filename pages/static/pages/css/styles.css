@@ -2370,8 +2370,7 @@
       border-right: 0;
     }
 
-    .technical-grid span,
-    .entity-strip span {
+    .technical-grid span {
       display: block;
       margin-bottom: 12px;
       color: var(--green-dark);
@@ -2384,17 +2383,9 @@
       font-size: 21px;
     }
 
-    .technical-grid p,
-    .entity-strip p {
+    .technical-grid p {
       color: var(--muted);
       line-height: 1.55;
-    }
-
-    .entity-strip {
-      max-width: 1180px;
-      margin: 28px auto 0;
-      padding-top: 24px;
-      border-top: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
     }
 
     .home-page .cta {
