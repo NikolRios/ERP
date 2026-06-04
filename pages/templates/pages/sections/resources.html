@@ -1,0 +1,73 @@
+<section class="section reveal resources-page" id="{{ section.id }}">
+  <header class="resources-hero">
+    <p class="kicker">Centro de aprendizaje</p>
+    <h1>{{ section.title }}</h1>
+    <p>{{ section.description }}</p>
+  </header>
+
+  <div class="resources-content">
+    <div class="resources-menu-wrap">
+      <nav class="resources-menu" aria-label="Navegacion de secciones">
+        <span class="resources-menu-thumb" aria-hidden="true"></span>
+        <a class="active" href="#pilares">Pilares</a>
+        <a href="#temas">Temas</a>
+        <a href="#modulo">Modulo</a>
+        <a href="#indice">Indice</a>
+        <a href="#pasos">Pasos</a>
+      </nav>
+    </div>
+
+    <section class="resources-block" id="pilares">
+      <h2>Pilares de contenido</h2>
+      <div class="resources-list">
+        {% for group in section.resource_groups %}
+          <article class="resources-item">
+            <span class="num">0{{ forloop.counter }}</span>
+            <div>
+              <h3>{{ group.title }}</h3>
+              <p>{{ group.items|join:", " }}</p>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="resources-block" id="temas">
+      <h2>{{ section.secondary_title }}</h2>
+      <ul>
+        {% for item in section.secondary_items %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section class="resources-block" id="modulo">
+      <h2>{{ section.module_title }}</h2>
+      <p style="color:var(--muted);margin-bottom:18px;">{{ section.module_intro }}</p>
+
+      <div class="guide-layout">
+        <aside class="guide-index" id="indice" aria-label="Indice del modulo">
+          <strong>Indice</strong>
+          <ol>
+            {% for block in section.module_sections %}
+              <li><a href="#step-{{ forloop.counter }}">{{ block.title }}</a></li>
+            {% endfor %}
+          </ol>
+        </aside>
+
+        <div id="pasos">
+          {% for block in section.module_sections %}
+            <article class="guide-step" id="step-{{ forloop.counter }}">
+              <h3>{{ block.title }}</h3>
+              <ul>
+                {% for point in block.points %}
+                  <li>{{ point }}</li>
+                {% endfor %}
+              </ul>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

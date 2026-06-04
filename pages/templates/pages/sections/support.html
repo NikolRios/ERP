@@ -1,0 +1,74 @@
+<section class="section reveal support-page" id="{{ section.id }}">
+  <div class="support-spotlight">
+    <div class="support-spotlight-inner">
+      <p class="support-kicker">{{ section.eyebrow }}</p>
+      <div class="section-heading support-hero">
+        <h1>{{ section.title }}</h1>
+        <p>{{ section.description }}</p>
+      </div>
+      <div class="support-actions">
+        <a class="btn btn-primary" href="/soporte/">{{ section.primary_cta }}</a>
+        <a class="support-ghost-link" href="/soporte/">{{ section.secondary_cta }} <span>›</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="support-content">
+    <div class="support-jump-wrap">
+      <nav class="support-jump" aria-label="Navegacion de secciones">
+        <span class="support-jump-thumb" aria-hidden="true"></span>
+        <a class="active" href="#flujo">Flujo</a>
+        <a href="#pilares">Pilares</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cta">Contacto</a>
+      </nav>
+    </div>
+
+    <div id="flujo" class="support-flow-grid">
+      <div class="visual-panel support-flow-card">
+        <h3>Implementacion</h3>
+        <p>Definimos alcance, migracion y activacion por modulo con hitos semanales.</p>
+      </div>
+      <div class="visual-panel support-flow-card">
+        <h3>Operacion diaria</h3>
+        <p>Soporte funcional para resolver incidencias y dudas de procesos en tiempo real.</p>
+      </div>
+      <div class="visual-panel support-flow-card">
+        <h3>Escalamiento</h3>
+        <p>Capacitacion por roles y mejoras continuas para sostener crecimiento.</p>
+      </div>
+    </div>
+
+    <div id="cta" class="support-cta-divider">
+      <div>
+        <h2>Hablemos de tu implementacion</h2>
+        <p>Te ayudamos a definir alcance, migracion y capacitacion por equipo.</p>
+      </div>
+      <div class="support-cta-actions">
+        <button class="btn btn-primary">{{ section.primary_cta }}</button>
+        <button class="btn btn-secondary">{{ section.secondary_cta }}</button>
+      </div>
+    </div>
+
+    <div id="pilares" class="module-grid">
+      {% for pillar in section.pillars %}
+        <article class="module-card">
+          <div class="module-icon module-icon--{{ forloop.counter }}">{{ forloop.counter }}</div>
+          <h3>{{ pillar.title }}</h3>
+          <p>{{ pillar.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="split" style="margin-top:26px;">
+      <div id="faq" class="visual-panel">
+        <h3 style="font-size:24px;margin-bottom:16px;">Preguntas frecuentes</h3>
+        <ul>
+          {% for question in section.faqs %}
+            <li>{{ question }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

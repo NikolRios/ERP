@@ -1,0 +1,106 @@
+<section class="section reveal features-page" id="{{ section.id }}">
+  <div class="features-spotlight">
+    <div class="features-spotlight-inner">
+      <p class="features-kicker">{{ section.eyebrow }}</p>
+      <div class="section-heading features-hero">
+        <h1>{{ section.title }}</h1>
+        {% if section.description %}
+          <p class="features-description">{{ section.description }}</p>
+        {% endif %}
+      </div>
+      <div class="features-actions">
+        <a class="btn btn-primary" href="/precio/">Probar gratis</a>
+        <a class="features-ghost-link" href="/soporte/">Agendar demo <span>&rsaquo;</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-content">
+    <div class="features-jump-wrap">
+      <nav class="features-jump" aria-label="Navegacion de secciones">
+        <span class="features-jump-thumb" aria-hidden="true"></span>
+        <a class="active" href="#historias">Historias</a>
+        <a href="#casos">Casos de uso</a>
+        <a href="#beneficios">Beneficios clave</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#capacidades">Capacidades</a>
+      </nav>
+    </div>
+
+    <div id="historias" class="visual-panel features-stories-panel">
+      <strong class="stories-title">{{ section.trust_text }}</strong>
+      <div class="stories-badges-grid">
+        {% for logo in section.trust_logos %}
+          <span class="story-badge">{{ logo }}</span>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div id="casos" class="section-heading features-section-heading">
+      <h2>{{ section.solutions_title }}</h2>
+    </div>
+
+    <div class="module-grid">
+      {% for item in section.items %}
+        {% if item.cta_href %}
+          <a class="module-card features-card-link" href="{{ item.cta_href }}" aria-label="{{ item.cta_label }}: {{ item.title }}">
+            <div class="card-audience">{{ item.audience }}</div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+            <ul class="card-feature-list">
+              {% for feature in item.features %}
+                <li>{{ feature }}</li>
+              {% endfor %}
+            </ul>
+          </a>
+        {% else %}
+          <article class="module-card">
+            <div class="card-audience">{{ item.audience }}</div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+            <ul class="card-feature-list">
+              {% for feature in item.features %}
+                <li>{{ feature }}</li>
+              {% endfor %}
+            </ul>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div id="beneficios" class="split features-split-block">
+      <div class="visual-panel ai-panel">
+        <h3>{{ section.ai_title }}</h3>
+        <ul class="ai-points-list">
+          {% for point in section.ai_points %}
+            <li>{{ point }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="metrics-panel">
+        <h3>{{ section.impact_title }}</h3>
+        <div class="metrics-grid">
+          {% for metric in section.impact_metrics %}
+            <div class="metric-item">
+              <strong>{{ metric.value }}</strong>
+              <span>{{ metric.label }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div id="recursos" class="module-grid features-recursos-grid">
+      {% for cta in section.final_ctas %}
+        <article class="module-card resource-cta-card">
+          <h3>{{ cta.title }}</h3>
+          <p>{{ cta.desc }}</p>
+          <a class="btn btn-secondary" href="/soporte/">{{ cta.cta }}</a>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div id="capacidades"></div>
+  </div>
+</section>

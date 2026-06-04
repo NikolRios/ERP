@@ -1,19 +1,53 @@
 <section class="pricing-band reveal" id="{{ section.id }}">
   <div class="section">
-    <div>
+    <div class="pricing-copy">
       <div class="eyebrow" style="background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.24);color:#fff;">{{ section.eyebrow }}</div>
       <h2>{{ section.title }}</h2>
       <p style="margin-top:18px;">{{ section.description }}</p>
-    </div>
-    <div class="price-card">
-      <strong>{{ section.plan }}</strong>
-      <div class="price"><strong>{{ section.price }}</strong><span>{{ section.period }}</span></div>
-      <ul>
-        {% for feature in section.features %}
-          <li>{{ feature }}</li>
+      <div class="pricing-toggle" aria-label="Billing period">
+        <button type="button" class="active">Monthly</button>
+        <button type="button">Annual <span>save 1 month</span></button>
+      </div>
+      <div class="pricing-notes">
+        {% for note in section.notes %}
+          <span>{{ note }}</span>
         {% endfor %}
-      </ul>
-      <button class="btn btn-primary" style="width:100%;" id="pricingCta">{{ section.primary_cta }}</button>
+      </div>
+    </div>
+    <div class="pricing-stack">
+      <div class="license-grid">
+        {% for plan in section.plans %}
+          <article class="price-card{% if plan.featured %} featured{% endif %}">
+            {% if plan.featured %}
+              <span class="plan-badge">Most popular</span>
+            {% endif %}
+            <strong>{{ plan.name }}</strong>
+            <small>{{ plan.secondary_cta }}</small>
+            <div class="price"><strong>{{ plan.price }}</strong><span>{{ plan.period }}</span></div>
+            <ul>
+              {% for feature in plan.features %}
+                <li>{{ feature }}</li>
+              {% endfor %}
+            </ul>
+            <button class="btn btn-primary" style="width:100%;" id="{% if forloop.first %}pricingCta{% else %}premiumCta{% endif %}">{{ plan.cta }}</button>
+          </article>
+        {% endfor %}
+      </div>
+      <article class="stamp-card">
+        <div>
+          <strong>{{ section.stamp_title }}</strong>
+          <p>{{ section.stamp_description }}</p>
+          <div class="price stamp-price"><strong>{{ section.stamp_price }}</strong><span>{{ section.stamp_period }}</span></div>
+        </div>
+        <div class="stamp-table">
+          {% for stamp in section.stamps %}
+            <div class="stamp-row">
+              <span>{{ stamp.label }}</span>
+              <strong>{{ stamp.price }}</strong>
+            </div>
+          {% endfor %}
+        </div>
+      </article>
       <button class="btn btn-secondary price-secondary" id="salesCta">{{ section.secondary_cta }}</button>
     </div>
   </div>

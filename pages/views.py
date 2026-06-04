@@ -15,8 +15,9 @@ def home(request):
     )
 
 
-def section_page(request, slug):
-    active_item = next(item for item in NAV_ITEMS if item["slug"] == slug)
+def section_page(request, slug, nav_slug=None):
+    active_slug = nav_slug or slug
+    active_item = next(item for item in NAV_ITEMS if item["slug"] == active_slug)
     return render(
         request,
         "pages/section_page.html",
@@ -24,7 +25,7 @@ def section_page(request, slug):
             "nav_items": NAV_ITEMS,
             "section": PAGE_CONTENT[slug],
             "section_template": SECTION_TEMPLATES[slug],
-            "active_slug": slug,
+            "active_slug": active_slug,
             "active_label": active_item["label"],
         },
     )

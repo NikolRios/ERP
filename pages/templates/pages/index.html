@@ -4,64 +4,441 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UniSuite - Gestion simple para negocios en crecimiento</title>
+  <title>Majjun ERP - Cloud ERP con IA y CFDI 4.0</title>
   <link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
   <link rel="stylesheet" href="{% static 'pages/css/nav.css' %}">
 </head>
-<body>
+<body class="home-page">
   {% include "pages/partials/nav.html" %}
 
   <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <div class="eyebrow">Suite modular + contabilidad simple + soporte conectado</div>
-          <h1>Todo tu negocio en una sola plataforma facil de vender, usar y escalar.</h1>
-          <p class="hero-copy">
-            UniSuite combina facturacion amigable, apps de servicio para equipos y modulos ERP flexibles para que ventas, finanzas, inventario y soporte trabajen con la misma informacion.
+    <section class="hero home-hero">
+      <div class="home-hero-inner">
+        <div class="home-hero-content">
+          <div class="eyebrow" data-i18n="heroEyebrow">AI-Powered · Cloud ERP · CFDI 4.0</div>
+          <h1 data-i18n="heroTitle">Modern ERP for Modern Business</h1>
+          <p class="hero-copy" data-i18n="heroCopy">
+            Majjun ERP is a new Enterprise Resource Planning system designed to solve complexity, high cost and tedious manual data entry.
           </p>
           <div class="hero-actions">
-            <button class="btn btn-primary" id="heroCta">Empezar prueba gratis</button>
-            <a href="/plataforma/" class="btn btn-secondary">Ver como funciona</a>
+            <a href="#contact" class="btn btn-primary" id="heroCta" data-contact-action data-plan="Start free trial" data-i18n="startTrial">Start free trial</a>
+            <a href="#contact" class="btn btn-secondary" data-contact-action data-plan="Request demo" data-i18n="requestDemo">Request demo</a>
           </div>
-          <p class="hero-note">Sin tarjeta de credito. Configuracion guiada. Datos listos para importar.</p>
-          <div class="trust-row">
-            <div class="trust-item"><strong data-count="15" data-suffix=" min">0</strong><span>para emitir tu primera factura</span></div>
-            <div class="trust-item"><strong data-count="40" data-suffix="+">0</strong><span>apps listas para activar</span></div>
-            <div class="trust-item"><strong data-count="24" data-suffix="/7">0</strong><span>flujos y automatizaciones</span></div>
+          <div class="home-trust-row" aria-label="Areas principales">
+            <article>
+              <strong data-i18n="trustInvoicing">Invoicing</strong>
+              <p data-i18n="trustInvoicingCopy">Create customers, orders, direct invoices and record payments across the order-to-payment flow.</p>
+            </article>
+            <article>
+              <strong data-i18n="trustProcurement">Procurement</strong>
+              <p data-i18n="trustProcurementCopy">Manage requisitions, approvals, purchase orders, goods receipts and vendor payments.</p>
+            </article>
+            <article>
+              <strong data-i18n="trustAi">AI Assistance</strong>
+              <p data-i18n="trustAiCopy">Suggests tax codes, validates non-conformance and proposes recurring expenses for review.</p>
+            </article>
+            <article>
+              <strong data-i18n="trustFinance">Finance</strong>
+              <p data-i18n="trustFinanceCopy">General ledger, financial reports, audit trail and clear visibility into business status.</p>
+            </article>
           </div>
         </div>
-
       </div>
     </section>
 
-    {% include "pages/sections/apps.html" with section=sections.apps %}
-    {% include "pages/sections/platform.html" with section=sections.platform %}
-    {% include "pages/sections/billing.html" with section=sections.billing %}
-    {% include "pages/sections/pricing.html" with section=sections.pricing %}
-    {% include "pages/sections/clients.html" with section=sections.clients %}
+    <section class="home-section home-story reveal" id="about">
+      <div class="home-screenshot" aria-label="Vista previa del producto">
+        <div class="screen-top"><span></span><span></span><span></span></div>
+        <div class="screen-layout">
+          <aside>
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </aside>
+          <div>
+            <div class="screen-kpis">
+              <strong>$148k</strong>
+              <strong>42 CFDI</strong>
+              <strong>8 alerts</strong>
+            </div>
+            <div class="screen-table">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-copy-block">
+        <span class="section-label" data-i18n="whyLabel">System Description</span>
+        <h2 data-i18n="whyTitle">A modern ERP built to remove friction from business operations.</h2>
+        <p data-i18n="whyCopy">Majjun ERP is designed for modern businesses that need a simpler, more intelligent alternative to traditional ERP systems. It reduces complexity, lowers operational overhead and cuts repetitive manual data entry through a dual-AI approach.</p>
+        <a class="btn btn-secondary" href="#features" data-i18n="learnMore">Learn more -></a>
+      </div>
+    </section>
+
+    <section class="home-section reveal" id="features">
+      <div class="home-section-heading">
+        <span class="section-label" data-i18n="featuresLabel">Core approach</span>
+        <h2 data-i18n="featuresTitle">A dual-AI ERP focused on business operations and development efficiency.</h2>
+      </div>
+      <div class="home-feature-grid">
+        <article class="home-feature-card">
+          <span class="feature-icon">AI</span>
+          <h3 data-i18n="featureAiTitle">Business Intelligence Agent</h3>
+          <p data-i18n="featureAiCopy">A chat-based assistant that lets users create transactions and generate reports using natural language.</p>
+          <ul>
+            <li data-i18n="featureAiPoint1">Create orders, invoices and operational records</li>
+            <li data-i18n="featureAiPoint2">Reduce repetitive manual data entry</li>
+            <li data-i18n="featureAiPoint3">Receive intelligent suggestions while working</li>
+          </ul>
+        </article>
+        <article class="home-feature-card">
+          <span class="feature-icon bars" aria-hidden="true"></span>
+          <h3 data-i18n="featureFinanceTitle">User Experience</h3>
+          <p data-i18n="featureFinanceCopy">Simplifies core business operations through an intuitive, AI-driven interface.</p>
+          <ul>
+            <li data-i18n="featureFinancePoint1">Clear workflows for daily operations</li>
+            <li data-i18n="featureFinancePoint2">Less training and less friction</li>
+            <li data-i18n="featureFinancePoint3">AI support inside the user journey</li>
+          </ul>
+        </article>
+        <article class="home-feature-card">
+          <span class="feature-icon sync" aria-hidden="true"></span>
+          <h3 data-i18n="featureProcurementTitle">Development Efficiency</h3>
+          <p data-i18n="featureProcurementCopy">Uses AI code generation to speed up feature development and system maintenance.</p>
+          <ul>
+            <li data-i18n="featureProcurementPoint1">Faster feature delivery</li>
+            <li data-i18n="featureProcurementPoint2">More efficient maintenance cycles</li>
+            <li data-i18n="featureProcurementPoint3">AI-assisted development workflows</li>
+          </ul>
+        </article>
+        <article class="home-feature-card">
+          <span class="feature-icon bars" aria-hidden="true"></span>
+          <h3 data-i18n="featureDashboardTitle">Business Intelligence</h3>
+          <p data-i18n="featureDashboardCopy">Offers clear, at-a-glance visibility into business status through modern dashboards.</p>
+          <ul>
+            <li data-i18n="featureDashboardPoint1">Modern dashboards for business status</li>
+            <li data-i18n="featureDashboardPoint2">Reports generated from natural language</li>
+            <li data-i18n="featureDashboardPoint3">Operational visibility for decision makers</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-section home-ai reveal">
+      <div class="home-copy-block">
+        <span class="section-label" data-i18n="aiLabel">Business Intelligence Agent</span>
+        <h2 data-i18n="aiTitle">Create transactions and reports from a simple conversation.</h2>
+        <p data-i18n="aiCopy">The Assistant lets users create transactions like orders and invoices, generate reports and receive intelligent suggestions using natural language.</p>
+        <a class="btn btn-secondary" id="erpFitCta" href="#contact" data-contact-action data-plan="AI workflow demo" data-i18n="seeAction">See it in action -></a>
+      </div>
+      <div class="ai-chat-card" aria-label="Ejemplo de chat con IA">
+        <div class="ai-bubble user">"Create invoice for Acme Inc."</div>
+        <div class="ai-bubble system">Invoice #0042 created</div>
+        <div class="ai-bubble user">"Suggest tax code?"</div>
+      </div>
+    </section>
+
+    <section class="home-section home-modules reveal" id="modules">
+      <div class="home-section-heading">
+        <span class="section-label" data-i18n="modulesLabel">Core Features by Module</span>
+        <h2 data-i18n="modulesTitle">Key modules support the full business cycle from sales to finance.</h2>
+        <p data-i18n="modulesCopy">Majjun ERP organizes core functionality into operational modules. The Sales & Accounts Receivable module manages the revenue cycle from customer orders to payment recording.</p>
+      </div>
+      <div class="module-topic-bar" aria-label="Module topics">
+        <button type="button" class="active" data-module-tab="sales" data-i18n="salesModuleLabel">Sales & Accounts Receivable (AR)</button>
+        <button type="button" data-module-tab="procurement" data-i18n="procurementModuleLabel">Procurement & Accounts Payable (AP)</button>
+        <button type="button" data-module-tab="inventory" data-i18n="inventoryModuleLabel">Inventory & Items</button>
+        <button type="button" data-module-tab="finance" data-i18n="financeModuleLabel">Finance Core & Reporting</button>
+      </div>
+      <div class="module-feature-list">
+        <article class="module-feature-row" data-module-card="sales">
+          <div>
+            <span data-i18n="salesModuleLabel">Sales & Accounts Receivable (AR)</span>
+            <h3 data-i18n="orderFlowTitle">Order-to-Payment Flow</h3>
+          </div>
+          <p data-i18n="orderFlowDesc">Manages the standard revenue process, including inventory checks, invoicing, and payment.</p>
+          <ul>
+            <li data-i18n="orderFlowCap1">Create customer and order</li>
+            <li data-i18n="orderFlowCap2">Check stock and reservations</li>
+            <li data-i18n="orderFlowCap3">Generate invoice and record cash receipt</li>
+          </ul>
+        </article>
+        <article class="module-feature-row" data-module-card="sales">
+          <div>
+            <span data-i18n="salesModuleLabel">Sales & Accounts Receivable (AR)</span>
+            <h3 data-i18n="directInvoiceTitle">Direct Invoicing</h3>
+          </div>
+          <p data-i18n="directInvoiceDesc">Allows billing users to create an invoice directly for one-off sales or services without a prior sales order.</p>
+          <ul>
+            <li data-i18n="directInvoiceCap1">Create direct invoices</li>
+            <li data-i18n="directInvoiceCap2">Validate customer credit terms</li>
+            <li data-i18n="directInvoiceCap3">Post to the General Ledger</li>
+          </ul>
+        </article>
+        <article class="module-feature-row" data-module-card="sales">
+          <div>
+            <span data-i18n="salesModuleLabel">Sales & Accounts Receivable (AR)</span>
+            <h3 data-i18n="aiSalesTitle">AI Sales Assistance</h3>
+          </div>
+          <p data-i18n="aiSalesDesc">The AI assistant integrates directly into the invoicing process.</p>
+          <ul>
+            <li data-i18n="aiSalesCap1">Suggest tax codes for invoice line items</li>
+            <li data-i18n="aiSalesCap2">Validate non-conformance</li>
+            <li data-i18n="aiSalesCap3">Support billing decisions during invoice creation</li>
+          </ul>
+        </article>
+        <article class="module-feature-row" data-module-card="sales">
+          <div>
+            <span data-i18n="salesModuleLabel">Sales & Accounts Receivable (AR)</span>
+            <h3 data-i18n="customerMasterTitle">Customer Master</h3>
+          </div>
+          <p data-i18n="customerMasterDesc">Stores all customer records, contact information, and billing terms.</p>
+          <ul>
+            <li data-i18n="customerMasterCap1">Create customer records</li>
+            <li data-i18n="customerMasterCap2">Read, update and delete customer records</li>
+            <li data-i18n="customerMasterCap3">Maintain contact information and billing terms</li>
+          </ul>
+        </article>
+        <article class="module-feature-row" data-module-card="procurement">
+          <div>
+            <span data-i18n="procurementModuleLabel">Procurement & Accounts Payable (AP)</span>
+            <h3 data-i18n="procurementWorkflowTitle">Procurement Workflow</h3>
+          </div>
+          <p data-i18n="procurementWorkflowDesc">Supports the full PR-to-PO-to-GR process for purchasing goods and inventory replenishment.</p>
+          <ul>
+            <li data-i18n="procurementWorkflowCap1">Create Purchase Requisitions (PR)</li>
+            <li data-i18n="procurementWorkflowCap2">Route approval requests up to auto-approval limits</li>
+            <li data-i18n="procurementWorkflowCap3">Convert to Purchase Orders and record Goods Receipts</li>
+          </ul>
+        </article>
+        <article class="module-feature-row" data-module-card="procurement">
+          <div>
+            <span data-i18n="procurementModuleLabel">Procurement & Accounts Payable (AP)</span>
+            <h3 data-i18n="aiExpenseTitle">AI Expense Assistance</h3>
+          </div>
+          <p data-i18n="aiExpenseDesc">An AI agent can propose common recurring expenses and draft the corresponding AP entries.</p>
+          <ul>
+            <li data-i18n="aiExpenseCap1">Identify recurring vendor expenses</li>
+            <li data-i18n="aiExpenseCap2">Draft corresponding AP entries</li>
+            <li data-i18n="aiExpenseCap3">Send suggestions to a review queue for approval and posting</li>
+          </ul>
+        </article>
+        <article class="module-feature-row" data-module-card="procurement">
+          <div>
+            <span data-i18n="procurementModuleLabel">Procurement & Accounts Payable (AP)</span>
+            <h3 data-i18n="expensePaymentTitle">Expense & Payment Flows</h3>
+          </div>
+          <p data-i18n="expensePaymentDesc">Manages the creation and tracking of AP invoices and payments to vendors.</p>
+          <ul>
+            <li data-i18n="expensePaymentCap1">Create and track AP invoices</li>
+            <li data-i18n="expensePaymentCap2">Support part-payments to suppliers</li>
+            <li data-i18n="expensePaymentCap3">Track outstanding payable balances</li>
+          </ul>
+        </article>
+        <article class="module-feature-row" data-module-card="inventory">
+          <div>
+            <span data-i18n="inventoryModuleLabel">Inventory & Items</span>
+            <h3 data-i18n="itemMasterTitle">Item Master</h3>
+          </div>
+          <p data-i18n="itemMasterDesc">Tracks all items and services offered by the business.</p>
+          <ul>
+            <li data-i18n="itemMasterCap1">Store item type for service or inventory</li>
+            <li data-i18n="itemMasterCap2">Maintain cost and SKU data</li>
+            <li data-i18n="itemMasterCap3">Track stock levels by warehouse</li>
+          </ul>
+        </article>
+        <article class="module-feature-row" data-module-card="inventory">
+          <div>
+            <span data-i18n="inventoryModuleLabel">Inventory & Items</span>
+            <h3 data-i18n="stockManagementTitle">Stock Management</h3>
+          </div>
+          <p data-i18n="stockManagementDesc">Tracks current inventory and handles transactions that affect stock.</p>
+          <ul>
+            <li data-i18n="stockManagementCap1">Support a basic warehouse stock model</li>
+            <li data-i18n="stockManagementCap2">Use stock adjustment APIs</li>
+            <li data-i18n="stockManagementCap3">Reserve inventory for sales orders</li>
+          </ul>
+        </article>
+        <article class="module-feature-row" data-module-card="inventory">
+          <div>
+            <span data-i18n="inventoryModuleLabel">Inventory & Items</span>
+            <h3 data-i18n="inventoryLedgerTitle">Inventory Ledger</h3>
+          </div>
+          <p data-i18n="inventoryLedgerDesc">Maintains a separate ledger to track inventory valuation and Cost of Goods Sold (COGS).</p>
+          <ul>
+            <li data-i18n="inventoryLedgerCap1">Record inventory ledger updates</li>
+            <li data-i18n="inventoryLedgerCap2">Post COGS during sales workflows</li>
+            <li data-i18n="inventoryLedgerCap3">Hook valuation updates into procurement flows</li>
+          </ul>
+        </article>
+        <article class="module-feature-row" data-module-card="finance">
+          <div>
+            <span data-i18n="financeModuleLabel">Finance Core & Reporting</span>
+            <h3 data-i18n="generalLedgerTitle">General Ledger (GL)</h3>
+          </div>
+          <p data-i18n="generalLedgerDesc">The backbone of all financial postings from transactional flows.</p>
+          <ul>
+            <li data-i18n="generalLedgerCap1">Manage Chart of Accounts (COA)</li>
+            <li data-i18n="generalLedgerCap2">Map postings from subledgers</li>
+            <li data-i18n="generalLedgerCap3">Post and reverse manual or automated Journal Entries</li>
+          </ul>
+        </article>
+        <article class="module-feature-row" data-module-card="finance">
+          <div>
+            <span data-i18n="financeModuleLabel">Finance Core & Reporting</span>
+            <h3 data-i18n="financialReportsTitle">Financial Reports</h3>
+          </div>
+          <p data-i18n="financialReportsDesc">Provides on-demand and scheduled reports for financial analysis.</p>
+          <ul>
+            <li data-i18n="financialReportsCap1">Trial Balance, Profit & Loss and Balance Sheet</li>
+            <li data-i18n="financialReportsCap2">COGS reports</li>
+            <li data-i18n="financialReportsCap3">Export capabilities for finance teams</li>
+          </ul>
+        </article>
+        <article class="module-feature-row" data-module-card="finance">
+          <div>
+            <span data-i18n="financeModuleLabel">Finance Core & Reporting</span>
+            <h3 data-i18n="auditTrailTitle">Audit Trail</h3>
+          </div>
+          <p data-i18n="auditTrailDesc">Comprehensive logging of all transactional and system changes.</p>
+          <ul>
+            <li data-i18n="auditTrailCap1">Log who, what, when and why for transactional changes</li>
+            <li data-i18n="auditTrailCap2">Track system changes and agent actions</li>
+            <li data-i18n="auditTrailCap3">Enable quick audit queries</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-section home-pricing reveal" id="pricing">
+      <div class="home-section-heading">
+        <span class="section-label" data-i18n="pricingLabel">Pricing</span>
+        <h2 data-i18n="pricingTitle">Simple licenses, clear CFDI stamp packages.</h2>
+        <div class="home-toggle" aria-label="Periodo de pago">
+          <span class="active" data-i18n="monthly">Monthly</span>
+          <span data-i18n="annual">Annual -1 mo</span>
+        </div>
+      </div>
+      <div class="home-price-grid">
+        <article class="home-price-card">
+          <h3>Plus</h3>
+          <div class="home-price">$43<span>/mo</span></div>
+          <ul>
+            <li data-i18n="plusPoint1">1 user included</li>
+            <li data-i18n="plusPoint2">+ $20/mo per extra user</li>
+            <li data-i18n="plusPoint3">For service businesses</li>
+            <li data-i18n="plusPoint4">Minimum 2 users</li>
+          </ul>
+          <a class="btn btn-secondary" id="pricingCta" href="#contact" data-contact-action data-plan="Plus" data-i18n="getStarted">Get started</a>
+        </article>
+        <article class="home-price-card featured">
+          <span class="plan-badge" data-i18n="mostPopular">Most popular</span>
+          <h3>Premium</h3>
+          <div class="home-price">$80<span>/mo</span></div>
+          <ul>
+            <li data-i18n="premiumPoint1">1 user included</li>
+            <li data-i18n="premiumPoint2">+ $80/mo per extra user</li>
+            <li data-i18n="premiumPoint3">For commercial businesses</li>
+            <li data-i18n="premiumPoint4">Minimum 5 users</li>
+          </ul>
+          <a class="btn btn-primary" id="premiumCta" href="#contact" data-contact-action data-plan="Premium" data-i18n="getStarted">Get started</a>
+        </article>
+        <article class="home-price-card stamp">
+          <h3 data-i18n="stampTitle">Stamp packages</h3>
+          <div class="stamp-list">
+            <span>100 stamps <strong>$180</strong></span>
+            <span>250 stamps <strong>$390</strong></span>
+            <span>500 stamps <strong>$680</strong></span>
+            <span>1,000 stamps <strong>$1,200</strong></span>
+            <span data-i18n-html="stampMore">... up to 100k <strong>Contact sales</strong></span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-section home-technical reveal">
+      <div class="home-section-heading">
+        <span class="section-label" data-i18n="technicalLabel">Technical Implementation</span>
+        <h2 data-i18n="technicalTitle">Modern standards for scalability, security and development efficiency.</h2>
+        <p data-i18n="technicalCopy">Majjun ERP is built on robust technology choices that support high-performance APIs, multi-tenant data isolation, containerized deployment and AI-powered agents.</p>
+      </div>
+      <div class="technical-grid">
+        <article>
+          <span data-i18n="backendComponent">Backend Framework</span>
+          <h3 data-i18n="backendTech">.NET 10 (LTS), ASP.NET Core MVC</h3>
+          <p data-i18n="backendDesc">Provides a modern, high-performance foundation for web applications and APIs.</p>
+        </article>
+        <article>
+          <span data-i18n="databaseComponent">Database</span>
+          <h3 data-i18n="databaseTech">PostgreSQL 15+</h3>
+          <p data-i18n="databaseDesc">Optimized for concurrent operations, supporting multi-tenant isolation through row-level security checks.</p>
+        </article>
+        <article>
+          <span data-i18n="deploymentComponent">Deployment</span>
+          <h3 data-i18n="deploymentTech">Render / Azure Services</h3>
+          <p data-i18n="deploymentDesc">Uses a containerized CI/CD pipeline for automated and consistent deployment.</p>
+        </article>
+        <article>
+          <span data-i18n="aiIntegrationComponent">AI Integration</span>
+          <h3 data-i18n="aiIntegrationTech">OpenAI API or Azure OpenAI</h3>
+          <p data-i18n="aiIntegrationDesc">Powers Large Language Model integration for both Business Intelligence and Code Generation agents.</p>
+        </article>
+      </div>
+      <div class="entity-strip">
+        <span data-i18n="entitiesLabel">Key Entities</span>
+        <p data-i18n="entitiesList">Tenant, User, Customer, Item, Order, Invoice, Payment, PurchaseRequisition, PurchaseOrder, GoodsReceipt, LedgerEntry, AgentAction, AuditRecord</p>
+      </div>
+    </section>
 
     <section class="cta reveal">
       <div class="cta-box">
         <div>
-          <h2>Unifica ventas, finanzas y operaciones desde esta semana.</h2>
-          <p style="margin-top:12px;">Agenda una demo o inicia una prueba con datos demo para explorar la suite completa.</p>
+          <h2 data-i18n="ctaTitle">Ve Majjun ERP en accion con tus procesos reales.</h2>
+          <p data-i18n="ctaCopy">Agenda una demo, revisa usuarios, modulos y paquetes de timbres CFDI, y define el plan que encaja con tu operacion.</p>
         </div>
-        <button class="btn btn-primary" id="finalCta">Crear cuenta gratis</button>
+        <div class="cta-actions">
+          <a class="btn btn-secondary" id="finalCta" href="#about" data-i18n="watchDemo">Watch demo</a>
+          <a class="btn btn-primary" href="#contact" data-contact-action data-plan="Start free trial" data-i18n="startTrial">Start free trial</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-contact reveal" id="contact">
+      <form class="contact-card" id="homeContactForm">
+        <input type="text" name="name" placeholder="Name" aria-label="Name" required data-i18n-placeholder="namePlaceholder">
+        <input type="email" name="email" placeholder="Email" aria-label="Email" required data-i18n-placeholder="emailPlaceholder">
+        <input type="text" name="company" placeholder="Company" aria-label="Company" data-i18n-placeholder="companyPlaceholder">
+        <select name="plan" id="selectedPlan" aria-label="Plan de interes">
+          <option value="Request demo" data-i18n="requestDemo">Request demo</option>
+          <option value="Start free trial" data-i18n="startTrial">Start free trial</option>
+          <option value="Plus">Plus</option>
+          <option value="Premium">Premium</option>
+          <option value="AI workflow demo" data-i18n="aiWorkflowDemo">AI workflow demo</option>
+          <option value="Schedule a call" data-i18n="scheduleCall">Schedule a call</option>
+        </select>
+        <textarea name="message" placeholder="Message" aria-label="Message" required data-i18n-placeholder="messagePlaceholder"></textarea>
+        <button class="btn btn-primary" type="submit" id="sendHomeMessage" data-i18n="sendMessage">Send message</button>
+      </form>
+      <div class="home-copy-block">
+        <span class="section-label" data-i18n="contactLabel">Contact</span>
+        <h2 data-i18n="contactTitle">Talk with the team that will help you implement.</h2>
+        <p data-i18n="contactCopy">Cuentanos usuarios, modulos y volumen de timbres. Te ayudamos a dimensionar el plan y el proceso de arranque.</p>
+        <a class="btn btn-secondary" href="#contact" data-contact-action data-plan="Schedule a call" data-i18n="scheduleCallArrow">Schedule a call -></a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-      <span>© 2026 UniSuite. Concepto visual para landing SaaS.</span>
-      <span>Apps · Plataforma · Precio · Soporte</span>
+      <span data-i18n="footerReady">© 2026 Majjun ERP · Mexico CFDI 4.0 ready</span>
+      <span><a href="#features" data-i18n="featuresLabel">Features</a> · <a href="#pricing" data-i18n="pricingLabel">Pricing</a> · <span data-i18n="privacy">Privacy</span> · <span data-i18n="terms">Terms</span> · <a href="#contact" data-i18n="requestDemo">Request demo</a></span>
     </div>
   </footer>
 
   <div class="toast" id="toast">
-    <strong>Listo</strong>
-    <span id="toastText">Tu demo esta lista para configurarse.</span>
+    <strong data-i18n="toastTitle">Listo</strong>
+    <span id="toastText" data-i18n="toastReady">Tu demo de Majjun ERP esta lista para configurarse.</span>
   </div>
 
   <script src="{% static 'pages/js/app.js' %}" defer></script>

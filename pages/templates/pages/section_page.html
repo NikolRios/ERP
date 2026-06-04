@@ -7,7 +7,19 @@
   <title>UniSuite - {{ section.title }}</title>
   <link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
   <link rel="stylesheet" href="{% static 'pages/css/nav.css' %}">
-  <link rel="stylesheet" href="{% static 'pages/css/section_page.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/section_page.css' %}?v=2">
+  {% if active_slug == "features" %}
+    <link rel="stylesheet" href="{% static 'pages/css/features.css' %}">
+  {% endif %}
+  {% if active_slug == "segments" %}
+    <link rel="stylesheet" href="{% static 'pages/css/segments.css' %}">
+  {% endif %}
+  {% if active_slug == "support" %}
+    <link rel="stylesheet" href="{% static 'pages/css/support.css' %}">
+  {% endif %}
+  {% if active_slug == "resources" %}
+    <link rel="stylesheet" href="{% static 'pages/css/resources.css' %}">
+  {% endif %}
   {% if active_slug == "pricing" %}
     <link rel="stylesheet" href="{% static 'pages/css/pricing.css' %}">
   {% endif %}
@@ -31,7 +43,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <span>© 2026 UniSuite. Concepto visual para landing SaaS.</span>
-      <span>Apps · Plataforma · Precio · Soporte</span>
+      <span>Funciones · Para quien · Recursos · Precio · Soporte</span>
     </div>
   </footer>
 
@@ -42,6 +54,9 @@
 
   <script src="{% static 'pages/js/app.js' %}" defer></script>
   <script src="{% static 'pages/js/section_page.js' %}" defer></script>
+  {% if active_slug == "resources" or active_slug == "features" or active_slug == "segments" or active_slug == "support" %}
+    <script src="{% static 'pages/js/resources.js' %}" defer></script>
+  {% endif %}
   {% if active_slug == "pricing" %}
     <script src="{% static 'pages/js/pricing.js' %}" defer></script>
   {% endif %}

@@ -1,0 +1,33 @@
+<section class="section reveal finance-module-page" id="{{ section.id }}">
+  <header class="finance-module-hero">
+    <p class="finance-module-kicker">{{ section.eyebrow }}</p>
+    <h1>{{ section.title }}</h1>
+    <p>{{ section.description }}</p>
+  </header>
+
+  <div class="finance-module-content">
+    <div class="features-jump-wrap finance-jump-wrap">
+      <nav class="features-jump finance-jump" aria-label="Navegacion de secciones">
+        <span class="features-jump-thumb" aria-hidden="true"></span>
+        <a class="active" href="#finance-step-1">Tu Catalogo de Cuentas</a>
+        <a href="#finance-step-2">Registros Manuales</a>
+        <a href="#finance-step-3">Configuracion</a>
+      </nav>
+    </div>
+
+    <div class="features-finance-layout">
+      <div class="features-finance-steps">
+        {% for block in section.sections %}
+          <article class="features-finance-step" id="finance-step-{{ forloop.counter }}">
+            <h3>{{ block.title }}</h3>
+            <ul>
+              {% for point in block.points %}
+                <li>{{ point }}</li>
+              {% endfor %}
+            </ul>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
