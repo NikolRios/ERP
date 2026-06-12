@@ -1,0 +1,76 @@
+<section class="section reveal segments-page sales-guide-page payable-guide-page" id="{{ section.id }}">
+  <div class="segments-spotlight">
+    <div class="segments-spotlight-inner">
+      <p class="segments-kicker">{{ section.eyebrow }}</p>
+      <div class="section-heading segments-hero">
+        <h1>{{ section.title }}</h1>
+        <p>{{ section.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="segments-content sales-guide-content">
+    <div class="segments-jump-wrap">
+      <nav class="segments-jump sales-guide-jump" aria-label="Navegacion de secciones">
+        <span class="segments-jump-thumb" aria-hidden="true"></span>
+        {% for block in section.sections %}
+          <a {% if forloop.first %}class="active"{% endif %} href="#payable-step-{{ forloop.counter }}">{{ block.short_title }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+
+    <ol class="sales-flow payable-flow" aria-label="Flujo de cuentas por pagar">
+      {% for step in section.flow %}
+        <li>{{ step }}</li>
+      {% endfor %}
+    </ol>
+
+    <div class="sales-guide-steps">
+      {% for block in section.sections %}
+        <article class="sales-guide-step" id="payable-step-{{ forloop.counter }}">
+          <h2>{{ block.title }}</h2>
+          <p class="sales-guide-intro">{{ block.intro }}</p>
+          {% if block.route %}
+            <p class="sales-guide-route"><span>Ruta</span>{{ block.route }}</p>
+          {% endif %}
+
+          {% if block.groups %}
+            <div class="payable-option-grid">
+              {% for group in block.groups %}
+                <section class="payable-option">
+                  <p class="payable-option-label">{{ group.label }}</p>
+                  <h3>{{ group.title }}</h3>
+                  {% if group.route %}
+                    <p class="sales-guide-route"><span>Ruta</span>{{ group.route }}</p>
+                  {% endif %}
+                  <ul>
+                    {% for point in group.points %}
+                      <li>{{ point }}</li>
+                    {% endfor %}
+                  </ul>
+                </section>
+              {% endfor %}
+            </div>
+          {% else %}
+            <ul>
+              {% for point in block.points %}
+                <li>{{ point }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          <p class="sales-guide-tip"><strong>Recomendacion</strong>{{ block.tip }}</p>
+        </article>
+      {% endfor %}
+    </div>
+
+    <aside class="sales-guide-cta reveal">
+      <div>
+        <p class="segments-kicker">Egresos bajo control</p>
+        <h2>{{ section.cta_title }}</h2>
+        <p>{{ section.cta_description }}</p>
+      </div>
+      <a class="btn btn-primary" href="{{ section.cta_href }}">{{ section.cta_label }}</a>
+    </aside>
+  </div>
+</section>

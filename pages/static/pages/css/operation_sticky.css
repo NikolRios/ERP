@@ -1,0 +1,98 @@
+/* Sticky pill compartido por las paginas de Operacion. */
+.op-sticky-wrap {
+  position: sticky !important;
+  top: var(--op-header-height, 76px) !important;
+  z-index: 19 !important;
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 16px !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.op-sticky-wrap .op-pill-nav {
+  position: relative !important;
+  display: flex !important;
+  gap: 10px !important;
+  width: max-content !important;
+  max-width: calc(100vw - 32px) !important;
+  margin: 0 auto !important;
+  padding: 8px 12px !important;
+  overflow-x: auto !important;
+  border: 2px solid var(--green) !important;
+  border-radius: 999px !important;
+  background: var(--paper) !important;
+  box-shadow: 0 8px 22px rgba(21, 23, 29, .1) !important;
+  isolation: isolate;
+  scrollbar-width: none;
+}
+
+.op-sticky-wrap .op-pill-nav::-webkit-scrollbar { display: none; }
+
+.op-sticky-wrap .op-pill-thumb {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 0;
+  width: 0;
+  height: calc(100% - 12px);
+  border: 2px solid var(--blue);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--mint) 62%, transparent);
+  transform: translate(0, -50%);
+  transition: transform .28s ease, width .28s ease;
+  pointer-events: none;
+}
+
+.op-sticky-wrap .op-pill-nav > a {
+  position: relative !important;
+  z-index: 1 !important;
+  flex: 0 0 auto !important;
+  padding: 12px 20px !important;
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+  color: var(--muted) !important;
+  background: transparent !important;
+  font-size: clamp(16px, 1.45vw, 20px) !important;
+  font-weight: 750 !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: color .2s ease, background .2s ease !important;
+}
+
+.op-sticky-wrap .op-pill-nav > a:hover {
+  color: var(--ink) !important;
+  background: var(--sage) !important;
+}
+
+.op-sticky-wrap .op-pill-nav > a.active {
+  color: var(--green-dark) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+@media (max-width: 900px) {
+  .op-sticky-wrap {
+    justify-content: flex-start !important;
+    padding: 12px 16px !important;
+  }
+
+  .op-sticky-wrap .op-pill-nav {
+    gap: 6px !important;
+    margin-left: 0 !important;
+    padding: 6px !important;
+    border-width: 1px !important;
+    border-radius: 16px !important;
+  }
+
+  .op-sticky-wrap .op-pill-thumb { border-width: 1px; }
+
+  .op-sticky-wrap .op-pill-nav > a {
+    padding: 10px 14px !important;
+    font-size: 15px !important;
+  }
+}

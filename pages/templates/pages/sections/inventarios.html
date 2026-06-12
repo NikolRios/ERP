@@ -1,0 +1,332 @@
+{% load static %}
+<div class="inv-page">
+
+  <!-- HERO DE SECCIÓN -->
+  <div class="inv-hero">
+    <span class="inv-eyebrow">Guia de Usuario</span>
+    <h1 class="inv-hero-title">{{ section.module_title }}</h1>
+    <p class="inv-hero-desc">{{ section.module_intro }}</p>
+    <div class="inv-hero-btns">
+      <a href="#inv-catalogo" class="inv-btn-fill">Explorar funciones</a>
+      <a href="#inv-empezar" class="inv-btn-ghost">Como empezar</a>
+    </div>
+  </div>
+
+  <!-- ANCHOR NAV STICKY -->
+  <div class="inv-anchor-nav op-sticky-wrap" id="inv-anchor-nav">
+    <nav class="inv-wrap op-pill-nav" aria-label="Navegacion de Inventarios">
+      <span class="op-pill-thumb" aria-hidden="true"></span>
+      <a href="#inv-catalogo"    class="inv-anchor-link active">Catalogo</a>
+      <a href="#inv-existencias" class="inv-anchor-link">Existencias</a>
+      <a href="#inv-casos"       class="inv-anchor-link">Kits y ensamblaje</a>
+      <a href="#inv-capacidades" class="inv-anchor-link">Capacidades</a>
+      <a href="#inv-faq"         class="inv-anchor-link">Preguntas</a>
+      <a href="#inv-empezar"     class="inv-anchor-link">Empezar</a>
+    </nav>
+  </div>
+
+  <!-- SECCIÓN 1: CATÁLOGO -->
+  {% with sec=section.module_sections.0 %}
+  <section id="inv-catalogo" class="inv-section">
+    <div class="inv-wrap">
+      <div class="inv-sec-head">
+        <h2>Define tu catalogo, una sola vez</h2>
+        <p>Antes de vender o comprar, registra tus productos y servicios. Es el punto de partida de todo tu inventario.</p>
+      </div>
+      <div class="inv-benefits-grid">
+
+        <!-- Visual: pasos numerados -->
+        <div class="inv-benefit-visual">
+          <div class="inv-bv-route">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/></svg>
+            {{ sec.route }}
+          </div>
+          <div class="inv-bv-steps">
+            <div class="inv-bvs">
+              <div class="inv-bvs-n">1</div>
+              <div class="inv-bvs-t"><h4>Ve a Inventario &rsaquo; Articulos</h4><p>Accede a tu catalogo completo.</p></div>
+            </div>
+            <div class="inv-bvs">
+              <div class="inv-bvs-n">2</div>
+              <div class="inv-bvs-t"><h4>Clic en + Nuevo Articulo</h4><p>Define el tipo y los datos clave.</p></div>
+            </div>
+            <div class="inv-bvs">
+              <div class="inv-bvs-n">3</div>
+              <div class="inv-bvs-t"><h4>Asigna codigo, nombre y precio</h4><p>Ej. ART-01 con su precio de lista.</p></div>
+            </div>
+            <div class="inv-bvs">
+              <div class="inv-bvs-n">4</div>
+              <div class="inv-bvs-t"><h4>Configura el stock minimo</h4><p>El sistema te avisa cuando comprar.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion -->
+        <div class="inv-accordion">
+          <!-- Item 1: tipo de artículo -->
+          <div class="inv-acc-item open">
+            <button class="inv-acc-head">
+              Elige el tipo de articulo
+              <span class="inv-acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="inv-acc-body">
+              <div class="inv-acc-body-inner">
+                Define la naturaleza de lo que ofreces antes de registrarlo.
+                <div class="inv-type-mini">
+                  <div class="inv-tm">
+                    <div class="inv-tm-ic">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg>
+                    </div>
+                    <h5>Inventario</h5>
+                    <p>Productos fisicos que ocupan espacio en tu bodega.</p>
+                  </div>
+                  <div class="inv-tm">
+                    <div class="inv-tm-ic">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.3L3 18v3h3l6.4-6.4a4 4 0 0 0 5.3-5.4l-2.6 2.6-2.1-.5-.5-2.1 2.7-2.4z"/></svg>
+                    </div>
+                    <h5>Servicio</h5>
+                    <p>Mano de obra o intangibles, como Instalacion.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item 2: datos clave -->
+          <div class="inv-acc-item">
+            <button class="inv-acc-head">
+              Datos clave de cada articulo
+              <span class="inv-acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="inv-acc-body">
+              <div class="inv-acc-body-inner">{{ sec.points.0 }} {{ sec.points.2 }}</div>
+            </div>
+          </div>
+          <!-- Item 3: niveles de alerta -->
+          <div class="inv-acc-item">
+            <button class="inv-acc-head">
+              Niveles de alerta automaticos
+              <span class="inv-acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="inv-acc-body">
+              <div class="inv-acc-body-inner">{{ sec.points.3 }}</div>
+            </div>
+          </div>
+          <!-- Tip -->
+          <div class="inv-tip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            {{ sec.tip }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  {% endwith %}
+
+  <!-- SECCIÓN 2: MÉTRICAS / EXISTENCIAS -->
+  {% with sec=section.module_sections.2 %}
+  <section id="inv-existencias" class="inv-section inv-section-alt">
+    <div class="inv-wrap">
+      <div class="inv-sec-head">
+        <h2>Siempre sabes cuanto tienes y cuanto puedes vender</h2>
+        <p>Tres cifras clave en la Lista de Inventario te dan visibilidad total del stock en tiempo real.</p>
+      </div>
+      <div class="inv-metrics">
+        {% for m in sec.metrics %}
+        <div class="inv-metric">
+          <div class="inv-metric-num">{{ m.label }}</div>
+          <div class="inv-metric-label">{{ m.desc }}</div>
+        </div>
+        {% endfor %}
+        <div class="inv-metric">
+          <div class="inv-metric-num">Historial</div>
+          <div class="inv-metric-label">Cada entrada, salida o ajuste con su usuario responsable.</div>
+        </div>
+      </div>
+      <div class="inv-callout">
+        <span class="inv-callout-i">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        </span>
+        <div><strong>Historial de Movimientos:</strong> {{ sec.tip }}</div>
+      </div>
+    </div>
+  </section>
+  {% endwith %}
+
+  <!-- SECCIÓN 3: TABS (kits / ajustes / armado) -->
+  <section id="inv-casos" class="inv-section">
+    <div class="inv-wrap">
+      <div class="inv-sec-head">
+        <h2>De kits a produccion, sin perder el control</h2>
+        <p>Agrupa productos, calcula margenes y ensambla kits &mdash; el inventario se ajusta solo.</p>
+      </div>
+
+      <div class="inv-uc-tabs">
+        <button class="inv-uc-tab active" data-uc="0">Kits y recetas</button>
+        <button class="inv-uc-tab" data-uc="1">Ajustes y transferencias</button>
+        <button class="inv-uc-tab" data-uc="2">Armado de productos</button>
+      </div>
+
+      <!-- Panel 0: Kits -->
+      {% with sec=section.module_sections.1 %}
+      <div class="inv-uc-panel active" data-panel="0">
+        <div class="inv-uc-content">
+          <span class="inv-uc-tag">Listas de materiales (BOM)</span>
+          <h3>Agrupa varios articulos en un solo kit vendible</h3>
+          <p>Crea un articulo de tipo Kit o Receta y agrega sus componentes en la pestana BOM. El boton Aplicar Precios suma el costo de todos los componentes y sugiere un precio de venta segun el margen que desees ganar.</p>
+          <a href="#inv-empezar" class="inv-uc-link">Ver pasos completos &rarr;</a>
+        </div>
+        <div class="inv-uc-visual">
+          <div class="inv-uc-checklist">
+            {% for p in sec.points %}
+            <div class="inv-ucl">{{ p }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endwith %}
+
+      <!-- Panel 1: Ajustes -->
+      {% with sec=section.module_sections.3 %}
+      <div class="inv-uc-panel" data-panel="1">
+        <div class="inv-uc-content">
+          <span class="inv-uc-tag">Correcciones rapidas</span>
+          <h3>Manten tu inventario al dia ante cualquier imprevisto</h3>
+          <p>Corrige mercancia danada o sobrante con un ajuste manual, o mueve stock entre ubicaciones con transferencias. Todo queda registrado con usuario y fecha para trazabilidad total.</p>
+          <a href="#inv-empezar" class="inv-uc-link">Ver pasos completos &rarr;</a>
+        </div>
+        <div class="inv-uc-visual">
+          <div class="inv-uc-checklist">
+            {% for p in sec.points %}
+            <div class="inv-ucl">{{ p }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endwith %}
+
+      <!-- Panel 2: Armado -->
+      {% with sec=section.module_sections.4 %}
+      <div class="inv-uc-panel" data-panel="2">
+        <div class="inv-uc-content">
+          <span class="inv-uc-tag">Ensamblaje</span>
+          <h3>Produce kits antes de venderlos y actualiza stock solo</h3>
+          <p>Si tu negocio arma los kits antes de ponerlos en venta, ve a Inventario &rsaquo; Ensamblajes y crea un ensamblaje. Al completarlo, el sistema resta los componentes y suma los kits terminados automaticamente.</p>
+          <a href="#inv-empezar" class="inv-uc-link">Ver pasos completos &rarr;</a>
+        </div>
+        <div class="inv-uc-visual">
+          <div class="inv-uc-stat-cards">
+            <div class="inv-usc"><div class="inv-usc-tag">Paso 1</div><div class="inv-usc-val">Crear</div><div class="inv-usc-desc">Crea el ensamblaje.</div></div>
+            <div class="inv-usc"><div class="inv-usc-tag">Paso 2</div><div class="inv-usc-val">Definir</div><div class="inv-usc-desc">Kit y cantidad a armar.</div></div>
+            <div class="inv-usc"><div class="inv-usc-tag">Paso 3</div><div class="inv-usc-val">Completar</div><div class="inv-usc-desc">Resta y suma stock solo.</div></div>
+          </div>
+        </div>
+      </div>
+      {% endwith %}
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: CAPACIDADES -->
+  <section id="inv-capacidades" class="inv-section inv-section-alt">
+    <div class="inv-wrap">
+      <div class="inv-sec-head">
+        <h2>Todo lo que el modulo hace por ti</h2>
+        <p>Capacidades potentes con un diseno intuitivo para que tu equipo se mueva mas rapido.</p>
+      </div>
+      <div class="inv-cap-grid">
+        <a href="#inv-catalogo" class="inv-cap">
+          <div class="inv-cap-ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/></svg>
+          </div>
+          <h4>Catalogo de productos</h4>
+          <p>Registra articulos de inventario y servicios con codigo, precio y stock minimo.</p>
+        </a>
+        <a href="#inv-casos" class="inv-cap">
+          <div class="inv-cap-ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3a2 2 0 0 1 4 0c0 .6.4 1 1 1h2a1 1 0 0 1 1 1v2c0 .6.4 1 1 1a2 2 0 0 1 0 4c-.6 0-1 .4-1 1v3a1 1 0 0 1-1 1h-3c-.6 0-1-.4-1-1a2 2 0 0 0-4 0c0 .6-.4 1-1 1H6a1 1 0 0 1-1-1v-3c0-.6-.4-1-1-1a2 2 0 0 1 0-4c.6 0 1-.4 1-1V5a1 1 0 0 1 1-1h2c.6 0 1-.4 1-1z"/></svg>
+          </div>
+          <h4>Kits y recetas (BOM)</h4>
+          <p>Agrupa componentes y calcula precios de venta segun el margen deseado.</p>
+        </a>
+        <a href="#inv-existencias" class="inv-cap">
+          <div class="inv-cap-ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg>
+          </div>
+          <h4>Control de existencias</h4>
+          <p>En mano, reservado y disponible &mdash; visibilidad de stock en tiempo real.</p>
+        </a>
+        <a href="#inv-existencias" class="inv-cap">
+          <div class="inv-cap-ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h4>Historial de movimientos</h4>
+          <p>Trazabilidad de cada entrada, salida y ajuste con su usuario responsable.</p>
+        </a>
+        <a href="#inv-casos" class="inv-cap">
+          <div class="inv-cap-ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+          </div>
+          <h4>Ajustes y transferencias</h4>
+          <p>Corrige stock y mueve mercancia entre ubicaciones en segundos.</p>
+        </a>
+        <a href="#inv-casos" class="inv-cap">
+          <div class="inv-cap-ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l6 4V9l6 4V5l6 4v12H3z"/><path d="M7 21v-4"/><path d="M13 21v-4"/></svg>
+          </div>
+          <h4>Armado de productos</h4>
+          <p>Ensambla kits y actualiza el inventario terminado automaticamente.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: FAQ -->
+  <section id="inv-faq" class="inv-section">
+    <div class="inv-wrap">
+      <div class="inv-sec-head">
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="inv-accordion inv-faq-list">
+        {% for item in section.faq %}
+        <div class="inv-acc-item{% if forloop.first %} open{% endif %}">
+          <button class="inv-acc-head">
+            {{ item.q }}
+            <span class="inv-acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="inv-acc-body">
+            <div class="inv-acc-body-inner">{{ item.a }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6: CTA FINAL -->
+  <section id="inv-empezar" class="inv-final">
+    <h2>Comienza con el modulo de Inventarios</h2>
+    <p>Tres caminos segun donde estes en tu proceso.</p>
+    <div class="inv-final-cols">
+      <div class="inv-fcol">
+        <div class="inv-fcol-tag">Configura</div>
+        <h4>Crea tu catalogo</h4>
+        <p>Registra productos, servicios, codigos y niveles de alerta de stock minimo.</p>
+        <a href="#inv-catalogo">Ir al catalogo &rarr;</a>
+      </div>
+      <div class="inv-fcol">
+        <div class="inv-fcol-tag">Monitorea</div>
+        <h4>Controla existencias</h4>
+        <p>Consulta en mano, reservado y disponible desde la Lista de Inventario.</p>
+        <a href="#inv-existencias">Ver existencias &rarr;</a>
+      </div>
+      <div class="inv-fcol">
+        <div class="inv-fcol-tag">Escala</div>
+        <h4>Arma kits y produce</h4>
+        <p>Crea paquetes, calcula margenes y ensambla productos con un clic.</p>
+        <a href="#inv-casos">Ver kits &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /.inv-page -->

@@ -1,0 +1,106 @@
+<div class="ps-page">
+
+  <!-- ── Hero ──────────────────────────────────────────────── -->
+  <div class="ps-hero">
+    <div class="ps-wrap">
+      <p class="ps-eyebrow">{{ section.eyebrow }}</p>
+      <h1 class="ps-hero-title">{{ section.title }}</h1>
+      <p class="ps-hero-desc">{{ section.description }}</p>
+      <div class="ps-hero-ctas">
+        <a class="ps-btn-fill" href="{{ section.cta_href }}">Explorar modulo</a>
+        <a class="ps-btn-ghost" href="#ps-flow">Ver el flujo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Flow strip ─────────────────────────────────────────── -->
+  {% if section.flow %}
+  <div class="ps-flow-strip" id="ps-flow">
+    <div class="ps-wrap">
+      <ol class="ps-flow-list" aria-label="Flujo del proceso">
+        {% for step in section.flow %}
+        <li class="ps-flow-node">
+          <div class="ps-flow-num">{{ forloop.counter }}</div>
+          <span class="ps-flow-label">{{ step }}</span>
+          {% if not forloop.last %}
+          <svg class="ps-flow-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- ── Anchor nav ─────────────────────────────────────────── -->
+  <div class="ps-anchor-nav op-sticky-wrap">
+    <div class="ps-wrap">
+      <nav class="ps-anchor-inner op-pill-nav" aria-label="Secciones del modulo">
+        <span class="op-pill-thumb" aria-hidden="true"></span>
+        {% for block in section.sections %}
+        <a class="ps-anchor-link{% if forloop.first %} active{% endif %}"
+           href="#ps-step-{{ forloop.counter }}">{{ block.short_title }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </div>
+
+  <!-- ── Step sections ──────────────────────────────────────── -->
+  {% for block in section.sections %}
+  <section class="ps-section{% if forloop.counter|divisibleby:2 %} ps-section-alt{% endif %}"
+           id="ps-step-{{ forloop.counter }}">
+    <div class="ps-wrap">
+      <div class="ps-step-grid">
+
+        <!-- Content -->
+        <div class="ps-step-content">
+          <p class="ps-step-kicker">
+            <span class="ps-step-kicker-num">{{ forloop.counter }}</span>
+            {{ block.short_title }}
+          </p>
+          <h2 class="ps-step-title">{{ block.title }}</h2>
+          <p class="ps-step-intro">{{ block.intro }}</p>
+          <div class="ps-route">
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>{{ block.route }}</span>
+          </div>
+          <ul class="ps-points">
+            {% for point in block.points %}
+            <li class="ps-point">{{ point }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- Visual -->
+        <div class="ps-step-visual">
+          <div class="ps-tip-card">
+            <div class="ps-tip-header">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M10 6v4M10 14h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <span>Recomendacion</span>
+            </div>
+            <p class="ps-tip-text">{{ block.tip }}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+
+  <!-- ── CTA Final ───────────────────────────────────────────── -->
+  <section class="ps-final">
+    <div class="ps-wrap">
+      <h2>{{ section.cta_title }}</h2>
+      <p>{{ section.cta_description }}</p>
+      <a class="ps-btn-fill ps-btn-white" href="{{ section.cta_href }}">{{ section.cta_label }}</a>
+    </div>
+  </section>
+
+</div>

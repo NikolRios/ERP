@@ -1,0 +1,87 @@
+{% load static %}
+<div class="vc-page">
+  <header class="vc-hero">
+    <div class="vc-wrap vc-hero-inner">
+      <p class="vc-eyebrow">{{ section.eyebrow }}</p>
+      <h1>{{ section.title }}</h1>
+      <p class="vc-hero-description">{{ section.description }}</p>
+      <div class="vc-hero-actions">
+        <a class="vc-button vc-button-primary" href="{{ section.cta_href }}">Explorar ventas</a>
+        <a class="vc-button vc-button-secondary" href="#vc-flujo">Ver el embudo</a>
+      </div>
+    </div>
+  </header>
+
+  {% if section.flow %}
+  <section class="vc-flow" id="vc-flujo" aria-label="Flujo de ventas">
+    <div class="vc-wrap">
+      <ol class="vc-flow-list">
+        {% for step in section.flow %}
+        <li>
+          <span>{{ step }}</span>
+          {% if not forloop.last %}<span class="vc-flow-arrow" aria-hidden="true">→</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+  {% endif %}
+
+  <div class="vc-anchor-nav op-sticky-wrap">
+    <div class="vc-wrap">
+      <nav class="vc-anchor-inner op-pill-nav" aria-label="Etapas de ventas y clientes">
+        <span class="op-pill-thumb" aria-hidden="true"></span>
+        {% for block in section.sections %}
+        <a class="vc-anchor-link{% if forloop.first %} active{% endif %}"
+           href="#vc-stage-{{ forloop.counter }}">{{ block.short_title }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </div>
+
+  <main class="vc-editorial">
+    <div class="vc-wrap">
+      {% for block in section.sections %}
+      <section class="vc-stage vc-stage-{{ forloop.counter }}" id="vc-stage-{{ forloop.counter }}">
+        <span class="vc-watermark" aria-hidden="true">0{{ forloop.counter }}</span>
+        <div class="vc-stage-content">
+          <p class="vc-stage-label">{{ block.short_title }}</p>
+          <h2>{{ block.title }}</h2>
+          <p class="vc-stage-intro">{{ block.intro }}</p>
+
+          {% if block.route %}
+          <p class="vc-route"><span aria-hidden="true">→</span>{{ block.route }}</p>
+          {% endif %}
+
+          {% if block.short_title == "Facturacion" %}
+          <div class="vc-cfdi" aria-label="Estados del semáforo CFDI">
+            <span><i class="vc-cfdi-green" aria-hidden="true"></i>Timbrada</span>
+            <span><i class="vc-cfdi-amber" aria-hidden="true"></i>Pendiente</span>
+            <span><i class="vc-cfdi-red" aria-hidden="true"></i>Error</span>
+          </div>
+          {% endif %}
+
+          <ul class="vc-points">
+            {% for point in block.points %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+
+          <aside class="vc-tip">
+            <strong>Recomendación</strong>
+            <p>{{ block.tip }}</p>
+          </aside>
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+  </main>
+
+  <section class="vc-final">
+    <div class="vc-wrap vc-final-inner">
+      <h2>{{ section.cta_title }}</h2>
+      <p>{{ section.cta_description }}</p>
+      <a class="vc-button vc-button-primary" href="{{ section.cta_href }}">{{ section.cta_label }}</a>
+    </div>
+  </section>
+</div>

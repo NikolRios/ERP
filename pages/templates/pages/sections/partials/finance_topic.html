@@ -1,0 +1,34 @@
+<div class="fin-topic-heading">
+  <p class="fin-topic-label">{{ block.short_title }}</p>
+  <h2>{{ block.display_title }}</h2>
+  <p class="fin-topic-intro">{{ block.intro }}</p>
+</div>
+
+<div class="fin-topic-detail">
+  <div>
+    {% if block.route %}
+      <p class="fin-route"><span aria-hidden="true">→</span> {{ block.route }}</p>
+    {% endif %}
+
+    {% if block.routes %}
+      <div class="fin-routes" aria-label="Rutas relacionadas">
+        {% for route in block.routes %}
+          <p class="fin-route"><span aria-hidden="true">→</span> {{ route }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if block.tip %}
+      <aside class="fin-note">
+        <strong>Recomendación</strong>
+        <p>{{ block.tip }}</p>
+      </aside>
+    {% endif %}
+  </div>
+
+  <ul class="fin-checklist">
+    {% for point in block.points %}
+      <li>{{ point }}</li>
+    {% endfor %}
+  </ul>
+</div>

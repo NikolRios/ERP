@@ -276,3 +276,325 @@ main,
     flex-direction: column;
   }
 }
+
+.sales-guide-content {
+  max-width: 1120px;
+}
+
+.sales-guide-jump {
+  scrollbar-width: thin;
+}
+
+.sales-flow {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.sales-flow li {
+  position: relative;
+  padding: 14px 8px;
+  border: 1px solid color-mix(in srgb, var(--green) 24%, var(--line));
+  border-radius: 10px;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.sales-flow li:not(:last-child)::after {
+  content: "›";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -8px;
+  color: var(--green-dark);
+  font-size: 20px;
+  transform: translate(50%, -50%);
+}
+
+.sales-guide-steps {
+  display: grid;
+  gap: 22px;
+}
+
+.sales-guide-step {
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--paper) 96%, transparent);
+  box-shadow: var(--soft-shadow);
+  scroll-margin-top: 170px;
+}
+
+.sales-guide-step h2 {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.25;
+}
+
+.sales-guide-intro {
+  max-width: 850px;
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.sales-guide-route {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 24px;
+  padding: 9px 13px;
+  border: 1px solid color-mix(in srgb, var(--green) 24%, var(--line));
+  border-radius: 8px;
+  color: var(--ink);
+  background: var(--mint);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.sales-guide-route span {
+  color: var(--green-dark);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.sales-guide-step ul {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sales-guide-step li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.sales-guide-step li::before {
+  content: "";
+  position: absolute;
+  top: .62em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.sales-guide-tip {
+  display: grid;
+  gap: 5px;
+  margin: 24px 0 0;
+  padding: 16px 18px;
+  border-left: 3px solid var(--green);
+  border-radius: 0 8px 8px 0;
+  color: var(--muted);
+  background: var(--sage);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.sales-guide-tip strong {
+  color: var(--ink);
+  font-size: 12px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.sales-guide-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 48px;
+  padding: 36px;
+  border: 1px solid color-mix(in srgb, var(--green) 24%, var(--line));
+  border-radius: 16px;
+  background: var(--paper);
+  box-shadow: var(--soft-shadow);
+}
+
+.sales-guide-cta h2 {
+  margin: 0;
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.sales-guide-cta p:not(.segments-kicker) {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.payable-flow {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.retainer-flow {
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.retainer-rules-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.retainer-rules table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  background: var(--paper);
+}
+
+.retainer-rules th,
+.retainer-rules td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  line-height: 1.5;
+  text-align: left;
+  vertical-align: top;
+}
+
+.retainer-rules th {
+  color: var(--ink);
+  background: var(--mint);
+  font-size: 12px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.retainer-rules td:first-child {
+  color: var(--green-dark);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.retainer-rules td:nth-child(2) {
+  color: var(--ink);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.retainer-rules tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.payable-option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.payable-option {
+  padding: 22px;
+  border: 1px solid color-mix(in srgb, var(--green) 18%, var(--line));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--mint) 38%, var(--paper));
+}
+
+.payable-option-label {
+  margin: 0 0 8px;
+  color: var(--green-dark);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.payable-option h3 {
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-size: 20px;
+}
+
+.payable-option .sales-guide-route {
+  margin-bottom: 18px;
+}
+
+@media (max-width: 900px) {
+  .sales-flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sales-flow li:nth-child(3)::after {
+    display: none;
+  }
+
+  .sales-guide-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .retainer-flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .retainer-flow li:nth-child(3n)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .sales-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sales-flow li:nth-child(2)::after,
+  .sales-flow li:nth-child(4)::after {
+    display: none;
+  }
+
+  .sales-flow li:nth-child(3)::after {
+    display: block;
+  }
+
+  .sales-guide-step,
+  .sales-guide-cta {
+    padding: 24px 20px;
+  }
+
+  .sales-guide-route {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .sales-guide-cta .btn {
+    width: 100%;
+  }
+
+  .payable-flow,
+  .payable-option-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payable-flow li::after {
+    display: none !important;
+  }
+
+  .retainer-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .retainer-flow li:nth-child(odd)::after {
+    display: block;
+  }
+
+  .retainer-flow li:nth-child(even)::after,
+  .retainer-flow li:last-child::after {
+    display: none;
+  }
+}

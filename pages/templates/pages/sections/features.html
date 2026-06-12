@@ -1,106 +1,100 @@
-<section class="section reveal features-page" id="{{ section.id }}">
-  <div class="features-spotlight">
-    <div class="features-spotlight-inner">
-      <p class="features-kicker">{{ section.eyebrow }}</p>
-      <div class="section-heading features-hero">
-        <h1>{{ section.title }}</h1>
-        {% if section.description %}
-          <p class="features-description">{{ section.description }}</p>
-        {% endif %}
-      </div>
-      <div class="features-actions">
-        <a class="btn btn-primary" href="/precio/">Probar gratis</a>
-        <a class="features-ghost-link" href="/soporte/">Agendar demo <span>&rsaquo;</span></a>
+{% load static %}
+<div class="features-page" id="{{ section.id }}">
+  <section class="features-hub-hero">
+    <div class="features-hub-wrap">
+      <p class="features-hub-eyebrow">{{ section.eyebrow }}</p>
+      <h1>{{ section.title }}</h1>
+      {% if section.description %}<p class="features-hub-description">{{ section.description }}</p>{% endif %}
+      <div class="features-hub-actions">
+        <a class="btn btn-primary" href="#operacion-modulos">Explorar Operación</a>
+        <a class="btn btn-secondary" href="/soporte/">Agendar demo</a>
       </div>
     </div>
+  </section>
+
+  <div class="features-hub-sticky op-sticky-wrap">
+    <nav class="features-hub-wrap op-pill-nav" aria-label="Navegación de Operación">
+      <span class="op-pill-thumb" aria-hidden="true"></span>
+      <a class="active" href="#operacion-modulos">Módulos</a>
+      <a href="#operacion-ia">IA aplicada</a>
+      <a href="#operacion-impacto">Impacto</a>
+      <a href="#operacion-siguientes">Siguientes pasos</a>
+    </nav>
   </div>
 
-  <div class="features-content">
-    <div class="features-jump-wrap">
-      <nav class="features-jump" aria-label="Navegacion de secciones">
-        <span class="features-jump-thumb" aria-hidden="true"></span>
-        <a class="active" href="#historias">Historias</a>
-        <a href="#casos">Casos de uso</a>
-        <a href="#beneficios">Beneficios clave</a>
-        <a href="#recursos">Recursos</a>
-        <a href="#capacidades">Capacidades</a>
-      </nav>
+  <section class="features-trust features-hub-reveal">
+    <div class="features-hub-wrap features-trust-inner">
+      <p>{{ section.trust_text }}</p>
+      <div class="features-trust-pills" aria-label="Industrias">
+        {% for logo in section.trust_logos %}<span>{{ logo }}</span>{% endfor %}
+      </div>
     </div>
+  </section>
 
-    <div id="historias" class="visual-panel features-stories-panel">
-      <strong class="stories-title">{{ section.trust_text }}</strong>
-      <div class="stories-badges-grid">
-        {% for logo in section.trust_logos %}
-          <span class="story-badge">{{ logo }}</span>
+  <section class="features-hub-section features-modules" id="operacion-modulos">
+    <div class="features-hub-wrap">
+      <header class="features-hub-heading features-hub-reveal">
+        <p class="features-hub-eyebrow">Operación conectada</p>
+        <h2>{{ section.solutions_title }}</h2>
+        <p>Entra al área que necesitas y mantén compras, inventario y almacenes trabajando con la misma información.</p>
+      </header>
+      <div class="features-module-grid">
+        {% for item in section.items %}
+          <a class="features-module-card features-hub-reveal" href="{{ item.cta_href }}">
+            <span class="features-module-icon" aria-hidden="true">{{ item.initial }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+            <span class="features-module-link">Ver módulo <span aria-hidden="true">&rarr;</span></span>
+          </a>
         {% endfor %}
       </div>
     </div>
+  </section>
 
-    <div id="casos" class="section-heading features-section-heading">
-      <h2>{{ section.solutions_title }}</h2>
+  <section class="features-ai" id="operacion-ia">
+    <div class="features-hub-wrap features-ai-layout">
+      <div class="features-ai-copy features-hub-reveal">
+        <p class="features-hub-eyebrow">Inteligencia aplicada</p>
+        <h2>{{ section.ai_title }}</h2>
+        <p>Majjun ERP convierte señales operativas en recomendaciones revisables para que el equipo actúe antes.</p>
+      </div>
+      <ul class="features-ai-points">
+        {% for point in section.ai_points %}
+          <li class="features-hub-reveal"><span aria-hidden="true">0{{ forloop.counter }}</span>{{ point }}</li>
+        {% endfor %}
+      </ul>
     </div>
+  </section>
 
-    <div class="module-grid">
-      {% for item in section.items %}
-        {% if item.cta_href %}
-          <a class="module-card features-card-link" href="{{ item.cta_href }}" aria-label="{{ item.cta_label }}: {{ item.title }}">
-            <div class="card-audience">{{ item.audience }}</div>
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
-            <ul class="card-feature-list">
-              {% for feature in item.features %}
-                <li>{{ feature }}</li>
-              {% endfor %}
-            </ul>
-          </a>
-        {% else %}
-          <article class="module-card">
-            <div class="card-audience">{{ item.audience }}</div>
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
-            <ul class="card-feature-list">
-              {% for feature in item.features %}
-                <li>{{ feature }}</li>
-              {% endfor %}
-            </ul>
+  <section class="features-impact" id="operacion-impacto">
+    <div class="features-hub-wrap">
+      <header class="features-hub-heading features-hub-reveal">
+        <p class="features-hub-eyebrow">Impacto operativo</p>
+        <h2>{{ section.impact_title }}</h2>
+      </header>
+      <div class="features-impact-grid">
+        {% for metric in section.impact_metrics %}
+          <article class="features-impact-item features-hub-reveal">
+            <strong {% if metric.count %}data-feature-count="{{ metric.count }}" data-feature-suffix="{{ metric.suffix|default:'' }}"{% endif %}>{{ metric.value }}</strong>
+            <span>{{ metric.label }}</span>
           </article>
-        {% endif %}
-      {% endfor %}
-    </div>
-
-    <div id="beneficios" class="split features-split-block">
-      <div class="visual-panel ai-panel">
-        <h3>{{ section.ai_title }}</h3>
-        <ul class="ai-points-list">
-          {% for point in section.ai_points %}
-            <li>{{ point }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <div class="metrics-panel">
-        <h3>{{ section.impact_title }}</h3>
-        <div class="metrics-grid">
-          {% for metric in section.impact_metrics %}
-            <div class="metric-item">
-              <strong>{{ metric.value }}</strong>
-              <span>{{ metric.label }}</span>
-            </div>
-          {% endfor %}
-        </div>
+        {% endfor %}
       </div>
     </div>
+  </section>
 
-    <div id="recursos" class="module-grid features-recursos-grid">
-      {% for cta in section.final_ctas %}
-        <article class="module-card resource-cta-card">
-          <h3>{{ cta.title }}</h3>
-          <p>{{ cta.desc }}</p>
-          <a class="btn btn-secondary" href="/soporte/">{{ cta.cta }}</a>
-        </article>
-      {% endfor %}
+  <section class="features-final" id="operacion-siguientes">
+    <div class="features-hub-wrap">
+      <div class="features-final-grid">
+        {% for cta in section.final_ctas %}
+          <article class="features-final-card features-hub-reveal">
+            <span>0{{ forloop.counter }}</span>
+            <h3>{{ cta.title }}</h3>
+            <p>{{ cta.desc }}</p>
+            <a class="features-final-link" href="/soporte/">{{ cta.cta }} &rarr;</a>
+          </article>
+        {% endfor %}
+      </div>
     </div>
-
-    <div id="capacidades"></div>
-  </div>
-</section>
+  </section>
+</div>

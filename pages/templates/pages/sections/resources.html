@@ -19,7 +19,7 @@
 
     <section class="resources-block" id="pilares">
       <h2>Pilares de contenido</h2>
-      <div class="resources-list">
+      <div class="resources-list reveal">
         {% for group in section.resource_groups %}
           <article class="resources-item">
             <span class="num">0{{ forloop.counter }}</span>
@@ -34,7 +34,7 @@
 
     <section class="resources-block" id="temas">
       <h2>{{ section.secondary_title }}</h2>
-      <ul>
+      <ul class="reveal">
         {% for item in section.secondary_items %}
           <li>{{ item }}</li>
         {% endfor %}
@@ -57,7 +57,7 @@
 
         <div id="pasos">
           {% for block in section.module_sections %}
-            <article class="guide-step" id="step-{{ forloop.counter }}">
+            <article class="guide-step reveal" id="step-{{ forloop.counter }}">
               <h3>{{ block.title }}</h3>
               <ul>
                 {% for point in block.points %}

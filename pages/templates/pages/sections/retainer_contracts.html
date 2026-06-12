@@ -1,0 +1,131 @@
+<div class="ret-page" id="{{ section.id }}">
+  <header class="ret-hero">
+    <div class="ret-wrap ret-hero-inner">
+      <p class="ret-eyebrow">{{ section.eyebrow }}</p>
+      <h1>{{ section.title }}</h1>
+      <p class="ret-hero-description">{{ section.description }}</p>
+      <div class="ret-hero-actions">
+        <a class="ret-primary-link" href="{{ section.cta_href }}">Conocer Majjun ERP <span aria-hidden="true">→</span></a>
+        <a class="ret-text-link" href="#ret-step-1">Consultar etapas <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </header>
+
+  {% if section.flow %}
+    <section class="ret-flow" aria-labelledby="ret-flow-title">
+      <div class="ret-wrap">
+        <p class="ret-section-label" id="ret-flow-title">Índice del ciclo contractual</p>
+        <ol>
+          {% for step in section.flow %}
+            <li>
+              <span>{{ step }}</span>
+              {% if not forloop.last %}<b aria-hidden="true">→</b>{% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </section>
+  {% endif %}
+
+  <div class="ret-anchor-nav">
+    <nav class="ret-anchor-inner" aria-label="Secciones de contratos de retainer">
+      <span class="ret-anchor-thumb" aria-hidden="true"></span>
+      {% for block in section.sections %}
+        <a {% if forloop.first %}class="active"{% endif %} href="#ret-step-{{ forloop.counter }}">{{ block.short_title }}</a>
+      {% endfor %}
+      <a href="#ret-rules">Reglas</a>
+    </nav>
+  </div>
+
+  <main class="ret-document">
+    <div class="ret-wrap">
+      {% for block in section.sections %}
+        <section class="ret-stage ret-reveal ret-stage-{{ forloop.counter }}" id="ret-step-{{ forloop.counter }}">
+          <span class="ret-stage-watermark" aria-hidden="true">0{{ forloop.counter }}</span>
+          <div class="ret-stage-heading">
+            <p class="ret-stage-kicker">Etapa 0{{ forloop.counter }} · {{ block.short_title }}</p>
+            <h2>{{ block.title }}</h2>
+            <p class="ret-stage-intro">{{ block.intro }}</p>
+            {% if block.route %}
+              <p class="ret-route"><span aria-hidden="true">→</span> Ruta: {{ block.route }}</p>
+            {% endif %}
+          </div>
+
+          <div class="ret-stage-detail">
+            <ul class="ret-checklist">
+              {% for point in block.points %}
+                <li>{{ point }}</li>
+              {% endfor %}
+            </ul>
+
+            {% if block.short_title == "Tablero" %}
+              <div class="ret-traffic" aria-label="Semáforo de vencimientos">
+                <p><span class="ret-dot ret-dot-red" aria-hidden="true"></span><strong>Rojo</strong> · 7 días o menos</p>
+                <p><span class="ret-dot ret-dot-orange" aria-hidden="true"></span><strong>Naranja</strong> · Entre 8 y 30 días</p>
+              </div>
+            {% endif %}
+
+            <aside class="ret-note">
+              <strong>Recomendación</strong>
+              <p>{{ block.tip }}</p>
+            </aside>
+          </div>
+        </section>
+      {% endfor %}
+    </div>
+
+    <section class="ret-rules ret-reveal" id="ret-rules">
+      <div class="ret-wrap">
+        <div class="ret-rules-heading">
+          <div>
+            <p class="ret-section-label">Marco normativo</p>
+            <h2>Reglas de negocio</h2>
+            <p>Consulta las validaciones que rigen contratos, tiempos, facturación y renovaciones durante todo el ciclo.</p>
+          </div>
+          <p class="ret-rule-count" aria-live="polite"><strong>{{ section.rules|length }}</strong> reglas</p>
+        </div>
+
+        <div class="ret-rule-filters" role="group" aria-label="Filtrar reglas por categoría">
+          <button class="active" type="button" data-category="General" aria-pressed="true">General</button>
+          <button type="button" data-category="Servicios" aria-pressed="false">Servicios</button>
+          <button type="button" data-category="Asignación" aria-pressed="false">Asignación</button>
+          <button type="button" data-category="Tiempos" aria-pressed="false">Tiempos</button>
+          <button type="button" data-category="Facturación" aria-pressed="false">Facturación</button>
+          <button type="button" data-category="Renovación" aria-pressed="false">Renovación</button>
+          <button type="button" data-category="Cancelación" aria-pressed="false">Cancelación</button>
+          <button type="button" data-category="Tablero" aria-pressed="false">Tablero</button>
+        </div>
+
+        <table class="ret-rule-table">
+          <thead>
+            <tr>
+              <th scope="col">Código</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Regla</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for rule in section.rules %}
+              <tr data-category="{{ rule.1 }}">
+                <td data-label="Código"><code>{{ rule.0 }}</code></td>
+                <td data-label="Categoría">{{ rule.1 }}</td>
+                <td data-label="Regla">{{ rule.2 }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <section class="ret-final ret-reveal">
+    <div class="ret-wrap ret-final-inner">
+      <div>
+        <p class="ret-section-label">Servicios recurrentes</p>
+        <h2>{{ section.cta_title }}</h2>
+        <p>{{ section.cta_description }}</p>
+      </div>
+      <a class="ret-primary-link" href="{{ section.cta_href }}">{{ section.cta_label }} <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</div>

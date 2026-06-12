@@ -6,10 +6,31 @@
     </a>
     {% if active_slug == "home" %}
     <div class="nav-links home-nav-links">
-      <a href="#features" class="nav-link" data-i18n="featuresLabel">Features</a>
-      <a href="#pricing" class="nav-link" data-i18n="pricingLabel">Pricing</a>
-      <a href="#about" class="nav-link" data-i18n="aboutLabel">About</a>
-      <a href="#contact" class="nav-link" data-i18n="contactLabel">Contact</a>
+      {% for item in nav_items %}
+        <div class="nav-item">
+          <a href="{{ item.href }}" class="nav-link">
+            {{ item.label }}
+            <span aria-hidden="true">⌄</span>
+          </a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-grid">
+              {% for column in item.dropdown.columns %}
+                <div>
+                  <strong>{{ column.title }}</strong>
+                  {% for link in column.links %}
+                    <a href="{{ link.href }}">{{ link.label }}</a>
+                  {% endfor %}
+                </div>
+              {% endfor %}
+              <aside>
+                <strong>{{ item.dropdown.aside_title }}</strong>
+                <p>{{ item.dropdown.aside_text }}</p>
+                <a class="btn btn-secondary btn-quiet" href="{{ item.href }}">Ver pagina</a>
+              </aside>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
     </div>
     <div class="nav-actions">
       <div class="lang-switch" aria-label="Language selector">

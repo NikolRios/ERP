@@ -1,0 +1,458 @@
+/* Ventas y clientes: composicion editorial aislada bajo .vc-page. */
+.vc-page {
+  --vc-blue: var(--green, #2563eb);
+  --vc-blue-dark: var(--green-dark, #1d4ed8);
+  --vc-soft: var(--mint, #eaf3ff);
+  --vc-paper: var(--paper, #fff);
+  --vc-ink: var(--ink, #15171d);
+  --vc-muted: var(--muted, #626975);
+  --vc-line: var(--line, #d7dbe3);
+  position: relative;
+  z-index: 1;
+  overflow: clip;
+  color: var(--vc-ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.vc-page .vc-wrap {
+  width: min(1240px, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+
+.vc-page .vc-eyebrow,
+.vc-page .vc-stage-label {
+  margin: 0 0 16px;
+  color: var(--vc-blue);
+  font-size: 14px;
+  font-weight: 850;
+  letter-spacing: .11em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.vc-page .vc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 13px 24px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.vc-page .vc-button:hover { transform: translateY(-2px); }
+
+.vc-page .vc-button-primary {
+  color: #fff;
+  background: var(--vc-blue);
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--vc-blue) 28%, transparent);
+}
+
+.vc-page .vc-button-primary:hover { background: var(--vc-blue-dark); }
+
+.vc-page .vc-button-secondary {
+  border-color: color-mix(in srgb, var(--vc-blue) 30%, var(--vc-line));
+  color: var(--vc-blue-dark);
+  background: color-mix(in srgb, var(--vc-paper) 88%, transparent);
+}
+
+.vc-page .vc-button-secondary:hover {
+  border-color: var(--vc-blue);
+  background: var(--vc-paper);
+}
+
+.vc-page .vc-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 0%, color-mix(in srgb, var(--vc-blue) 20%, transparent), transparent 34%),
+    radial-gradient(circle at 86% 18%, color-mix(in srgb, var(--vc-blue) 13%, transparent), transparent 30%),
+    linear-gradient(155deg, color-mix(in srgb, var(--vc-soft) 72%, var(--vc-paper)), var(--vc-paper));
+}
+
+.vc-page .vc-hero-inner {
+  max-width: 940px;
+  padding-block: clamp(92px, 12vw, 148px) clamp(82px, 10vw, 124px);
+  text-align: center;
+}
+
+.vc-page .vc-hero h1 {
+  max-width: 900px;
+  margin: 0 auto 24px;
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 850;
+  letter-spacing: -.045em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.vc-page .vc-hero-description {
+  max-width: 720px;
+  margin: 0 auto 34px;
+  color: var(--vc-muted);
+  font-size: clamp(18px, 1.8vw, 21px);
+  line-height: 1.65;
+}
+
+.vc-page .vc-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.vc-page .vc-flow {
+  padding-block: 38px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--vc-soft) 36%, var(--vc-paper)), var(--vc-paper));
+  scroll-margin-top: calc(var(--op-header-height, 76px) + var(--op-sticky-height, 82px) + 16px);
+}
+
+.vc-page .vc-flow-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vc-page .vc-flow-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--vc-muted);
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.vc-page .vc-flow-arrow {
+  color: color-mix(in srgb, var(--vc-blue) 62%, var(--vc-muted));
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.vc-page .vc-anchor-nav .vc-wrap {
+  width: auto;
+  max-width: calc(100vw - 32px);
+  padding: 0;
+}
+
+.vc-page .vc-editorial {
+  position: relative;
+  background:
+    radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--vc-blue) 8%, transparent), transparent 25%),
+    radial-gradient(circle at 84% 25%, color-mix(in srgb, var(--vc-blue) 9%, transparent), transparent 24%),
+    radial-gradient(circle at 50% 43%, color-mix(in srgb, var(--vc-blue) 6%, transparent), transparent 27%),
+    radial-gradient(circle at 10% 65%, color-mix(in srgb, var(--vc-blue) 9%, transparent), transparent 25%),
+    radial-gradient(circle at 87% 83%, color-mix(in srgb, var(--vc-blue) 10%, transparent), transparent 25%),
+    linear-gradient(180deg, var(--vc-paper), color-mix(in srgb, var(--vc-soft) 18%, var(--vc-paper)), var(--vc-paper));
+}
+
+.vc-page .vc-stage {
+  position: relative;
+  min-height: 610px;
+  padding-block: clamp(112px, 14vw, 184px);
+  scroll-margin-top: calc(var(--op-header-height, 76px) + var(--op-sticky-height, 82px) + 20px);
+}
+
+.vc-page .vc-stage-content {
+  position: relative;
+  z-index: 1;
+  width: var(--vc-width);
+  margin-left: var(--vc-left);
+}
+
+.vc-page .vc-stage-1 { --vc-width: 70%; --vc-left: 2%; }
+.vc-page .vc-stage-2 { --vc-width: 54%; --vc-left: 43%; }
+.vc-page .vc-stage-3 { --vc-width: 78%; --vc-left: 12%; }
+.vc-page .vc-stage-4 { --vc-width: 58%; --vc-left: 4%; }
+.vc-page .vc-stage-5 { --vc-width: 48%; --vc-left: 50%; }
+.vc-page .vc-stage-6 { --vc-width: 68%; --vc-left: 22%; }
+
+.vc-page .vc-stage-1 h2 { font-size: clamp(36px, 4.6vw, 56px); }
+.vc-page .vc-stage-2 h2 { font-size: clamp(30px, 3.4vw, 42px); }
+.vc-page .vc-stage-3 h2 { font-size: clamp(34px, 4.2vw, 52px); text-align: center; }
+.vc-page .vc-stage-3 .vc-stage-label,
+.vc-page .vc-stage-3 .vc-stage-intro,
+.vc-page .vc-stage-3 .vc-route { text-align: center; justify-content: center; }
+.vc-page .vc-stage-4 h2 { font-size: clamp(33px, 4vw, 48px); }
+.vc-page .vc-stage-5 h2 { font-size: clamp(29px, 3.3vw, 40px); }
+.vc-page .vc-stage-6 h2 { font-size: clamp(34px, 4vw, 50px); text-align: center; }
+.vc-page .vc-stage-6 .vc-stage-label,
+.vc-page .vc-stage-6 .vc-stage-intro,
+.vc-page .vc-stage-6 .vc-route { text-align: center; justify-content: center; }
+
+.vc-page .vc-watermark {
+  position: absolute;
+  z-index: 0;
+  color: color-mix(in srgb, var(--vc-blue) 6%, transparent);
+  font-size: clamp(170px, 24vw, 320px);
+  font-weight: 900;
+  letter-spacing: -.09em;
+  line-height: .7;
+  pointer-events: none;
+  user-select: none;
+}
+
+.vc-page .vc-stage-1 .vc-watermark { top: 20%; left: -2%; }
+.vc-page .vc-stage-2 .vc-watermark { top: 35%; right: -1%; }
+.vc-page .vc-stage-3 .vc-watermark { top: 15%; left: 38%; }
+.vc-page .vc-stage-4 .vc-watermark { top: 40%; left: -3%; }
+.vc-page .vc-stage-5 .vc-watermark { top: 12%; right: 8%; }
+.vc-page .vc-stage-6 .vc-watermark { top: 38%; left: 20%; }
+
+.vc-page .vc-stage h2,
+.vc-page .vc-final h2 {
+  margin: 0;
+  font-weight: 840;
+  letter-spacing: -.04em;
+  line-height: 1.09;
+  text-wrap: balance;
+}
+
+.vc-page .vc-stage-intro {
+  margin: 24px 0 22px;
+  color: var(--vc-muted);
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+.vc-page .vc-route {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 28px;
+  color: var(--vc-blue-dark);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.vc-page .vc-route span {
+  flex: 0 0 auto;
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.vc-page .vc-cfdi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  margin: 0 0 28px;
+  color: var(--vc-muted);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.vc-page .vc-cfdi span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vc-page .vc-cfdi i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 14%, transparent);
+}
+
+.vc-page .vc-cfdi-green { color: #16a34a; background: currentColor; }
+.vc-page .vc-cfdi-amber { color: #d97706; background: currentColor; }
+.vc-page .vc-cfdi-red { color: #dc2626; background: currentColor; }
+
+.vc-page .vc-points {
+  display: grid;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.vc-page .vc-points li {
+  position: relative;
+  padding-left: 32px;
+  font-size: 17px;
+  line-height: 1.68;
+}
+
+.vc-page .vc-points li::before {
+  content: "✓";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--vc-blue);
+  font-size: 18px;
+  font-weight: 850;
+}
+
+.vc-page .vc-tip {
+  margin-top: 34px;
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid color-mix(in srgb, var(--vc-blue) 66%, var(--vc-line));
+  text-align: left;
+}
+
+.vc-page .vc-tip strong {
+  color: var(--vc-blue-dark);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.vc-page .vc-tip p {
+  margin: 8px 0 0;
+  color: var(--vc-muted);
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+.vc-page .vc-final {
+  background:
+    radial-gradient(circle at 68% 100%, color-mix(in srgb, var(--vc-blue) 15%, transparent), transparent 48%),
+    linear-gradient(180deg, var(--vc-paper), color-mix(in srgb, var(--vc-soft) 65%, var(--vc-paper)));
+}
+
+.vc-page .vc-final-inner {
+  max-width: 860px;
+  padding-block: clamp(88px, 11vw, 128px);
+  text-align: center;
+}
+
+.vc-page .vc-final h2 { font-size: clamp(32px, 4vw, 48px); }
+
+.vc-page .vc-final p {
+  max-width: 680px;
+  margin: 22px auto 30px;
+  color: var(--vc-muted);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.vc-page .vc-reveal-left,
+.vc-page .vc-reveal-right,
+.vc-page .vc-reveal-up {
+  opacity: 0;
+  transition: opacity .68s ease, transform .68s ease;
+  transition-delay: var(--vc-delay, 0ms);
+}
+
+.vc-page .vc-reveal-left { transform: translateX(-34px); }
+.vc-page .vc-reveal-right { transform: translateX(34px); }
+.vc-page .vc-reveal-up { transform: translateY(24px); }
+
+.vc-page .vc-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .vc-page .vc-stage {
+    min-height: 540px;
+    padding-block: 110px;
+  }
+
+  .vc-page .vc-stage-1 { --vc-width: 76%; --vc-left: 0%; }
+  .vc-page .vc-stage-2 { --vc-width: 62%; --vc-left: 36%; }
+  .vc-page .vc-stage-3 { --vc-width: 84%; --vc-left: 8%; }
+  .vc-page .vc-stage-4 { --vc-width: 68%; --vc-left: 0%; }
+  .vc-page .vc-stage-5 { --vc-width: 58%; --vc-left: 40%; }
+  .vc-page .vc-stage-6 { --vc-width: 78%; --vc-left: 12%; }
+}
+
+@media (max-width: 700px) {
+  .vc-page {
+    font-size: 16px;
+  }
+
+  .vc-page .vc-wrap { padding-inline: 18px; }
+  .vc-page .vc-hero-inner { padding-block: 74px 70px; }
+  .vc-page .vc-hero h1 { font-size: clamp(36px, 11vw, 48px); }
+  .vc-page .vc-hero-actions { display: grid; }
+  .vc-page .vc-button { width: 100%; }
+  .vc-page .vc-flow { padding-block: 30px; }
+
+  .vc-page .vc-flow-list {
+    justify-content: flex-start;
+    gap: 10px 12px;
+  }
+
+  .vc-page .vc-flow-list li {
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  .vc-page .vc-stage,
+  .vc-page .vc-stage-1,
+  .vc-page .vc-stage-2,
+  .vc-page .vc-stage-3,
+  .vc-page .vc-stage-4,
+  .vc-page .vc-stage-5,
+  .vc-page .vc-stage-6 {
+    --vc-width: 100%;
+    --vc-left: 0%;
+    min-height: auto;
+    padding-block: 94px;
+  }
+
+  .vc-page .vc-stage-1 h2,
+  .vc-page .vc-stage-2 h2,
+  .vc-page .vc-stage-3 h2,
+  .vc-page .vc-stage-4 h2,
+  .vc-page .vc-stage-5 h2,
+  .vc-page .vc-stage-6 h2,
+  .vc-page .vc-final h2 {
+    font-size: clamp(28px, 9vw, 38px);
+    text-align: left;
+  }
+
+  .vc-page .vc-stage-3 .vc-stage-label,
+  .vc-page .vc-stage-3 .vc-stage-intro,
+  .vc-page .vc-stage-3 .vc-route,
+  .vc-page .vc-stage-6 .vc-stage-label,
+  .vc-page .vc-stage-6 .vc-stage-intro,
+  .vc-page .vc-stage-6 .vc-route {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .vc-page .vc-watermark,
+  .vc-page .vc-stage-1 .vc-watermark,
+  .vc-page .vc-stage-2 .vc-watermark,
+  .vc-page .vc-stage-3 .vc-watermark,
+  .vc-page .vc-stage-4 .vc-watermark,
+  .vc-page .vc-stage-5 .vc-watermark,
+  .vc-page .vc-stage-6 .vc-watermark {
+    top: 54px;
+    right: auto;
+    left: 0;
+    font-size: clamp(120px, 38vw, 180px);
+  }
+
+  .vc-page .vc-stage-intro,
+  .vc-page .vc-final p { font-size: 16px; }
+  .vc-page .vc-points li { padding-left: 28px; font-size: 16px; }
+  .vc-page .vc-reveal-left,
+  .vc-page .vc-reveal-right { transform: translateY(22px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vc-page .vc-reveal-left,
+  .vc-page .vc-reveal-right,
+  .vc-page .vc-reveal-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

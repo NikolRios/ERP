@@ -8,20 +8,44 @@
   <link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
   <link rel="stylesheet" href="{% static 'pages/css/nav.css' %}">
   <link rel="stylesheet" href="{% static 'pages/css/section_page.css' %}?v=2">
-  {% if active_slug == "features" %}
-    <link rel="stylesheet" href="{% static 'pages/css/features.css' %}">
+  {% if section_template == "pages/sections/features.html" or section_template == "pages/sections/finance_accounting.html" %}
+    <link rel="stylesheet" href="{% static 'pages/css/features.css' %}?v=3">
   {% endif %}
-  {% if active_slug == "segments" %}
+  {% if section_template == "pages/sections/finance_ledger.html" %}
+    <link rel="stylesheet" href="{% static 'pages/css/finanzas.css' %}">
+  {% endif %}
+  {% if section_template == "pages/sections/accounts_payable.html" %}
     <link rel="stylesheet" href="{% static 'pages/css/segments.css' %}">
   {% endif %}
-  {% if active_slug == "support" %}
+  {% if section_template == "pages/sections/retainer_contracts.html" %}
+    <link rel="stylesheet" href="{% static 'pages/css/retainer.css' %}">
+  {% endif %}
+  {% if section_template == "pages/sections/sales_customers.html" %}
+    <link rel="stylesheet" href="{% static 'pages/css/ventas.css' %}">
+  {% endif %}
+  {% if section_template == "pages/sections/segments.html" %}
+    <link rel="stylesheet" href="{% static 'pages/css/comercial.css' %}">
+  {% endif %}
+  {% if section_template == "pages/sections/support.html" %}
     <link rel="stylesheet" href="{% static 'pages/css/support.css' %}">
   {% endif %}
-  {% if active_slug == "resources" %}
-    <link rel="stylesheet" href="{% static 'pages/css/resources.css' %}">
+  {% if section_template == "pages/sections/resources.html" %}
+    <link rel="stylesheet" href="{% static 'pages/css/resources.css' %}?v=2">
   {% endif %}
-  {% if active_slug == "pricing" %}
+  {% if section_template == "pages/sections/pricing_skeleton.html" %}
     <link rel="stylesheet" href="{% static 'pages/css/pricing.css' %}">
+  {% endif %}
+  {% if section_template == "pages/sections/inventarios.html" %}
+    <link rel="stylesheet" href="{% static 'pages/css/inventarios.css' %}">
+  {% endif %}
+  {% if section_template == "pages/sections/purchases_suppliers.html" %}
+    <link rel="stylesheet" href="{% static 'pages/css/compras.css' %}">
+  {% endif %}
+  {% if section_template == "pages/sections/logistics_warehouses.html" %}
+    <link rel="stylesheet" href="{% static 'pages/css/logistica.css' %}">
+  {% endif %}
+  {% if section_template == "pages/sections/features.html" or section_template == "pages/sections/inventarios.html" or section_template == "pages/sections/purchases_suppliers.html" or section_template == "pages/sections/logistics_warehouses.html" or section_template == "pages/sections/sales_customers.html" %}
+    <link rel="stylesheet" href="{% static 'pages/css/operation_sticky.css' %}">
   {% endif %}
 </head>
 <body>
@@ -54,11 +78,38 @@
 
   <script src="{% static 'pages/js/app.js' %}" defer></script>
   <script src="{% static 'pages/js/section_page.js' %}" defer></script>
-  {% if active_slug == "resources" or active_slug == "features" or active_slug == "segments" or active_slug == "support" %}
+  {% if section_template == "pages/sections/features.html" %}
+    <script src="{% static 'pages/js/features.js' %}" defer></script>
+  {% endif %}
+  {% if section_template == "pages/sections/finance_accounting.html" or section_template == "pages/sections/resources.html" or section_template == "pages/sections/accounts_payable.html" or section_template == "pages/sections/support.html" %}
     <script src="{% static 'pages/js/resources.js' %}" defer></script>
   {% endif %}
-  {% if active_slug == "pricing" %}
+  {% if section_template == "pages/sections/retainer_contracts.html" %}
+    <script src="{% static 'pages/js/retainer.js' %}" defer></script>
+  {% endif %}
+  {% if section_template == "pages/sections/finance_ledger.html" %}
+    <script src="{% static 'pages/js/finanzas.js' %}" defer></script>
+  {% endif %}
+  {% if section_template == "pages/sections/sales_customers.html" %}
+    <script src="{% static 'pages/js/ventas.js' %}" defer></script>
+  {% endif %}
+  {% if section_template == "pages/sections/segments.html" %}
+    <script src="{% static 'pages/js/comercial.js' %}" defer></script>
+  {% endif %}
+  {% if section_template == "pages/sections/pricing_skeleton.html" %}
     <script src="{% static 'pages/js/pricing.js' %}" defer></script>
+  {% endif %}
+  {% if section_template == "pages/sections/inventarios.html" %}
+    <script src="{% static 'pages/js/inventarios.js' %}" defer></script>
+  {% endif %}
+  {% if section_template == "pages/sections/purchases_suppliers.html" %}
+    <script src="{% static 'pages/js/compras.js' %}" defer></script>
+  {% endif %}
+  {% if section_template == "pages/sections/logistics_warehouses.html" %}
+    <script src="{% static 'pages/js/logistica.js' %}" defer></script>
+  {% endif %}
+  {% if section_template == "pages/sections/features.html" or section_template == "pages/sections/inventarios.html" or section_template == "pages/sections/purchases_suppliers.html" or section_template == "pages/sections/logistics_warehouses.html" or section_template == "pages/sections/sales_customers.html" %}
+    <script src="{% static 'pages/js/operation_sticky.js' %}" defer></script>
   {% endif %}
 </body>
 </html>

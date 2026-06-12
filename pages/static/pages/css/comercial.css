@@ -1,0 +1,467 @@
+/* Hub Comercial: estilos aislados bajo .com-page. */
+.com-page {
+  --com-blue: var(--green, #2563eb);
+  --com-blue-dark: var(--green-dark, #1d4ed8);
+  --com-soft: var(--mint, #eaf3ff);
+  --com-paper: var(--paper, #fff);
+  --com-bg: var(--bg, #f4f5f7);
+  --com-ink: var(--ink, #15171d);
+  --com-muted: var(--muted, #626975);
+  --com-line: var(--line, #d7dbe3);
+  position: relative;
+  z-index: 1;
+  overflow: clip;
+  color: var(--com-ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.com-page .com-wrap {
+  width: min(1200px, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+
+.com-page .com-eyebrow {
+  margin: 0 0 18px;
+  color: var(--com-blue);
+  font-size: 14px;
+  font-weight: 850;
+  letter-spacing: .11em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.com-page .com-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid color-mix(in srgb, var(--com-blue) 18%, var(--com-line));
+  background:
+    radial-gradient(circle at 14% 0%, color-mix(in srgb, var(--com-blue) 24%, transparent), transparent 32%),
+    radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--com-blue) 18%, transparent), transparent 34%),
+    linear-gradient(145deg, color-mix(in srgb, var(--com-soft) 82%, var(--com-paper)), var(--com-paper));
+}
+
+.com-page .com-hero::before,
+.com-page .com-hero::after {
+  content: "";
+  position: absolute;
+  border: 1px solid color-mix(in srgb, var(--com-blue) 20%, transparent);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.com-page .com-hero::before {
+  width: 420px;
+  height: 420px;
+  right: -210px;
+  bottom: -250px;
+}
+
+.com-page .com-hero::after {
+  width: 270px;
+  height: 270px;
+  right: -135px;
+  bottom: -175px;
+}
+
+.com-page .com-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  padding-block: clamp(92px, 12vw, 144px) clamp(82px, 10vw, 120px);
+  text-align: center;
+}
+
+.com-page .com-hero h1 {
+  max-width: 920px;
+  margin: 0 auto 24px;
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 850;
+  letter-spacing: -.045em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.com-page .com-hero-description {
+  max-width: 720px;
+  margin: 0 auto 34px;
+  color: var(--com-muted);
+  font-size: clamp(18px, 1.8vw, 21px);
+  line-height: 1.65;
+}
+
+.com-page .com-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.com-page .com-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 13px 24px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.com-page .com-button:hover {
+  transform: translateY(-2px);
+}
+
+.com-page .com-button-primary {
+  color: #fff;
+  background: var(--com-blue);
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--com-blue) 28%, transparent);
+}
+
+.com-page .com-button-primary:hover {
+  background: var(--com-blue-dark);
+}
+
+.com-page .com-button-secondary {
+  border-color: color-mix(in srgb, var(--com-blue) 32%, var(--com-line));
+  color: var(--com-blue-dark);
+  background: color-mix(in srgb, var(--com-paper) 90%, transparent);
+}
+
+.com-page .com-button-secondary:hover {
+  border-color: var(--com-blue);
+  background: var(--com-paper);
+}
+
+.com-page .com-modules {
+  background: var(--com-paper);
+}
+
+.com-page .com-module {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(92px, 11vw, 136px);
+  border-bottom: 1px solid color-mix(in srgb, var(--com-blue) 13%, var(--com-line));
+}
+
+.com-page .com-module:nth-child(even) {
+  background:
+    radial-gradient(circle at 12% 50%, color-mix(in srgb, var(--com-blue) 9%, transparent), transparent 28%),
+    linear-gradient(145deg, color-mix(in srgb, var(--com-soft) 48%, var(--com-paper)), var(--com-bg));
+}
+
+.com-page .com-module:nth-child(odd) {
+  background:
+    radial-gradient(circle at 88% 50%, color-mix(in srgb, var(--com-blue) 9%, transparent), transparent 28%),
+    var(--com-paper);
+}
+
+.com-page .com-module-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: clamp(48px, 8vw, 104px);
+  align-items: center;
+}
+
+.com-page .com-module-reverse .com-module-copy {
+  order: 2;
+}
+
+.com-page .com-module-reverse .com-flow-card {
+  order: 1;
+}
+
+.com-page .com-module-copy h2,
+.com-page .com-final h2 {
+  margin: 0;
+  font-size: clamp(34px, 4.2vw, 52px);
+  font-weight: 840;
+  letter-spacing: -.04em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.com-page .com-module-copy > p:not(.com-eyebrow) {
+  margin: 24px 0 28px;
+  color: var(--com-muted);
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+.com-page .com-module-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--com-blue-dark);
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.com-page .com-module-link span {
+  font-size: 22px;
+  transition: transform .2s ease;
+}
+
+.com-page .com-module-link:hover span {
+  transform: translateX(5px);
+}
+
+.com-page .com-flow-card {
+  position: relative;
+  min-width: 0;
+  padding: clamp(30px, 4vw, 48px);
+  border: 1px solid color-mix(in srgb, var(--com-blue) 22%, var(--com-line));
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--com-paper) 94%, var(--com-soft)), var(--com-paper));
+  box-shadow: 0 24px 70px rgba(21, 23, 29, .11);
+}
+
+.com-page .com-flow-card::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid color-mix(in srgb, var(--com-blue) 10%, transparent);
+  border-radius: 17px;
+  pointer-events: none;
+}
+
+.com-page .com-flow {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.com-page .com-flow li {
+  position: relative;
+  display: inline-flex;
+  flex: 1 1 150px;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+  min-height: 54px;
+  padding: 8px 15px 8px 8px;
+  border: 1px solid color-mix(in srgb, var(--com-blue) 18%, var(--com-line));
+  border-radius: 999px;
+  background: var(--com-paper);
+  box-shadow: 0 8px 24px rgba(21, 23, 29, .06);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.com-page .com-flow li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: -20px;
+  color: var(--com-blue);
+  font-size: 18px;
+  font-weight: 850;
+  transform: translateY(-50%);
+}
+
+.com-page .com-flow li:hover {
+  border-color: color-mix(in srgb, var(--com-blue) 46%, var(--com-line));
+  box-shadow: 0 12px 28px rgba(21, 23, 29, .09);
+  transform: translateX(4px);
+}
+
+.com-page .com-flow-number {
+  display: grid;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--com-blue);
+  font-size: 14px;
+  font-weight: 850;
+  box-shadow: 0 8px 16px color-mix(in srgb, var(--com-blue) 24%, transparent);
+}
+
+.com-page .com-flow strong {
+  min-width: 0;
+  color: var(--com-ink);
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.com-page .com-final {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 18% 0%, color-mix(in srgb, #fff 20%, transparent), transparent 34%),
+    linear-gradient(135deg, var(--com-blue-dark), var(--com-blue));
+}
+
+.com-page .com-final-inner {
+  max-width: 920px;
+  padding-block: clamp(86px, 11vw, 124px);
+  text-align: center;
+}
+
+.com-page .com-final .com-eyebrow {
+  color: color-mix(in srgb, #fff 82%, var(--com-soft));
+}
+
+.com-page .com-final h2 {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.com-page .com-final .com-actions {
+  margin-top: 32px;
+}
+
+.com-page .com-button-light {
+  color: var(--com-blue-dark);
+  background: #fff;
+  box-shadow: 0 14px 30px rgba(21, 23, 29, .18);
+}
+
+.com-page .com-button-outline-light {
+  border-color: color-mix(in srgb, #fff 55%, transparent);
+  color: #fff;
+  background: color-mix(in srgb, #fff 9%, transparent);
+}
+
+.com-page .com-button-outline-light:hover {
+  background: color-mix(in srgb, #fff 17%, transparent);
+}
+
+.com-page .com-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .65s ease, transform .65s ease;
+  transition-delay: var(--com-delay, 0ms);
+}
+
+.com-page .com-flow li.com-reveal {
+  transform: translateX(18px);
+}
+
+.com-page .com-reveal.com-visible,
+.com-page .com-flow li.com-reveal.com-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .com-page .com-module-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .com-page .com-module-reverse .com-module-copy,
+  .com-page .com-module-reverse .com-flow-card {
+    order: initial;
+  }
+
+  .com-page .com-module-copy {
+    max-width: 720px;
+  }
+
+  .com-page .com-flow-card {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 640px) {
+  .com-page {
+    font-size: 16px;
+  }
+
+  .com-page .com-wrap {
+    padding-inline: 18px;
+  }
+
+  .com-page .com-hero-inner {
+    padding-block: 74px 70px;
+  }
+
+  .com-page .com-hero h1 {
+    font-size: clamp(36px, 11vw, 48px);
+  }
+
+  .com-page .com-actions {
+    display: grid;
+  }
+
+  .com-page .com-button {
+    width: 100%;
+  }
+
+  .com-page .com-module {
+    padding-block: 76px;
+  }
+
+  .com-page .com-module-copy h2,
+  .com-page .com-final h2 {
+    font-size: clamp(30px, 9vw, 40px);
+  }
+
+  .com-page .com-module-copy > p:not(.com-eyebrow) {
+    font-size: 16px;
+  }
+
+  .com-page .com-flow-card {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .com-page .com-flow-card::before {
+    inset: 9px;
+    border-radius: 13px;
+  }
+
+  .com-page .com-flow {
+    display: grid;
+    gap: 16px;
+  }
+
+  .com-page .com-flow li {
+    width: 100%;
+    min-height: 56px;
+    padding: 9px 14px 9px 9px;
+  }
+
+  .com-page .com-flow li:not(:last-child)::after {
+    content: "↓";
+    top: auto;
+    right: 24px;
+    bottom: -19px;
+    transform: none;
+  }
+
+  .com-page .com-flow-number {
+    width: 38px;
+    height: 38px;
+  }
+
+  .com-page .com-flow strong {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .com-page .com-reveal,
+  .com-page .com-flow li.com-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

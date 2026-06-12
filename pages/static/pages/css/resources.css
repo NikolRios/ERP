@@ -22,7 +22,7 @@
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #21b58d;
+  color: var(--green);
 }
 
 .resources-hero h1 {
@@ -30,13 +30,13 @@
   font-size: clamp(36px, 5vw, 64px);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #112a46;
+  color: var(--ink);
 }
 
 .resources-hero p {
   max-width: 700px;
   margin: 24px auto 0;
-  color: #3b5c7d;
+  color: var(--muted);
   font-size: clamp(17px, 2vw, 20px);
   line-height: 1.6;
   font-weight: 400;
@@ -57,7 +57,7 @@
   width: max-content;
   max-width: calc(100vw - 32px);
   overflow-x: auto;
-  border: 2px solid #21b58d;
+  border: 1.5px solid color-mix(in srgb, var(--green) 32%, var(--line));
   border-radius: 999px;
   background: #ffffff;
   isolation: isolate;
@@ -69,8 +69,8 @@
   top: 50%;
   height: calc(100% - 12px);
   border-radius: 999px;
-  border: 2px solid #2f80ff;
-  background: transparent;
+  border: 1.5px solid color-mix(in srgb, var(--green) 40%, transparent);
+  background: color-mix(in srgb, var(--mint) 72%, transparent);
   transform: translateY(-50%);
   width: 0;
   z-index: 0;
@@ -141,7 +141,7 @@
   font-size: clamp(26px, 2.5vw, 36px);
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #112a46;
+  color: var(--ink);
 }
 
 .resources-list {
@@ -186,13 +186,13 @@
   margin: 0 0 10px;
   font-size: clamp(18px, 2vw, 22px);
   font-weight: 700;
-  color: #112a46;
+  color: var(--ink);
   line-height: 1.3;
 }
 
 .resources-item p {
   margin: 0;
-  color: #4a6b8c;
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.65;
   max-width: 720px;
@@ -215,7 +215,7 @@
   min-height: 86px;
   padding: 16px;
   background: #ffffff;
-  color: #112a46;
+  color: var(--ink);
   font-size: 15px;
   font-weight: 650;
   line-height: 1.35;
@@ -227,7 +227,7 @@
 #modulo > p {
   font-size: clamp(16px, 1.5vw, 18px);
   line-height: 1.6;
-  color: #4a6b8c !important;
+  color: var(--muted) !important;
   margin-bottom: 48px !important;
   max-width: 800px;
 }
@@ -255,7 +255,7 @@
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #7b95b0;
+  color: var(--muted);
   font-weight: 700;
 }
 
@@ -269,7 +269,7 @@
 }
 
 .guide-index a {
-  color: #2c4a66;
+  color: var(--ink);
   font-weight: 600;
   font-size: 14px;
   line-height: 1.4;
@@ -279,7 +279,7 @@
 }
 
 .guide-index a:hover {
-  color: #21b58d;
+  color: var(--green);
 }
 
 .guide-step {
@@ -297,7 +297,7 @@
 .guide-step h3 {
   margin: 0 0 24px;
   font-size: clamp(22px, 2.5vw, 28px);
-  color: #112a46;
+  color: var(--ink);
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.01em;
@@ -315,7 +315,7 @@
 .guide-step ul li {
   position: relative;
   padding-left: 24px;
-  color: #4a6b8c;
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.6;
 }
@@ -327,7 +327,7 @@
   top: 0.6em;
   width: 6px;
   height: 6px;
-  background-color: #21b58d;
+  background-color: var(--green);
   border-radius: 50%;
 }
 
@@ -346,3 +346,70 @@
     margin-bottom: 48px;
   }
 }
+
+/* ── Hero entrance ──────────────────────────────────────── */
+@keyframes resourcesHeroIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.resources-hero .kicker  { animation: resourcesHeroIn 0.55s ease both 0.06s; }
+.resources-hero h1       { animation: resourcesHeroIn 0.60s ease both 0.18s; }
+.resources-hero p        { animation: resourcesHeroIn 0.60s ease both 0.30s; }
+
+/* ── Resource items stagger ─────────────────────────────── */
+.resources-list.reveal.visible .resources-item {
+  animation: riseIn 0.5s ease both;
+}
+.resources-list.reveal.visible .resources-item:nth-child(2) { animation-delay: 0.10s; }
+.resources-list.reveal.visible .resources-item:nth-child(3) { animation-delay: 0.20s; }
+
+.resources-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.resources-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(21, 23, 29, .10);
+  border-color: color-mix(in srgb, var(--green) 28%, transparent);
+}
+
+/* ── Temas chips stagger ────────────────────────────────── */
+#temas ul.reveal.visible li {
+  animation: riseIn 0.45s ease both;
+}
+#temas ul.reveal.visible li:nth-child(2) { animation-delay: 0.06s; }
+#temas ul.reveal.visible li:nth-child(3) { animation-delay: 0.12s; }
+#temas ul.reveal.visible li:nth-child(4) { animation-delay: 0.18s; }
+#temas ul.reveal.visible li:nth-child(5) { animation-delay: 0.24s; }
+
+#temas li {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+#temas li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(21, 23, 29, .08);
+  border-color: color-mix(in srgb, var(--green) 40%, transparent);
+}
+
+/* ── Guide steps slide in ───────────────────────────────── */
+@keyframes guideStepIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.guide-step.reveal.visible {
+  animation: guideStepIn 0.45s ease both;
+}
+
+/* ── Guide index active link ────────────────────────────── */
+.guide-index a.active {
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ── Guide step list item dot pulse ─────────────────────── */
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+.guide-step ul li:nth-child(1)::before { animation: dotPulse 3s ease-in-out infinite 0.0s; }
+.guide-step ul li:nth-child(2)::before { animation: dotPulse 3s ease-in-out infinite 0.6s; }
+.guide-step ul li:nth-child(3)::before { animation: dotPulse 3s ease-in-out infinite 1.2s; }

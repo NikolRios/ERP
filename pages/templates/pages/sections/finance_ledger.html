@@ -1,0 +1,78 @@
+<div class="fin-page" id="{{ section.id }}">
+  <header class="fin-hero">
+    <div class="fin-wrap">
+      <p class="fin-eyebrow">{{ section.eyebrow }}</p>
+      <h1>{{ section.title }}</h1>
+      <p class="fin-hero-description">{{ section.description }}</p>
+      <div class="fin-hero-actions">
+        <a class="fin-primary-link" href="{{ section.cta_href }}">Conocer Majjun ERP <span aria-hidden="true">→</span></a>
+        <a class="fin-text-link" href="#fin-topic-1">Consultar guía contable <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="fin-anchor-nav">
+    <nav class="fin-anchor-inner" aria-label="Temas de finanzas y contabilidad">
+      <span class="fin-anchor-thumb" aria-hidden="true"></span>
+      {% for block in section.sections %}
+        <a {% if forloop.first %}class="active"{% endif %} href="#fin-topic-{{ forloop.counter }}">{{ block.short_title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+
+  <main class="fin-editorial">
+    <div class="fin-wrap">
+      {% for block in section.sections %}
+        {% if forloop.counter < 5 %}
+          <section class="fin-topic fin-reveal" id="fin-topic-{{ forloop.counter }}">
+            {% include "pages/sections/partials/finance_topic.html" with block=block %}
+          </section>
+        {% endif %}
+      {% endfor %}
+
+      {% for block in section.sections %}
+        {% if forloop.counter == 5 %}
+          <section class="fin-topic fin-reports fin-reveal" id="fin-topic-{{ forloop.counter }}">
+            <div class="fin-reports-heading">
+              <p class="fin-topic-label">{{ block.short_title }}</p>
+              <h2>{{ block.display_title }}</h2>
+              <p class="fin-topic-intro">{{ block.intro }}</p>
+            </div>
+
+            <div class="fin-statements" aria-label="Estados financieros principales">
+              {% for output in block.report_outputs %}
+                <div class="fin-statement">
+                  <strong>{{ output.title }}</strong>
+                  <p>{{ output.description }}</p>
+                </div>
+              {% endfor %}
+            </div>
+
+            <div class="fin-reports-foot">
+              <ul class="fin-checklist fin-additional-points">
+                {% for point in block.additional_points %}
+                  <li>{{ point }}</li>
+                {% endfor %}
+              </ul>
+              <aside class="fin-note">
+                <strong>Recomendación</strong>
+                <p>{{ block.tip }}</p>
+              </aside>
+            </div>
+          </section>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </main>
+
+  <section class="fin-final fin-reveal">
+    <div class="fin-wrap fin-final-inner">
+      <div>
+        <p class="fin-eyebrow">Finanzas en orden</p>
+        <h2>{{ section.cta_title }}</h2>
+        <p>{{ section.cta_description }}</p>
+      </div>
+      <a class="fin-primary-link" href="{{ section.cta_href }}">{{ section.cta_label }} <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</div>

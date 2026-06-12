@@ -79,3 +79,34 @@
     onScroll();
   });
 })();
+
+// Guide index active link tracking
+(() => {
+  const index = document.querySelector('.guide-index');
+  if (!index) return;
+
+  const indexLinks = [...index.querySelectorAll('a')];
+  if (!indexLinks.length) return;
+
+  const stepSections = indexLinks
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  const setIndexActive = (id) => {
+    indexLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+    });
+  };
+
+  const onScroll = () => {
+    const anchor = 200;
+    let currentId = stepSections[0]?.id;
+    for (const section of stepSections) {
+      if (section.getBoundingClientRect().top <= anchor) currentId = section.id;
+    }
+    if (currentId) setIndexActive(currentId);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();

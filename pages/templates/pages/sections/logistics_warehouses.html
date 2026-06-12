@@ -1,0 +1,93 @@
+{% load static %}
+<div class="log-page">
+  <header class="log-hero">
+    <div class="log-wrap log-hero-inner">
+      <p class="log-eyebrow">{{ section.eyebrow }}</p>
+      <h1>{{ section.title }}</h1>
+      <p class="log-hero-description">{{ section.description }}</p>
+      <div class="log-hero-actions">
+        <a class="log-button log-button-primary" href="{{ section.cta_href }}">Explorar logística</a>
+        <a class="log-button log-button-secondary" href="#log-flujo">Ver el flujo</a>
+      </div>
+    </div>
+  </header>
+
+  {% if section.flow %}
+  <section class="log-flow" id="log-flujo" aria-label="Recorrido de la mercancía">
+    <div class="log-wrap">
+      <ol class="log-flow-list">
+        {% for step in section.flow %}
+        <li>
+          <span>{{ step }}</span>
+          {% if not forloop.last %}<span class="log-flow-arrow" aria-hidden="true">→</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+  {% endif %}
+
+  <div class="log-anchor-nav op-sticky-wrap">
+    <div class="log-wrap">
+      <nav class="log-anchor-inner op-pill-nav" aria-label="Secciones de logística y almacenes">
+        <span class="op-pill-thumb" aria-hidden="true"></span>
+        {% for block in section.sections %}
+        <a class="log-anchor-link{% if forloop.first %} active{% endif %}"
+           href="#log-section-{{ forloop.counter }}">{{ block.short_title }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </div>
+
+  <main class="log-sections">
+    <div class="log-wrap">
+      {% for block in section.sections %}
+      <section class="log-section{% if forloop.counter|divisibleby:2 %} log-section-right{% else %} log-section-left{% endif %}"
+               id="log-section-{{ forloop.counter }}">
+        <span class="log-watermark" aria-hidden="true">0{{ forloop.counter }}</span>
+
+        <div class="log-section-content">
+          <div class="log-section-heading">
+            <p class="log-section-label">{{ block.short_title }}</p>
+            {% if block.short_title == "Reposición" %}
+            <span class="log-accent-label">IA · Reorden inteligente</span>
+            {% elif block.short_title == "Auditoría" %}
+            <span class="log-accent-label">Trazabilidad</span>
+            {% endif %}
+            <h2>{{ block.title }}</h2>
+          </div>
+
+          <p class="log-section-intro">{{ block.intro }}</p>
+
+          {% if block.route %}
+          <p class="log-route">
+            <span aria-hidden="true">→</span>
+            {{ block.route }}
+          </p>
+          {% endif %}
+
+          <ul class="log-points">
+            {% for point in block.points %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+
+          <aside class="log-tip">
+            <strong>Recomendación</strong>
+            <p>{{ block.tip }}</p>
+          </aside>
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+  </main>
+
+  <section class="log-final">
+    <div class="log-wrap log-final-inner">
+      <p class="log-eyebrow">{{ section.cta_eyebrow }}</p>
+      <h2>{{ section.cta_title }}</h2>
+      <p>{{ section.cta_description }}</p>
+      <a class="log-button log-button-light" href="{{ section.cta_href }}">{{ section.cta_label }}</a>
+    </div>
+  </section>
+</div>

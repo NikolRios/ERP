@@ -9,9 +9,9 @@
     <div class="features-jump-wrap finance-jump-wrap">
       <nav class="features-jump finance-jump" aria-label="Navegacion de secciones">
         <span class="features-jump-thumb" aria-hidden="true"></span>
-        <a class="active" href="#finance-step-1">Tu Catalogo de Cuentas</a>
-        <a href="#finance-step-2">Registros Manuales</a>
-        <a href="#finance-step-3">Configuracion</a>
+        {% for block in section.sections %}
+          <a {% if forloop.first %}class="active"{% endif %} href="#finance-step-{{ forloop.counter }}">{{ block.short_title }}</a>
+        {% endfor %}
       </nav>
     </div>
 
@@ -20,14 +20,37 @@
         {% for block in section.sections %}
           <article class="features-finance-step" id="finance-step-{{ forloop.counter }}">
             <h3>{{ block.title }}</h3>
+            <p class="finance-step-intro">{{ block.intro }}</p>
+            {% if block.route %}
+              <p class="finance-route"><span>Ruta</span>{{ block.route }}</p>
+            {% endif %}
+            {% if block.routes %}
+              <div class="finance-routes">
+                {% for route in block.routes %}
+                  <p class="finance-route"><span>Ruta</span>{{ route }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
             <ul>
               {% for point in block.points %}
                 <li>{{ point }}</li>
               {% endfor %}
             </ul>
+            {% if block.tip %}
+              <p class="finance-tip"><strong>Recomendacion</strong>{{ block.tip }}</p>
+            {% endif %}
           </article>
         {% endfor %}
       </div>
     </div>
+
+    <aside class="finance-cta reveal">
+      <div>
+        <p class="finance-module-kicker">{{ section.cta_eyebrow|default:"Finanzas en orden" }}</p>
+        <h2>{{ section.cta_title }}</h2>
+        <p>{{ section.cta_description }}</p>
+      </div>
+      <a class="btn btn-primary" href="{{ section.cta_href }}">{{ section.cta_label }}</a>
+    </aside>
   </div>
 </section>
