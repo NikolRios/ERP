@@ -373,7 +373,7 @@ html.dark .inv-page {
 
 .inv-btn-fill {
   background: var(--inv-blue);
-  color: #fff;
+  color: var(--button-on-accent);
   padding: 11px 22px;
   border-radius: 8px;
   font-size: 14px;
@@ -674,7 +674,7 @@ html.dark .inv-page {
   font-family: inherit;
 }
 .inv-uc-tab:hover  { border-color: var(--inv-blue); color: var(--inv-blue); }
-.inv-uc-tab.active { background: var(--inv-ink); border-color: var(--inv-ink); color: #fff; }
+.inv-uc-tab.active { background: var(--inv-blue); border-color: var(--inv-blue); color: var(--button-on-accent); }
 
 .inv-uc-panel { display: none; }
 .inv-uc-panel.active {

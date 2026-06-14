@@ -51,7 +51,7 @@
 .vc-page .vc-button:hover { transform: translateY(-2px); }
 
 .vc-page .vc-button-primary {
-  color: #fff;
+  color: var(--button-on-accent);
   background: var(--vc-blue);
   box-shadow: 0 14px 28px color-mix(in srgb, var(--vc-blue) 28%, transparent);
 }

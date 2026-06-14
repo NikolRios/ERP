@@ -99,7 +99,7 @@
 
 .billing-toggle button.active,
 .plan-tabs button.active {
-  color: #fff;
+  color: var(--button-on-accent);
   background: var(--green);
 }
 
@@ -134,7 +134,7 @@
 
 .plan-tabs button:hover,
 .plan-tabs button:focus-visible {
-  color: #fff;
+  color: var(--button-on-accent);
   background: var(--green);
   box-shadow: 0 10px 26px color-mix(in srgb, var(--green) 22%, transparent);
 }

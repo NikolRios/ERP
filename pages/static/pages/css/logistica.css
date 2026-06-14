@@ -60,7 +60,7 @@
 }
 
 .log-page .log-button-primary {
-  color: #fff;
+  color: var(--button-on-accent);
   background: var(--log-blue);
   box-shadow: 0 14px 28px color-mix(in srgb, var(--log-blue) 28%, transparent);
 }

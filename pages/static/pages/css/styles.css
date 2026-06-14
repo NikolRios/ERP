@@ -12,6 +12,7 @@
       --violet: #3b82f6;
       --blue: #0ea5e9;
       --orange: #38bdf8;
+      --button-on-accent: #ffffff;
       --shadow: 0 22px 70px rgba(21, 23, 29, .13);
       --soft-shadow: 0 12px 36px rgba(21, 23, 29, .09);
       --radius: 12px;
@@ -60,6 +61,7 @@
       --green-dark: #93c5fd;
       --mint: #102b4d;
       --sage: #111820;
+      --button-on-accent: #081426;
       --shadow: 0 22px 70px rgba(0, 0, 0, .35);
       --soft-shadow: 0 12px 36px rgba(0, 0, 0, .25);
     }
@@ -221,7 +223,7 @@
     }
 
     .lang-switch button.active {
-      color: #fff;
+      color: var(--button-on-accent);
       background: var(--green);
     }
 
@@ -270,7 +272,7 @@
     }
 
     .btn-primary {
-      color: #fff;
+      color: var(--button-on-accent);
       background: var(--green);
       box-shadow: 0 12px 30px color-mix(in srgb, var(--green) 34%, transparent);
     }
@@ -1941,14 +1943,14 @@
     }
 
     .home-toggle .active {
-      color: #fff;
-      background: var(--ink);
+      color: var(--button-on-accent);
+      background: var(--green);
     }
 
     .home-toggle .active:hover {
-      color: #fff;
-      background: color-mix(in srgb, var(--ink) 88%, var(--green));
-      box-shadow: 0 4px 12px color-mix(in srgb, var(--ink) 22%, transparent);
+      color: var(--button-on-accent);
+      background: color-mix(in srgb, var(--green) 88%, var(--ink));
+      box-shadow: 0 4px 12px color-mix(in srgb, var(--green) 22%, transparent);
     }
 
     .home-price-grid {
@@ -1987,7 +1989,7 @@
     .home-price-card.plan-option:focus-visible .btn {
       border-color: var(--green);
       background: var(--green);
-      color: #fff;
+      color: var(--button-on-accent);
     }
 
     .home-price-card.featured {
@@ -2355,7 +2357,7 @@
     }
 
     .module-topic-bar button.active {
-      color: #fff;
+      color: var(--button-on-accent);
       background: var(--green);
       box-shadow: 0 12px 30px color-mix(in srgb, var(--green) 24%, transparent);
     }

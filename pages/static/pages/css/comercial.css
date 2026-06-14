@@ -119,7 +119,7 @@
 }
 
 .com-page .com-button-primary {
-  color: #fff;
+  color: var(--button-on-accent);
   background: var(--com-blue);
   box-shadow: 0 14px 28px color-mix(in srgb, var(--com-blue) 28%, transparent);
 }
@@ -328,7 +328,7 @@
 }
 
 .com-page .com-button-light {
-  color: var(--com-blue-dark);
+  color: #172554;
   background: #fff;
   box-shadow: 0 14px 30px rgba(21, 23, 29, .18);
 }

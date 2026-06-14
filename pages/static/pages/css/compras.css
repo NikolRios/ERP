@@ -49,7 +49,7 @@
 
 .ps-page .ps-btn-fill {
   background: var(--ps-blue);
-  color: #fff;
+  color: var(--button-on-accent);
   border: 1.5px solid var(--ps-blue);
 }
 
@@ -74,7 +74,7 @@
 
 .ps-page .ps-btn-white {
   background: #fff;
-  color: var(--ps-blue);
+  color: #172554;
   border: 1.5px solid rgba(255, 255, 255, .3);
 }
 

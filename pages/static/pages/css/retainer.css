@@ -456,7 +456,7 @@
 
 .ret-page .ret-rule-filters button.active {
   border-bottom-color: var(--ret-blue);
-  color: var(--ret-paper);
+  color: var(--button-on-accent);
   background: var(--ret-blue);
 }
 
