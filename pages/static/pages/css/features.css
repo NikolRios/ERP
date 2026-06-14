@@ -961,6 +961,11 @@ main,
   --features-ink: var(--ink, #15171d);
   --features-muted: var(--muted, #626975);
   --features-line: var(--line, #d7dbe3);
+  --features-ai-bg: #eef5ff;
+  --features-ai-accent: #2563eb;
+  --features-ai-ink: #172554;
+  --features-ai-muted: #52657a;
+  --features-ai-line: rgba(37, 99, 235, .2);
   max-width: none;
   margin: 0;
   padding: 0;
@@ -1261,11 +1266,11 @@ main,
 
 .features-page .features-ai {
   padding: clamp(88px, 9vw, 120px) 0;
-  color: #fff;
+  color: var(--features-ai-ink);
   background:
     radial-gradient(circle at 10% 20%, color-mix(in srgb, var(--blue) 38%, transparent), transparent 32%),
     radial-gradient(circle at 90% 80%, color-mix(in srgb, var(--violet) 34%, transparent), transparent 34%),
-    var(--features-ink);
+    var(--features-ai-bg);
 }
 
 .features-page .features-ai-layout {
@@ -1275,8 +1280,9 @@ main,
   align-items: start;
 }
 
-.features-page .features-ai .features-hub-eyebrow { color: #93c5fd; }
-.features-page .features-ai-copy > p:last-child { color: rgba(255, 255, 255, .7); }
+.features-page .features-ai .features-hub-eyebrow { color: var(--features-ai-accent); }
+.features-page .features-ai-copy h2 { color: var(--features-ai-ink); }
+.features-page .features-ai-copy > p:last-child { color: var(--features-ai-muted); }
 
 .features-page .features-ai-points {
   display: grid;
@@ -1284,7 +1290,7 @@ main,
   margin: 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid rgba(255, 255, 255, .18);
+  border-top: 1px solid var(--features-ai-line);
 }
 
 .features-page .features-ai-points li {
@@ -1292,17 +1298,25 @@ main,
   grid-template-columns: 48px 1fr;
   gap: 20px;
   padding: 24px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .18);
-  color: rgba(255, 255, 255, .82);
+  border-bottom: 1px solid var(--features-ai-line);
+  color: var(--features-ai-muted);
   font-size: 18px;
   line-height: 1.55;
 }
 
 .features-page .features-ai-points span {
-  color: #93c5fd;
+  color: var(--features-ai-accent);
   font-size: 13px;
   font-weight: 850;
   letter-spacing: .08em;
+}
+
+html.dark .features-page {
+  --features-ai-bg: #080f1c;
+  --features-ai-accent: #bae6fd;
+  --features-ai-ink: #ffffff;
+  --features-ai-muted: rgba(255, 255, 255, .82);
+  --features-ai-line: rgba(147, 197, 253, .22);
 }
 
 .features-page .features-impact {

@@ -8,6 +8,13 @@
   --log-ink: var(--ink, #15171d);
   --log-muted: var(--muted, #626975);
   --log-line: var(--line, #d7dbe3);
+  --log-final-start: #e0f2fe;
+  --log-final-end: #dbeafe;
+  --log-final-ink: #172554;
+  --log-final-accent: #2563eb;
+  --log-final-muted: #52657a;
+  --log-final-button-ink: #ffffff;
+  --log-final-button-bg: #2563eb;
   position: relative;
   z-index: 1;
   overflow: clip;
@@ -319,10 +326,11 @@
 .log-page .log-final {
   position: relative;
   overflow: hidden;
-  color: #fff;
+  color: var(--log-final-ink);
   background:
-    radial-gradient(circle at 20% 0%, color-mix(in srgb, #fff 18%, transparent), transparent 35%),
-    linear-gradient(135deg, var(--log-blue-dark), var(--log-blue));
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, .16), transparent 35%),
+    radial-gradient(circle at 88% 100%, rgba(56, 189, 248, .24), transparent 38%),
+    linear-gradient(135deg, var(--log-final-start), var(--log-final-end));
 }
 
 .log-page .log-final-inner {
@@ -332,21 +340,42 @@
 }
 
 .log-page .log-final .log-eyebrow {
-  color: color-mix(in srgb, #fff 80%, var(--log-soft));
+  color: var(--log-final-accent);
+}
+
+.log-page .log-final h2 {
+  color: var(--log-final-ink);
 }
 
 .log-page .log-final p:not(.log-eyebrow) {
   max-width: 680px;
   margin: 22px auto 30px;
-  color: color-mix(in srgb, #fff 82%, transparent);
+  color: var(--log-final-muted);
   font-size: 18px;
   line-height: 1.7;
 }
 
 .log-page .log-button-light {
-  color: var(--log-blue-dark);
-  background: #fff;
+  border-color: var(--log-final-button-bg);
+  color: var(--log-final-button-ink);
+  background: var(--log-final-button-bg);
   box-shadow: 0 14px 30px rgba(21, 23, 29, .18);
+}
+
+.log-page .log-button-light:hover {
+  border-color: var(--log-blue-dark);
+  background: var(--log-blue-dark);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, .25);
+}
+
+html.dark .log-page {
+  --log-final-start: #0f2352;
+  --log-final-end: #082f49;
+  --log-final-ink: #ffffff;
+  --log-final-accent: #bae6fd;
+  --log-final-muted: rgba(255, 255, 255, .84);
+  --log-final-button-ink: #172554;
+  --log-final-button-bg: #ffffff;
 }
 
 .log-page .log-reveal-left,

@@ -28,7 +28,7 @@ NAV_ITEMS = [
                     "title": "Gestión comercial",
                     "links": [
                         {"label": "Ventas y clientes", "href": "/comercial/ventas-y-clientes/"},
-                        {"label": "Contratos de retainer", "href": "/comercial/contratos-de-retainer/"},
+                        {"label": "Contratos recurrentes", "href": "/comercial/contratos-de-retainer/"},
                     ],
                 },
             ],
@@ -64,7 +64,7 @@ NAV_ITEMS = [
         "dropdown": {
             "columns": [
                 {
-                    "title": "Inteligencia artificial",
+                    "title": "IA",
                     "links": [
                         {"label": "IA en Majjun ERP", "href": "/automatizacion/ia-en-majjun-erp/"},
                     ],
@@ -98,13 +98,13 @@ SECTION_TEMPLATES = {
 PAGE_CONTENT = {
     "apps": {
         "id": "modules",
-        "title": "Features that keep every invoice, item and ledger entry connected.",
-        "description": "Majjun ERP organiza facturacion, compras, inventario, finanzas y auditoria en una sola plataforma cloud para equipos que necesitan control sin friccion.",
+        "title": "Funciones que mantienen conectadas cada factura, articulo y registro contable.",
+        "description": "Majjun ERP organiza facturacion, compras, inventario, finanzas y auditoria en una sola plataforma en la nube para equipos que necesitan control sin friccion.",
         "items": [
             {
-                "initial": "AI",
+                "initial": "IA",
                 "color": "#1d4ed8",
-                "title": "AI Sales Assistance",
+                "title": "Asistencia de ventas con IA",
                 "description": "Crea facturas, prepara seguimientos y consulta ventas con lenguaje natural sin perder control del flujo comercial.",
                 "features": [
                     "Facturas sugeridas desde instrucciones simples",
@@ -117,10 +117,10 @@ PAGE_CONTENT = {
             {
                 "initial": "FR",
                 "color": "#0284c7",
-                "title": "Finance & Reporting",
+                "title": "Finanzas y reportes",
                 "description": "Conecta ingresos, egresos, cuentas contables y reportes para entender margen, caja y desempeno por periodo.",
                 "features": [
-                    "P&L mensual listo para exportar",
+                    "estado de resultados mensual listo para exportar",
                     "Libro mayor y cuentas contables",
                     "Indicadores para direccion y administracion",
                 ],
@@ -128,7 +128,7 @@ PAGE_CONTENT = {
             {
                 "initial": "PF",
                 "color": "#3b82f6",
-                "title": "Procurement Flow",
+                "title": "Flujo de compras",
                 "description": "Ordenes de compra, proveedores, vencimientos y gastos conectados con inventario y contabilidad.",
                 "features": [
                     "Compras por proveedor con trazabilidad",
@@ -139,9 +139,9 @@ PAGE_CONTENT = {
                 "cta_href": "/plataforma/",
             },
             {
-                "initial": "GL",
+                "initial": "LM",
                 "color": "#475569",
-                "title": "General Ledger & Audit Trail",
+                "title": "Libro mayor y rastro de auditoria",
                 "description": "Registra movimientos contables y deja evidencia clara de usuarios, cambios y documentos relacionados.",
                 "features": [
                     "Asientos manuales y ajustes controlados",
@@ -153,40 +153,40 @@ PAGE_CONTENT = {
     },
     "platform": {
         "id": "platform",
-        "eyebrow": "AI spotlight",
-        "title": "Ask Majjun to create, explain and prepare work across the ERP.",
+        "eyebrow": "IA destacada",
+        "title": "Pide a Majjun crear, explicar y preparar trabajo en todo el ERP.",
         "description": "El asistente entiende tareas de ventas, finanzas y compras para convertir instrucciones en borradores, reportes y sugerencias revisables.",
         "features": [
             {
                 "number": "1",
-                "title": "Create operational records",
+                "title": "Crear registros operativos",
                 "description": "Pide una factura, gasto o pedido en lenguaje natural y Majjun prepara el borrador con datos clave.",
             },
             {
                 "number": "2",
-                "title": "Explain financial signals",
-                "description": "Consulta ventas, margen, cobranza o P&L sin construir reportes desde cero.",
+                "title": "Explicar indicadores financieros",
+                "description": "Consulta ventas, margen, cobranza o estado de resultados sin construir reportes desde cero.",
             },
             {
                 "number": "3",
-                "title": "Suggest taxes and next steps",
+                "title": "Sugerir impuestos y siguientes pasos",
                 "description": "Recibe IVA, categorias y acciones sugeridas antes de timbrar, comprar o contabilizar.",
             },
         ],
         "purchase_note": "La IA prepara trabajo, pero tu equipo revisa y aprueba antes de afectar facturas, inventario o contabilidad.",
-        "purchase_cta": "See it in action",
+        "purchase_cta": "Ver en accion",
         "workflow": [
-            {"key": "ASK", "title": "Create invoice for Acme Inc.", "description": "$4,500 services with CFDI data", "status": "Prompt"},
-            {"key": "TAX", "title": "Suggested tax: IVA 16%", "description": "Majjun proposes tax treatment before stamping", "status": "Review"},
-            {"key": "P&L", "title": "Run this month's P&L report", "description": "Revenue, costs and net income prepared", "status": "Ready"},
-            {"key": "PDF", "title": "Export report package", "description": "Share PDF with finance or leadership", "status": "Done"},
+            {"key": "PEDIR", "title": "Crear factura para Acme Inc.", "description": "$4,500 de servicios con datos CFDI", "status": "Instruccion"},
+            {"key": "IMP", "title": "Impuesto sugerido: IVA 16%", "description": "Majjun propone el tratamiento fiscal antes de timbrar", "status": "Revision"},
+            {"key": "ER", "title": "Generar el estado de resultados de este mes", "description": "Ingresos, costos y utilidad neta preparados", "status": "Listo"},
+            {"key": "PDF", "title": "Exportar paquete de reportes", "description": "Compartir PDF con finanzas o direccion", "status": "Terminado"},
         ],
     },
     "billing": {
         "id": "finance",
-        "title": "CFDI 4.0 invoicing built into the same operating flow.",
+        "title": "Facturacion CFDI 4.0 integrada en el mismo flujo operativo.",
         "description": "Emite facturas, complementos de pago y notas de credito desde Majjun ERP, con datos fiscales y paquetes de timbres conectados a tus ventas.",
-        "calculator_title": "Invoice preview",
+        "calculator_title": "Vista previa de factura",
         "features": [
             {
                 "title": "Datos fiscales listos",
@@ -197,11 +197,11 @@ PAGE_CONTENT = {
                 "description": "Certificados, credenciales y paquetes de timbres preparados para emitir CFDI oficiales desde el flujo de venta.",
             },
             {
-                "title": "Payment complements",
+                "title": "Complementos de pago",
                 "description": "Forma de pago, moneda y tipo de cambio preparados para que puedas cumplir cuando tus clientes pagan en parcialidades.",
             },
             {
-                "title": "SAT cancellation flow",
+                "title": "Flujo de cancelacion ante el SAT",
                 "description": "Motivos de cancelacion y UUID de sustitucion integrados para que puedas corregir facturas sin salir del sistema.",
             },
         ],
@@ -212,13 +212,13 @@ PAGE_CONTENT = {
         "title": "Convierte ventas, compras e inventario en una operacion proactiva y conectada.",
         "description": "",
         "trust_text": "Equipos de comercio, distribucion y servicios ya operan con Majjun ERP",
-        "trust_logos": ["Retail", "Servicios", "Distribucion", "B2B", "eCommerce"],
+        "trust_logos": ["Comercio minorista", "Servicios", "Distribucion", "Empresas a empresas", "Comercio electronico"],
         "solutions_title": "Soluciones por frente operativo",
         "items": [
             {
                 "initial": "IN",
                 "title": "Inventarios",
-                "description": "Administra productos, controla existencias en tiempo real y gestiona kits de venta con trazabilidad.",
+                "description": "Administra productos, controla existencias en tiempo real y gestiona paquetes de venta con trazabilidad.",
                 "cta_href": "/operacion/inventarios/",
             },
             {
@@ -237,14 +237,14 @@ PAGE_CONTENT = {
         "ai_title": "IA integrada en los flujos",
         "ai_points": [
             "Resuelve tareas repetitivas con asistentes y reglas.",
-            "Prioriza alertas de stock, cobranza y vencimientos.",
+            "Prioriza alertas de existencias, cobranza y vencimientos.",
             "Sugiere acciones antes de que aparezcan cuellos de botella.",
         ],
         "impact_title": "Resultados que se miden",
         "impact_metrics": [
             {"value": "40%", "label": "menos captura manual", "count": 40, "suffix": "%"},
             {"value": "2x", "label": "mas velocidad en cierre operativo", "count": 2, "suffix": "x"},
-            {"value": "24/7", "label": "visibilidad de ventas y stock"},
+            {"value": "24/7", "label": "visibilidad de ventas y existencias"},
         ],
         "final_ctas": [
             {"title": "Prueba guiada", "desc": "Activa una prueba con datos demo para ver procesos reales.", "cta": "Probar gratis"},
@@ -344,12 +344,12 @@ PAGE_CONTENT = {
                 "points": [
                     "Crea un nuevo banco y asigna un nombre fácil de reconocer, por ejemplo Banorte Operativa.",
                     "Selecciona la moneda y captura el número de cuenta oficial.",
-                    "Relaciona la Cuenta GL o cuenta contable correspondiente, como 102.01 - Bancos Nacionales.",
+                    "Relaciona la cuenta contable o cuenta contable correspondiente, como 102.01 - Bancos Nacionales.",
                     "La cuenta contable vinculada permite que los movimientos bancarios se registren automáticamente en contabilidad.",
                     "Captura el saldo inicial para comenzar con una base correcta.",
                     "Al guardar, la cuenta queda disponible para pagos, cobros, transacciones y conciliaciones.",
                 ],
-                "tip": "Confirma la moneda, el número de cuenta y la Cuenta GL antes de comenzar a registrar movimientos.",
+                "tip": "Confirma la moneda, el número de cuenta y la cuenta contable antes de comenzar a registrar movimientos.",
             },
             {
                 "short_title": "Movimientos directos",
@@ -564,7 +564,7 @@ PAGE_CONTENT = {
         "id": "ai-guide",
         "eyebrow": "Automatización inteligente",
         "title": "Guía de IA en Majjun ERP",
-        "description": "Usa inteligencia artificial para analizar tu negocio, crear registros con mayor rapidez, recibir sugerencias contables y tomar mejores decisiones sin necesitar conocimientos avanzados de finanzas.",
+        "description": "Usa IA para analizar tu negocio, crear registros con mayor rapidez, recibir sugerencias contables y tomar mejores decisiones sin necesitar conocimientos avanzados de finanzas.",
         "sections": [
             {
                 "short_title": "Asistente digital",
@@ -603,7 +603,7 @@ PAGE_CONTENT = {
                 "intro": "Las recomendaciones inteligentes ayudan a decidir qué comprar y cuánto pedir con base en existencias e información histórica.",
                 "route": "Inventario > Recomendaciones de Reorden > Optimizar con IA",
                 "points": [
-                    "Consulta productos que se encuentran por debajo de su stock de seguridad.",
+                    "Consulta productos que se encuentran por debajo de sus existencias de seguridad.",
                     "La IA analiza ventas anteriores, temporadas y tendencias para preparar cantidades sugeridas.",
                     "Por ejemplo, puede recomendar unidades adicionales cuando un producto suele vender más durante una temporada específica.",
                     "Acepta una recomendación para crear una orden de compra en borrador y revisarla antes de enviarla.",
@@ -667,7 +667,7 @@ PAGE_CONTENT = {
             },
             {
                 "eyebrow": "Servicios recurrentes",
-                "title": "Contratos de Retainer",
+                "title": "Contratos recurrentes",
                 "description": "Gestiona compromisos continuos con clientes, asegura ingresos predecibles, audita horas con apoyo de IA y convierte servicios aprobados en facturas cobrables.",
                 "flow": [
                     "Crear",
@@ -701,7 +701,7 @@ PAGE_CONTENT = {
                 "intro": "El primer paso para vender con orden es contar con informacion confiable de cada cliente. Una base bien organizada agiliza cotizaciones, pedidos y facturas.",
                 "route": "Ventas > Clientes",
                 "points": [
-                    "Crea un nuevo cliente y registra el nombre de la empresa o persona, email y RFC o ID fiscal.",
+                    "Crea un nuevo cliente y registra el nombre de la empresa o persona, correo electronico y RFC o identificador fiscal.",
                     "Define los terminos de pago, por ejemplo 30 dias de credito, y selecciona la moneda de cobro.",
                     "Guarda direcciones de facturacion y envio por separado cuando la operacion lo requiera.",
                     "Establece un limite de credito para controlar cuanto puede deber el cliente antes de solicitar un pago.",
@@ -715,7 +715,7 @@ PAGE_CONTENT = {
                 "route": "Ventas > Pedidos",
                 "points": [
                     "Crea un nuevo pedido y selecciona al cliente para completar sus datos de envio y terminos de pago.",
-                    "Agrega los productos solicitados y revisa el stock disponible para evitar sobreventas.",
+                    "Agrega los productos solicitados y revisa las existencias disponibles para evitar sobreventas.",
                     "Confirma cantidades, precios y fechas antes de aprobar el pedido.",
                     "Al confirmar, el inventario queda asignado o reservado para ese cliente.",
                 ],
@@ -729,7 +729,7 @@ PAGE_CONTENT = {
                     "Desde un pedido de venta o factura, abre las partidas para revisar los articulos.",
                     "Selecciona el almacen de salida, por ejemplo Sucursal Norte.",
                     "Indica la ubicacion correspondiente, como Pasillo 2.",
-                    "Comprueba el stock disponible en esa ubicacion antes de confirmar la salida.",
+                    "Comprueba las existencias disponibles en esa ubicacion antes de confirmar la salida.",
                 ],
                 "tip": "Elegir almacen y ubicacion en cada partida mejora la trazabilidad de la entrega.",
             },
@@ -780,7 +780,7 @@ PAGE_CONTENT = {
     "retainer_contracts": {
         "id": "retainer-contracts",
         "eyebrow": "Servicios recurrentes",
-        "title": "Guía de Contratos de Retainer en Majjun ERP",
+        "title": "Guía de Contratos Recurrentes en Majjun ERP",
         "description": "Gestiona compromisos continuos con clientes, asegura ingresos predecibles, audita horas con apoyo de IA y convierte servicios aprobados en facturas cobrables.",
         "flow": [
             "Crear contrato",
@@ -798,13 +798,13 @@ PAGE_CONTENT = {
                 "short_title": "Creación",
                 "title": "1. Registra el acuerdo y prepara los cobros",
                 "intro": "El primer paso es capturar las condiciones del servicio recurrente para automatizar el seguimiento y construir un calendario de cobro confiable.",
-                "route": "Órdenes de Servicio > Contratos de Retainer",
+                "route": "Órdenes de Servicio > Contratos Recurrentes",
                 "points": [
                     "Crea un nuevo contrato y asigna un nombre descriptivo, cliente, fecha de inicio y fecha de vencimiento.",
                     "Define la periodicidad de cobro, ya sea mensual, trimestral u otra, junto con la moneda acordada.",
                     "Configura las horas laborables por día y los días previos al cierre para que la IA pueda sugerir cuándo facturar.",
                     "Al guardar, el contrato queda en borrador y recibe un folio con formato RET-AAAA-NNNN.",
-                    "Adjunta el SOW o el contrato firmado en PDF para conservar toda la evidencia junto al acuerdo.",
+                    "Adjunta el alcance de trabajo o el contrato firmado en PDF para conservar toda la evidencia junto al acuerdo.",
                 ],
                 "tip": "Verifica fechas, moneda y periodicidad antes de continuar; estos datos determinan el calendario de facturación.",
             },
@@ -963,7 +963,7 @@ PAGE_CONTENT = {
                         "points": [
                             "Crea un nuevo gasto y selecciona el proveedor y la fecha de vencimiento.",
                             "Agrega articulos con descripcion, cantidad y precio.",
-                            "Selecciona la cuenta contable o Cuenta GL adecuada, por ejemplo Papeleria o Renta.",
+                            "Selecciona la cuenta contable o cuenta contable adecuada, por ejemplo Papeleria o Renta.",
                             "Guarda como borrador o contabiliza cuando la informacion sea definitiva.",
                         ],
                     },
@@ -1033,7 +1033,7 @@ PAGE_CONTENT = {
         "id": "logistics-warehouses",
         "eyebrow": "Gestión de almacenes",
         "title": "Guía de Logística y Almacenes en Majjun ERP",
-        "description": "Organiza espacios físicos, controla existencias por ubicación, mueve mercancía entre sucursales y usa inteligencia artificial para decidir qué comprar y cuándo hacerlo.",
+        "description": "Organiza espacios físicos, controla existencias por ubicación, mueve mercancía entre sucursales y usa IA para decidir qué comprar y cuándo hacerlo.",
         "flow": [
             "Almacenes",
             "Ubicaciones",
@@ -1053,7 +1053,7 @@ PAGE_CONTENT = {
                     "Crea ubicaciones internas para identificar espacios como Pasillo 1, Estante A o Cámara de Frío.",
                     "Al vender o facturar, selecciona el almacén y la ubicación correspondiente en cada partida.",
                     "El sistema descuenta las existencias del lugar seleccionado para reflejar el movimiento real.",
-                    "Una estructura clara reduce diferencias de stock y facilita la preparación de pedidos.",
+                    "Una estructura clara reduce diferencias de existencias y facilita la preparación de pedidos.",
                 ],
                 "tip": "Usa nombres consistentes para que el equipo pueda localizar mercancía y registrar salidas sin confusiones.",
             },
@@ -1067,19 +1067,19 @@ PAGE_CONTENT = {
                     "Escribe parte del nombre o código para filtrar rápidamente los productos disponibles.",
                     "Selecciona la ubicación de origen y el destino de la mercancía.",
                     "Consulta la disponibilidad en el origen para evitar trasladar más unidades de las existentes.",
-                    "Al confirmar, el stock se descuenta del origen y se suma automáticamente al destino.",
+                    "Al confirmar, las existencias se descuentan del origen y se suman automáticamente al destino.",
                 ],
                 "tip": "Confirma cantidades, origen y destino antes de completar el movimiento.",
             },
             {
-                "short_title": "Kits",
-                "title": "3. Ensambla kits y productos compuestos",
+                "short_title": "Paquetes",
+                "title": "3. Ensambla paquetes y productos compuestos",
                 "intro": "Los ensamblajes simplifican la preparación de paquetes, combos y productos compuestos antes de venderlos, conservando el control de sus componentes.",
                 "route": "Inventario > Ensamblajes",
                 "points": [
-                    "Selecciona el kit que deseas preparar e indica la cantidad a producir, por ejemplo 10 unidades.",
+                    "Selecciona el paquete que deseas preparar e indica la cantidad a producir, por ejemplo 10 unidades.",
                     "Al completar el ensamblaje, el sistema descuenta del inventario los componentes individuales utilizados.",
-                    "Los kits terminados se agregan automáticamente a las existencias disponibles.",
+                    "Los paquetes terminados se agregan automáticamente a las existencias disponibles.",
                     "Utiliza este flujo para preparar una canasta de regalo, un paquete promocional o un equipo armado.",
                     "Así puedes gestionar producción ligera sin perder precisión en el inventario.",
                 ],
@@ -1091,7 +1091,7 @@ PAGE_CONTENT = {
                 "intro": "Las recomendaciones de reorden ayudan a comprar a tiempo y con mejores cantidades antes de que un producto se convierta en faltante.",
                 "route": "Inventario > Recomendaciones de Reorden",
                 "points": [
-                    "Consulta los productos que se encuentran por debajo de su stock de seguridad.",
+                    "Consulta los productos que se encuentran por debajo de sus existencias de seguridad.",
                     "La IA analiza ventas anteriores, tendencias y comportamiento de demanda para preparar sugerencias.",
                     "Revisa las cantidades recomendadas para equilibrar disponibilidad, costo y rentabilidad.",
                     "Acepta una sugerencia para generar una orden de compra en borrador y revisarla antes de enviarla.",
@@ -1140,7 +1140,7 @@ PAGE_CONTENT = {
                 "intro": "Antes de generar una orden de compra, registra los datos comerciales y financieros de cada proveedor para agilizar futuras operaciones.",
                 "route": "Compras > Proveedores",
                 "points": [
-                    "Crea un nuevo proveedor y registra su nombre, RFC o ID fiscal y contacto principal.",
+                    "Crea un nuevo proveedor y registra su nombre, RFC o identificador fiscal y contacto principal.",
                     "Define los terminos de pago habituales, como contado o 30 dias.",
                     "Selecciona la moneda que el proveedor utiliza normalmente para facturar.",
                     "Al guardar, el sistema reutiliza estos datos automaticamente en futuras compras.",
@@ -1193,7 +1193,7 @@ PAGE_CONTENT = {
                 "intro": "Las recomendaciones de reorden ayudan a identificar que productos necesitan reposicion antes de que se conviertan en faltantes.",
                 "route": "Inventario > Recomendaciones de Reorden",
                 "points": [
-                    "Consulta los productos que requieren reposicion segun sus niveles minimos de stock.",
+                    "Consulta los productos que requieren reposicion segun sus niveles minimos de existencias.",
                     "La optimizacion con IA analiza ventas anteriores, temporadas y patrones de demanda.",
                     "Antes de una temporada alta, el sistema puede sugerir comprar mas unidades de un producto con mayor demanda esperada.",
                     "Acepta una recomendacion para crear una orden de compra en borrador y revisarla antes de enviarla.",
@@ -1209,7 +1209,7 @@ PAGE_CONTENT = {
     "inventarios": {
         "id": "inventarios",
         "module_title": "Modulo de Inventarios",
-        "module_intro": "Administra tus productos, controla tus existencias en tiempo real y gestiona tus kits de venta de forma profesional.",
+        "module_intro": "Administra tus productos, controla tus existencias en tiempo real y gestiona tus paquetes de venta de forma profesional.",
         "module_sections": [
             {
                 "title": "1. Tu Catalogo de Productos",
@@ -1218,32 +1218,32 @@ PAGE_CONTENT = {
                     "Antes de vender o comprar, define tus productos o servicios en Inventario > Articulos.",
                     "Haz clic en + Nuevo Articulo y selecciona el tipo: Inventario para fisicos o Servicio para intangibles.",
                     "Asigna Codigo unico, Nombre y Precio de Lista para cada articulo.",
-                    "Configura Stock Minimo para recibir alertas de recompra.",
+                    "Configura Existencias Minimas para recibir alertas de recompra.",
                 ],
                 "tip": "Usa codigos unicos y consistentes desde el inicio para facilitar busquedas y reportes a futuro.",
             },
             {
-                "title": "2. Kits y Recetas",
-                "route": "Inventario > Articulos > Pestana BOM",
+                "title": "2. Paquetes y Recetas",
+                "route": "Inventario > Articulos > Pestana lista de materiales",
                 "points": [
-                    "Crea un articulo de tipo Kit o Receta cuando vendas paquetes o productos compuestos.",
-                    "En la pestana BOM, agrega componentes y cantidades con Anadir Componente.",
+                    "Crea un articulo de tipo Paquete o Receta cuando vendas paquetes o productos compuestos.",
+                    "En la pestana lista de materiales, agrega componentes y cantidades con Anadir Componente.",
                     "Usa Aplicar Precios para calcular costo total y sugerir precio de venta por margen.",
                 ],
-                "tip": "Revisa la disponibilidad de todos los componentes antes de crear un kit o iniciar un ensamblaje.",
+                "tip": "Revisa la disponibilidad de todos los componentes antes de crear un paquete o iniciar un ensamblaje.",
             },
             {
                 "title": "3. Control de Existencias",
                 "route": "Inventario > Lista de Inventario",
                 "points": [
                     "Consulta Inventario > Lista de Inventario para revisar En Mano, Reservado y Disponible.",
-                    "En Mano: stock fisico actual.",
+                    "En Mano: existencias fisicas actuales.",
                     "Reservado: vendido pero no entregado.",
                     "Disponible: libre para nuevas ventas.",
                     "Si hay diferencias, abre el historial con el icono del ojo para ver entradas, salidas, ajustes y usuario responsable.",
                 ],
                 "metrics": [
-                    {"label": "En Mano",    "desc": "Stock fisico actual en tu bodega."},
+                    {"label": "En Mano",    "desc": "Existencias fisicas actuales en tu bodega."},
                     {"label": "Reservado",  "desc": "Vendido pero aun no entregado."},
                     {"label": "Disponible", "desc": "Libre para nuevas ventas."},
                 ],
@@ -1254,7 +1254,7 @@ PAGE_CONTENT = {
                 "route": "Inventario > Transferencias",
                 "points": [
                     "Para dano, merma o sobrante, haz ajuste manual desde el icono de Caja con cantidad positiva o negativa.",
-                    "Para mover stock entre ubicaciones, usa Inventario > Transferencias.",
+                    "Para mover existencias entre ubicaciones, usa Inventario > Transferencias.",
                     "La barra de busqueda filtra por nombre o codigo al escribir 3 caracteres.",
                 ],
                 "tip": "La barra de busqueda filtra articulos al escribir 3 caracteres; usala para localizar productos antes de ajustar.",
@@ -1263,9 +1263,9 @@ PAGE_CONTENT = {
                 "title": "5. Armado de Productos",
                 "route": "Inventario > Ensamblajes",
                 "points": [
-                    "Si pre-ensamblas kits, entra a Inventario > Ensamblajes y selecciona Crear Ensamblaje.",
-                    "Indica Kit y Cantidad a armar.",
-                    "Al Completar Ensamblaje, el sistema resta componentes y suma kits terminados listos para venta.",
+                    "Si pre-ensamblas paquetes, entra a Inventario > Ensamblajes y selecciona Crear Ensamblaje.",
+                    "Indica Paquete y Cantidad a armar.",
+                    "Al Completar Ensamblaje, el sistema resta componentes y suma paquetes terminados listos para venta.",
                 ],
                 "tip": "Verifica la disponibilidad de todos los componentes antes de iniciar un ensamblaje para evitar interrupciones.",
             },
@@ -1273,23 +1273,23 @@ PAGE_CONTENT = {
         "faq": [
             {
                 "q": "¿Cual es la diferencia entre un articulo de Inventario y uno de Servicio?",
-                "a": "Un articulo de Inventario es un producto fisico que ocupa espacio en tu bodega y se descuenta del stock al venderse. Un Servicio es mano de obra o un intangible, como una instalacion, que no afecta el stock fisico.",
+                "a": "Un articulo de Inventario es un producto fisico que ocupa espacio en tu bodega y se descuenta de las existencias al venderse. Un Servicio es mano de obra o un intangible, como una instalacion, que no afecta las existencias fisicas.",
             },
             {
-                "q": "¿Como calcula el sistema el precio de un kit?",
-                "a": "Al usar el boton Aplicar Precios en la pestana BOM, el sistema suma el costo de todos los componentes y sugiere un precio de venta segun el margen de ganancia que definas.",
+                "q": "¿Como calcula el sistema el precio de un paquete?",
+                "a": "Al usar el boton Aplicar Precios en la pestana lista de materiales, el sistema suma el costo de todos los componentes y sugiere un precio de venta segun el margen de ganancia que definas.",
             },
             {
                 "q": "¿Que significa que un articulo este Reservado?",
                 "a": "Reservado es la cantidad que ya vendiste pero aun no has entregado al cliente. No esta disponible para nuevas ventas, pero sigue fisicamente en tu bodega hasta que se entregue.",
             },
             {
-                "q": "¿Puedo corregir el stock si encuentro mercancia danada?",
+                "q": "¿Puedo corregir las existencias si encuentro mercancia danada?",
                 "a": "Si. Busca el articulo en la lista, haz clic en el icono de la Caja e ingresa la cantidad a sumar (+) o restar (-). El ajuste queda registrado en el Historial de Movimientos con tu usuario y la fecha.",
             },
             {
                 "q": "¿Que pasa al completar un ensamblaje?",
-                "a": "El sistema ejecuta dos movimientos automaticos: resta los componentes usados de tu stock disponible y suma los kits terminados como productos listos para la venta.",
+                "a": "El sistema ejecuta dos movimientos automaticos: resta los componentes usados de tus existencias disponibles y suma los paquetes terminados como productos listos para la venta.",
             },
         ],
     },
@@ -1300,7 +1300,7 @@ PAGE_CONTENT = {
         "resource_groups": [
             {
                 "title": "Guia de inicio",
-                "items": ["Onboarding por modulo", "Checklist de migracion", "Primeros 30 dias"]
+                "items": ["Incorporacion por modulo", "Lista de migracion", "Primeros 30 dias"]
             },
             {
                 "title": "Biblioteca operativa",
@@ -1308,7 +1308,7 @@ PAGE_CONTENT = {
             },
             {
                 "title": "Analisis y comparativas",
-                "items": ["Majjun ERP vs opciones del mercado", "ROI operativo", "Casos de adopcion"]
+                "items": ["Majjun ERP frente a opciones del mercado", "Retorno de inversion operativo", "Casos de adopcion"]
             },
         ],
         "secondary_title": "Contenido por tema",
@@ -1324,39 +1324,39 @@ PAGE_CONTENT = {
     },
     "pricing": {
         "id": "pricing",
-        "eyebrow": "Pricing",
-        "title": "Simple licenses, clear CFDI stamp packages.",
+        "eyebrow": "Precios",
+        "title": "Licencias simples y paquetes de timbres CFDI claros.",
         "description": "Elige entre Plus y Premium, cambia mensual o anual, y agrega paquetes de timbres CFDI segun tu volumen.",
         "billing_periods": ["Mensual", "Anual"],
-        "tabs": ["Monthly", "Annual"],
+        "tabs": ["Mensual", "Anual"],
         "plan": "Premium",
         "price": "$80",
         "period": "/mo",
         "features": [
-            "1 user included",
-            "+ $80/mo per extra user",
+            "1 usuario incluido",
+            "+ $80/mes por usuario extra",
             "For commercial businesses",
             "Minimum 5 users",
         ],
         "primary_cta": "Get started",
-        "secondary_cta": "Contact sales",
+        "secondary_cta": "Contactar a ventas",
         "plans": [
             {
                 "name": "Plus",
-                "tag": "For service businesses",
+                "tag": "Para negocios de servicios",
                 "price": "$43",
                 "period": "/mo",
                 "featured": False,
                 "cta": "Get started",
-                "secondary_cta": "1 user included",
+                "secondary_cta": "1 usuario incluido",
                 "features": [
-                    "+ $20/mo per extra user",
-                    "For service businesses",
+                    "+ $20/mes por usuario extra",
+                    "Para negocios de servicios",
                     "Minimum 2 users",
-                    "Core invoicing, finance and reports",
+                    "Facturacion, finanzas y reportes centrales",
                 ],
                 "addons_title": "Includes:",
-                "addons": ["CFDI ready", "Basic inventory", "AI assistant"],
+                "addons": ["Listo para CFDI", "Inventario basico", "Asistente de IA"],
             },
             {
                 "name": "Premium",
@@ -1365,33 +1365,33 @@ PAGE_CONTENT = {
                 "period": "/mo",
                 "featured": True,
                 "cta": "Get started",
-                "secondary_cta": "1 user included",
+                "secondary_cta": "1 usuario incluido",
                 "features": [
-                    "+ $80/mo per extra user",
+                    "+ $80/mes por usuario extra",
                     "For commercial businesses",
                     "Minimum 5 users",
-                    "Procurement, inventory and audit trail",
+                    "Compras, inventario y rastro de auditoria",
                 ],
                 "addons_title": "Includes:",
-                "addons": ["Advanced AI", "Full finance", "Priority onboarding"],
+                "addons": ["IA avanzada", "Finanzas completas", "Incorporacion prioritaria"],
             },
         ],
-        "stamp_title": "CFDI Stamps",
-        "stamp_description": "Pay-as-you-go packages included with any plan.",
+        "stamp_title": "Timbres CFDI",
+        "stamp_description": "Paquetes de pago por uso incluidos con cualquier plan.",
         "stamp_price": "$15",
         "stamp_period": "/mo",
         "stamps": [
-            {"label": "100 stamps", "price": "$180"},
-            {"label": "250 stamps", "price": "$390"},
-            {"label": "500 stamps", "price": "$680"},
-            {"label": "1,000 stamps", "price": "$1,200"},
-            {"label": "2,000 stamps", "price": "$2,020"},
-            {"label": "... up to 100k", "price": "Contact sales"},
+            {"label": "100 timbres", "price": "$180"},
+            {"label": "250 timbres", "price": "$390"},
+            {"label": "500 timbres", "price": "$680"},
+            {"label": "1,000 timbres", "price": "$1,200"},
+            {"label": "2,000 timbres", "price": "$2,020"},
+            {"label": "... hasta 100 mil", "price": "Contactar a ventas"},
         ],
         "notes": [
-            "Annual billing saves you one full month of licenses.",
-            "Licenses billed in MXN at the daily exchange rate.",
-            "Prices in MXN. No discounts on stamp packs.",
+            "La facturacion anual ahorra un mes completo de licencias.",
+            "Licencias facturadas en MXN al tipo de cambio diario.",
+            "Precios en MXN. Sin descuentos en paquetes de timbres.",
         ],
     },
     "support": {
@@ -1400,7 +1400,7 @@ PAGE_CONTENT = {
         "title": "Soporte que acompana la operacion completa.",
         "description": "Desde la implementacion hasta el uso diario, Majjun ERP te ayuda a resolver dudas funcionales, fiscales y operativas.",
         "pillars": [
-            {"title": "Onboarding guiado", "description": "Configuracion inicial por modulo con objetivos por semana."},
+            {"title": "Incorporacion guiada", "description": "Configuracion inicial por modulo con objetivos por semana."},
             {"title": "Mesa de ayuda", "description": "Atencion para incidencias, dudas de uso y seguimiento de casos."},
             {"title": "Capacitacion continua", "description": "Sesiones por rol para ventas, finanzas, almacen y direccion."},
         ],
@@ -1411,15 +1411,15 @@ PAGE_CONTENT = {
             "Como funciona el acompañamiento fiscal CFDI 4.0?",
         ],
         "primary_cta": "Contactar soporte",
-        "secondary_cta": "Agendar onboarding",
+        "secondary_cta": "Agendar incorporacion",
     },
     "clients": {
         "id": "stories",
         "title": "Why Majjun?",
         "description": "Majjun combina profundidad ERP con una experiencia clara para equipos que necesitan vender, timbrar, comprar, controlar inventario y reportar sin saltar entre sistemas.",
         "testimonials": [
-            {"quote": "Facturacion, cobranza y reportes viven en el mismo flujo; el equipo ya no reconstruye informacion al cierre.", "author": "Finance lead"},
-            {"quote": "La IA nos ayuda a crear borradores y revisar indicadores sin quitar aprobaciones del proceso.", "author": "Operations manager"},
+            {"quote": "Facturacion, cobranza y reportes viven en el mismo flujo; el equipo ya no reconstruye informacion al cierre.", "author": "Responsable de finanzas"},
+            {"quote": "La IA nos ayuda a crear borradores y revisar indicadores sin quitar aprobaciones del proceso.", "author": "Responsable de operaciones"},
             {"quote": "Compras e inventario quedaron conectados con evidencia clara de cada movimiento.", "author": "Commercial director"},
             {"quote": "Los paquetes de timbres y las licencias nos permiten crecer con costos visibles.", "author": "Founder"},
         ],

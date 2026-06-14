@@ -28,7 +28,7 @@
   {% endif %}
 
   <div class="ret-anchor-nav">
-    <nav class="ret-anchor-inner" aria-label="Secciones de contratos de retainer">
+    <nav class="ret-anchor-inner" aria-label="Secciones de contratos recurrentes">
       <span class="ret-anchor-thumb" aria-hidden="true"></span>
       {% for block in section.sections %}
         <a {% if forloop.first %}class="active"{% endif %} href="#ret-step-{{ forloop.counter }}">{{ block.short_title }}</a>

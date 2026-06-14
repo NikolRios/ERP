@@ -4,7 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Majjun ERP - Cloud ERP con IA y CFDI 4.0</title>
+  <title>Majjun ERP - Planificacion de recursos empresariales en la nube con IA y facturacion electronica 4.0</title>
+  <script>
+    (() => {
+      let savedTheme = null;
+      try {
+        savedTheme = localStorage.getItem('majjunTheme');
+      } catch (error) {
+        savedTheme = null;
+      }
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
   <link rel="stylesheet" href="{% static 'pages/css/nav.css' %}">
 </head>
@@ -15,31 +29,29 @@
     <section class="hero home-hero">
       <div class="home-hero-inner">
         <div class="home-hero-content">
-          <div class="eyebrow" data-i18n="heroEyebrow">AI-Powered · Cloud ERP · CFDI 4.0</div>
-          <h1 data-i18n="heroTitle">Modern ERP for Modern Business</h1>
-          <p class="hero-copy" data-i18n="heroCopy">
-            Majjun ERP is a new Enterprise Resource Planning system designed to solve complexity, high cost and tedious manual data entry.
-          </p>
+          <div class="eyebrow" data-i18n="heroEyebrow">Planificacion de recursos empresariales en la nube con IA · Facturacion electronica 4.0</div>
+          <h1 data-i18n="heroTitle">Planificacion de recursos empresariales moderna para empresas modernas</h1>
+          <p class="hero-copy" data-i18n="heroCopy">Majjun ERP es un nuevo sistema de planificacion empresarial disenado para resolver la complejidad, el alto costo y la captura manual tediosa.</p>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary" id="heroCta" data-contact-action data-plan="Start free trial" data-i18n="startTrial">Start free trial</a>
-            <a href="#contact" class="btn btn-secondary" data-contact-action data-plan="Request demo" data-i18n="requestDemo">Request demo</a>
+            <a href="#contact" class="btn btn-primary" id="heroCta" data-contact-action data-plan="Iniciar prueba gratis" data-i18n="startTrial">Iniciar prueba gratis</a>
+            <a href="#contact" class="btn btn-secondary" data-contact-action data-plan="Solicitar demo" data-i18n="requestDemo">Solicitar demo</a>
           </div>
           <div class="home-trust-row" aria-label="Areas principales">
             <article>
-              <strong data-i18n="trustInvoicing">Invoicing</strong>
-              <p data-i18n="trustInvoicingCopy">Create customers, orders, direct invoices and record payments across the order-to-payment flow.</p>
+              <strong data-i18n="trustInvoicing">Facturacion</strong>
+              <p data-i18n="trustInvoicingCopy">Crea clientes, ordenes, facturas directas y registra pagos del flujo de orden a pago.</p>
             </article>
             <article>
-              <strong data-i18n="trustProcurement">Procurement</strong>
-              <p data-i18n="trustProcurementCopy">Manage requisitions, approvals, purchase orders, goods receipts and vendor payments.</p>
+              <strong data-i18n="trustProcurement">Compras</strong>
+              <p data-i18n="trustProcurementCopy">Gestiona requisiciones, aprobaciones, ordenes de compra, recepciones y pagos a proveedores.</p>
             </article>
             <article>
-              <strong data-i18n="trustAi">AI Assistance</strong>
-              <p data-i18n="trustAiCopy">Suggests tax codes, validates non-conformance and proposes recurring expenses for review.</p>
+              <strong data-i18n="trustAi">Asistencia con IA</strong>
+              <p data-i18n="trustAiCopy">Sugiere informacion para agilizar la creacion y revision de transacciones recurrentes.</p>
             </article>
             <article>
-              <strong data-i18n="trustFinance">Finance</strong>
-              <p data-i18n="trustFinanceCopy">General ledger, financial reports, audit trail and clear visibility into business status.</p>
+              <strong data-i18n="trustFinance">Finanzas</strong>
+              <p data-i18n="trustFinanceCopy">Libro mayor, reportes financieros, auditoria y visibilidad clara del estado del negocio.</p>
             </article>
           </div>
         </div>
@@ -59,8 +71,8 @@
           <div>
             <div class="screen-kpis">
               <strong>$148k</strong>
-              <strong>42 CFDI</strong>
-              <strong>8 alerts</strong>
+              <strong>42 facturas electronicas</strong>
+              <strong>8 alertas</strong>
             </div>
             <div class="screen-table">
               <span></span><span></span><span></span><span></span>
@@ -69,57 +81,57 @@
         </div>
       </div>
       <div class="home-copy-block">
-        <span class="section-label" data-i18n="whyLabel">System Description</span>
-        <h2 data-i18n="whyTitle">A modern ERP built to remove friction from business operations.</h2>
-        <p data-i18n="whyCopy">Majjun ERP is designed for modern businesses that need a simpler, more intelligent alternative to traditional ERP systems. It reduces complexity, lowers operational overhead and cuts repetitive manual data entry through a dual-AI approach.</p>
-        <a class="btn btn-secondary" href="#features" data-i18n="learnMore">Learn more -></a>
+        <span class="section-label" data-i18n="whyLabel">Descripcion del sistema</span>
+        <h2 data-i18n="whyTitle">Un sistema moderno de planificacion de recursos empresariales creado para quitar friccion a las operaciones de negocio.</h2>
+        <p data-i18n="whyCopy">Majjun ERP esta disenado para empresas modernas que necesitan una alternativa mas simple e inteligente a los sistemas tradicionales de planificacion de recursos empresariales. Reduce complejidad, costo operativo y captura manual repetitiva mediante un enfoque innovador de doble IA.</p>
+        <a class="btn btn-secondary" href="#features" data-i18n="learnMore">Conocer mas -></a>
       </div>
     </section>
 
     <section class="home-section reveal" id="features">
       <div class="home-section-heading">
-        <span class="section-label" data-i18n="featuresLabel">Core approach</span>
-        <h2 data-i18n="featuresTitle">A dual-AI ERP focused on business operations and development efficiency.</h2>
+        <span class="section-label" data-i18n="featuresLabel">Enfoque central</span>
+        <h2 data-i18n="featuresTitle">Un sistema de planificacion de recursos empresariales con doble IA, enfocado en operaciones de negocio y eficiencia de desarrollo.</h2>
       </div>
       <div class="home-feature-grid">
         <article class="home-feature-card">
-          <span class="feature-icon">AI</span>
-          <h3 data-i18n="featureAiTitle">Business Intelligence Agent</h3>
-          <p data-i18n="featureAiCopy">A chat-based assistant that lets users create transactions and generate reports using natural language.</p>
+          <span class="feature-icon">IA</span>
+          <h3 data-i18n="featureAiTitle">Agente de inteligencia de negocio</h3>
+          <p data-i18n="featureAiCopy">Un asistente basado en chat que permite crear transacciones y generar reportes usando lenguaje natural.</p>
           <ul>
-            <li data-i18n="featureAiPoint1">Create orders, invoices and operational records</li>
-            <li data-i18n="featureAiPoint2">Reduce repetitive manual data entry</li>
-            <li data-i18n="featureAiPoint3">Receive intelligent suggestions while working</li>
+            <li data-i18n="featureAiPoint1">Crear pedidos, facturas y registros operativos</li>
+            <li data-i18n="featureAiPoint2">Reducir captura manual repetitiva</li>
+            <li data-i18n="featureAiPoint3">Recibir sugerencias inteligentes mientras trabajas</li>
           </ul>
         </article>
         <article class="home-feature-card">
           <span class="feature-icon bars" aria-hidden="true"></span>
-          <h3 data-i18n="featureFinanceTitle">User Experience</h3>
-          <p data-i18n="featureFinanceCopy">Simplifies core business operations through an intuitive, AI-driven interface.</p>
+          <h3 data-i18n="featureFinanceTitle">Experiencia de usuario</h3>
+          <p data-i18n="featureFinanceCopy">Simplifica operaciones centrales mediante una interfaz intuitiva impulsada por IA.</p>
           <ul>
-            <li data-i18n="featureFinancePoint1">Clear workflows for daily operations</li>
-            <li data-i18n="featureFinancePoint2">Less training and less friction</li>
-            <li data-i18n="featureFinancePoint3">AI support inside the user journey</li>
+            <li data-i18n="featureFinancePoint1">Flujos claros para la operacion diaria</li>
+            <li data-i18n="featureFinancePoint2">Menos capacitacion y menos friccion</li>
+            <li data-i18n="featureFinancePoint3">Soporte de IA dentro de la experiencia</li>
           </ul>
         </article>
         <article class="home-feature-card">
           <span class="feature-icon sync" aria-hidden="true"></span>
-          <h3 data-i18n="featureProcurementTitle">Development Efficiency</h3>
-          <p data-i18n="featureProcurementCopy">Uses AI code generation to speed up feature development and system maintenance.</p>
+          <h3 data-i18n="featureProcurementTitle">Eficiencia de desarrollo</h3>
+          <p data-i18n="featureProcurementCopy">Usa generacion de codigo con IA para acelerar el desarrollo de funciones y mantenimiento del sistema.</p>
           <ul>
-            <li data-i18n="featureProcurementPoint1">Faster feature delivery</li>
-            <li data-i18n="featureProcurementPoint2">More efficient maintenance cycles</li>
-            <li data-i18n="featureProcurementPoint3">AI-assisted development workflows</li>
+            <li data-i18n="featureProcurementPoint1">Entrega de funciones mas rapida</li>
+            <li data-i18n="featureProcurementPoint2">Ciclos de mantenimiento mas eficientes</li>
+            <li data-i18n="featureProcurementPoint3">Flujos de desarrollo asistidos por IA</li>
           </ul>
         </article>
         <article class="home-feature-card">
           <span class="feature-icon bars" aria-hidden="true"></span>
-          <h3 data-i18n="featureDashboardTitle">Business Intelligence</h3>
-          <p data-i18n="featureDashboardCopy">Offers clear, at-a-glance visibility into business status through modern dashboards.</p>
+          <h3 data-i18n="featureDashboardTitle">Inteligencia de negocio</h3>
+          <p data-i18n="featureDashboardCopy">Ofrece visibilidad clara del estado del negocio mediante Tablero moderno.</p>
           <ul>
-            <li data-i18n="featureDashboardPoint1">Modern dashboards for business status</li>
-            <li data-i18n="featureDashboardPoint2">Reports generated from natural language</li>
-            <li data-i18n="featureDashboardPoint3">Operational visibility for decision makers</li>
+            <li data-i18n="featureDashboardPoint1">Tablero moderno para estado del negocio</li>
+            <li data-i18n="featureDashboardPoint2">Reportes generados con lenguaje natural</li>
+            <li data-i18n="featureDashboardPoint3">Visibilidad operativa para tomar decisiones</li>
           </ul>
         </article>
       </div>
@@ -127,185 +139,186 @@
 
     <section class="home-section home-ai reveal">
       <div class="home-copy-block">
-        <span class="section-label" data-i18n="aiLabel">Business Intelligence Agent</span>
-        <h2 data-i18n="aiTitle">Create transactions and reports from a simple conversation.</h2>
-        <p data-i18n="aiCopy">The Assistant lets users create transactions like orders and invoices, generate reports and receive intelligent suggestions using natural language.</p>
-        <a class="btn btn-secondary" id="erpFitCta" href="#contact" data-contact-action data-plan="AI workflow demo" data-i18n="seeAction">See it in action -></a>
+        <span class="section-label" data-i18n="aiLabel">Agente de inteligencia de negocio</span>
+        <h2 data-i18n="aiTitle">Crea transacciones y reportes desde una conversacion simple.</h2>
+        <p data-i18n="aiCopy">El asistente permite crear transacciones como pedidos y facturas, generar reportes y recibir sugerencias inteligentes usando lenguaje natural.</p>
+        <a class="btn btn-secondary" id="erpFitCta" href="#contact" data-contact-action data-plan="Demo de flujo con IA" data-i18n="seeAction">Ver en accion -></a>
       </div>
       <div class="ai-chat-card" aria-label="Ejemplo de chat con IA">
-        <div class="ai-bubble user">"Create invoice for Acme Inc."</div>
-        <div class="ai-bubble system">Invoice #0042 created</div>
-        <div class="ai-bubble user">"Suggest tax code?"</div>
+        <div class="ai-bubble user">"Crear factura para Acme Inc."</div>
+        <div class="ai-bubble system">Factura #0042 creada</div>
+        <div class="ai-bubble user">"¿Sugerir codigo de impuesto?"</div>
       </div>
     </section>
 
     <section class="home-section home-modules reveal" id="modules">
       <div class="home-section-heading">
-        <span class="section-label" data-i18n="modulesLabel">Core Features by Module</span>
-        <h2 data-i18n="modulesTitle">Key modules support the full business cycle from sales to finance.</h2>
-        <p data-i18n="modulesCopy">Majjun ERP organizes core functionality into operational modules. The Sales & Accounts Receivable module manages the revenue cycle from customer orders to payment recording.</p>
+        <span class="section-label" data-i18n="modulesLabel">Funciones centrales por modulo</span>
+        <h2 data-i18n="modulesTitle">Modulos clave soportan el ciclo completo del negocio, de ventas a finanzas.</h2>
+        <p data-i18n="modulesCopy">Majjun ERP organiza la funcionalidad central en modulos operativos. Ventas administra ingresos, Compras controla proveedores, Inventario gestiona existencias y Finanzas estructura contabilidad, reportes y auditoria.</p>
       </div>
       <div class="module-topic-bar" aria-label="Module topics">
-        <button type="button" class="active" data-module-tab="sales" data-i18n="salesModuleLabel">Sales & Accounts Receivable (AR)</button>
-        <button type="button" data-module-tab="procurement" data-i18n="procurementModuleLabel">Procurement & Accounts Payable (AP)</button>
-        <button type="button" data-module-tab="inventory" data-i18n="inventoryModuleLabel">Inventory & Items</button>
-        <button type="button" data-module-tab="finance" data-i18n="financeModuleLabel">Finance Core & Reporting</button>
+        <button type="button" class="active" data-module-tab="sales" data-i18n="salesModuleLabel">Ventas y Cuentas por Cobrar</button>
+        <button type="button" data-module-tab="procurement" data-i18n="procurementModuleLabel">Compras y Cuentas por Pagar</button>
+        <button type="button" data-module-tab="inventory" data-i18n="inventoryModuleLabel">Inventario y articulos</button>
+        <button type="button" data-module-tab="finance" data-i18n="financeModuleLabel">Nucleo financiero y reportes</button>
       </div>
       <div class="module-feature-list">
         <article class="module-feature-row" data-module-card="sales">
           <div>
-            <span data-i18n="salesModuleLabel">Sales & Accounts Receivable (AR)</span>
-            <h3 data-i18n="orderFlowTitle">Order-to-Payment Flow</h3>
+            <span data-i18n="salesModuleLabel">Ventas y Cuentas por Cobrar</span>
+            <h3 data-i18n="orderFlowTitle">Flujo de orden a pago</h3>
           </div>
-          <p data-i18n="orderFlowDesc">Manages the standard revenue process, including inventory checks, invoicing, and payment.</p>
+          <p data-i18n="orderFlowDesc">Administra el proceso estandar de ingresos, incluyendo revision de inventario, facturacion y pago.</p>
           <ul>
-            <li data-i18n="orderFlowCap1">Create customer and order</li>
-            <li data-i18n="orderFlowCap2">Check stock and reservations</li>
-            <li data-i18n="orderFlowCap3">Generate invoice and record cash receipt</li>
+            <li data-i18n="orderFlowCap1">Crear cliente y orden</li>
+            <li data-i18n="orderFlowCap2">Verificar existencias y reservaciones</li>
+            <li data-i18n="orderFlowCap3">Generar factura y registrar recibo de efectivo</li>
           </ul>
         </article>
         <article class="module-feature-row" data-module-card="sales">
           <div>
-            <span data-i18n="salesModuleLabel">Sales & Accounts Receivable (AR)</span>
-            <h3 data-i18n="directInvoiceTitle">Direct Invoicing</h3>
+            <span data-i18n="salesModuleLabel">Ventas y Cuentas por Cobrar</span>
+            <h3 data-i18n="directInvoiceTitle">Facturacion directa</h3>
           </div>
-          <p data-i18n="directInvoiceDesc">Allows billing users to create an invoice directly for one-off sales or services without a prior sales order.</p>
+          <p data-i18n="directInvoiceDesc">Permite a usuarios de facturacion crear una factura directamente para ventas o servicios puntuales sin una orden de venta previa.</p>
           <ul>
-            <li data-i18n="directInvoiceCap1">Create direct invoices</li>
-            <li data-i18n="directInvoiceCap2">Validate customer credit terms</li>
-            <li data-i18n="directInvoiceCap3">Post to the General Ledger</li>
+            <li data-i18n="directInvoiceCap1">Crear facturas directas</li>
+            <li data-i18n="directInvoiceCap2">Validar terminos de credito del cliente</li>
+            <li data-i18n="directInvoiceCap3">Contabilizar en el libro mayor</li>
           </ul>
         </article>
         <article class="module-feature-row" data-module-card="sales">
           <div>
-            <span data-i18n="salesModuleLabel">Sales & Accounts Receivable (AR)</span>
-            <h3 data-i18n="aiSalesTitle">AI Sales Assistance</h3>
+            <span data-i18n="salesModuleLabel">Ventas y Cuentas por Cobrar</span>
+            <h3 data-i18n="aiSalesTitle">Asistencia de ventas con IA</h3>
           </div>
-          <p data-i18n="aiSalesDesc">The AI assistant integrates directly into the invoicing process.</p>
+          <p data-i18n="aiSalesDesc">El asistente de IA se integra directamente en el proceso de facturacion.</p>
           <ul>
-            <li data-i18n="aiSalesCap1">Suggest tax codes for invoice line items</li>
-            <li data-i18n="aiSalesCap2">Validate non-conformance</li>
-            <li data-i18n="aiSalesCap3">Support billing decisions during invoice creation</li>
+            <li data-i18n="aiSalesCap1">Sugerir codigos de impuesto para partidas de factura</li>
+            <li data-i18n="aiSalesCap2">Validar no conformidades</li>
+            <li data-i18n="aiSalesCap3">Apoyar decisiones de facturacion durante la creacion de la factura</li>
           </ul>
         </article>
         <article class="module-feature-row" data-module-card="sales">
           <div>
-            <span data-i18n="salesModuleLabel">Sales & Accounts Receivable (AR)</span>
-            <h3 data-i18n="customerMasterTitle">Customer Master</h3>
+            <span data-i18n="salesModuleLabel">Ventas y Cuentas por Cobrar</span>
+            <h3 data-i18n="customerMasterTitle">Maestro de clientes</h3>
           </div>
-          <p data-i18n="customerMasterDesc">Stores all customer records, contact information, and billing terms.</p>
+          <p data-i18n="customerMasterDesc">Almacena todos los registros de clientes, informacion de contacto y terminos de facturacion.</p>
           <ul>
-            <li data-i18n="customerMasterCap1">Create customer records</li>
-            <li data-i18n="customerMasterCap2">Read, update and delete customer records</li>
-            <li data-i18n="customerMasterCap3">Maintain contact information and billing terms</li>
+            <li data-i18n="customerMasterCap1">Crear registros de cliente</li>
+            <li data-i18n="customerMasterCap2">Leer, actualizar y eliminar registros de cliente</li>
+            <li data-i18n="customerMasterCap3">Mantener informacion de contacto y terminos de facturacion</li>
           </ul>
         </article>
         <article class="module-feature-row" data-module-card="procurement">
           <div>
-            <span data-i18n="procurementModuleLabel">Procurement & Accounts Payable (AP)</span>
-            <h3 data-i18n="procurementWorkflowTitle">Procurement Workflow</h3>
+            <span data-i18n="procurementModuleLabel">Compras y Cuentas por Pagar</span>
+            <h3 data-i18n="procurementWorkflowTitle">Flujo de compras</h3>
           </div>
-          <p data-i18n="procurementWorkflowDesc">Supports the full PR-to-PO-to-GR process for purchasing goods and inventory replenishment.</p>
+          <p data-i18n="procurementWorkflowDesc">Soporta el proceso completo de requisicion, orden de compra y recepcion de bienes para compras y reabastecimiento de inventario.</p>
           <ul>
-            <li data-i18n="procurementWorkflowCap1">Create Purchase Requisitions (PR)</li>
-            <li data-i18n="procurementWorkflowCap2">Route approval requests up to auto-approval limits</li>
-            <li data-i18n="procurementWorkflowCap3">Convert to Purchase Orders and record Goods Receipts</li>
+            <li data-i18n="procurementWorkflowCap1">Crear requisiciones de compra</li>
+            <li data-i18n="procurementWorkflowCap2">Enviar solicitudes de aprobacion hasta limites de autoaprobacion</li>
+            <li data-i18n="procurementWorkflowCap3">Convertir a ordenes de compra y registrar recepciones de bienes</li>
           </ul>
         </article>
         <article class="module-feature-row" data-module-card="procurement">
           <div>
-            <span data-i18n="procurementModuleLabel">Procurement & Accounts Payable (AP)</span>
-            <h3 data-i18n="aiExpenseTitle">AI Expense Assistance</h3>
+            <span data-i18n="procurementModuleLabel">Compras y Cuentas por Pagar</span>
+            <h3 data-i18n="aiExpenseTitle">Asistencia de gastos con IA</h3>
           </div>
-          <p data-i18n="aiExpenseDesc">An AI agent can propose common recurring expenses and draft the corresponding AP entries.</p>
+          <p data-i18n="aiExpenseDesc">Un agente de IA puede proponer gastos recurrentes comunes y preparar los registros de cuentas por pagar correspondientes.</p>
           <ul>
-            <li data-i18n="aiExpenseCap1">Identify recurring vendor expenses</li>
-            <li data-i18n="aiExpenseCap2">Draft corresponding AP entries</li>
-            <li data-i18n="aiExpenseCap3">Send suggestions to a review queue for approval and posting</li>
+            <li data-i18n="aiExpenseCap1">Identificar gastos recurrentes de proveedores</li>
+            <li data-i18n="aiExpenseCap2">Preparar los registros de cuentas por pagar correspondientes</li>
+            <li data-i18n="aiExpenseCap3">Enviar sugerencias a una cola de revision para aprobacion y contabilizacion</li>
           </ul>
         </article>
         <article class="module-feature-row" data-module-card="procurement">
           <div>
-            <span data-i18n="procurementModuleLabel">Procurement & Accounts Payable (AP)</span>
-            <h3 data-i18n="expensePaymentTitle">Expense & Payment Flows</h3>
+            <span data-i18n="procurementModuleLabel">Compras y Cuentas por Pagar</span>
+            <h3 data-i18n="expensePaymentTitle">Flujos de gastos y pagos</h3>
           </div>
-          <p data-i18n="expensePaymentDesc">Manages the creation and tracking of AP invoices and payments to vendors.</p>
+          <p data-i18n="expensePaymentDesc">Administra la creacion y seguimiento de facturas de cuentas por pagar y pagos a proveedores.</p>
           <ul>
-            <li data-i18n="expensePaymentCap1">Create and track AP invoices</li>
-            <li data-i18n="expensePaymentCap2">Support part-payments to suppliers</li>
-            <li data-i18n="expensePaymentCap3">Track outstanding payable balances</li>
+            <li data-i18n="expensePaymentCap1">Crear y rastrear facturas de cuentas por pagar</li>
+            <li data-i18n="expensePaymentCap2">Soportar pagos parciales a proveedores</li>
+            <li data-i18n="expensePaymentCap3">Rastrear saldos pendientes por pagar</li>
           </ul>
         </article>
         <article class="module-feature-row" data-module-card="inventory">
           <div>
-            <span data-i18n="inventoryModuleLabel">Inventory & Items</span>
-            <h3 data-i18n="itemMasterTitle">Item Master</h3>
+            <span data-i18n="inventoryModuleLabel">Inventario y articulos</span>
+            <h3 data-i18n="itemMasterTitle">Maestro de articulos</h3>
           </div>
-          <p data-i18n="itemMasterDesc">Tracks all items and services offered by the business.</p>
+          <p data-i18n="itemMasterDesc">Rastrea todos los articulos y servicios ofrecidos por el negocio.</p>
           <ul>
-            <li data-i18n="itemMasterCap1">Store item type for service or inventory</li>
-            <li data-i18n="itemMasterCap2">Maintain cost and SKU data</li>
-            <li data-i18n="itemMasterCap3">Track stock levels by warehouse</li>
+            <li data-i18n="itemMasterCap1">Guardar tipo de articulo como servicio o inventario</li>
+            <li data-i18n="itemMasterCap2">Mantener datos de costo y codigo de articulo</li>
+            <li data-i18n="itemMasterCap3">Rastrear niveles de existencias por almacen</li>
           </ul>
         </article>
         <article class="module-feature-row" data-module-card="inventory">
           <div>
-            <span data-i18n="inventoryModuleLabel">Inventory & Items</span>
-            <h3 data-i18n="stockManagementTitle">Stock Management</h3>
+            <span data-i18n="inventoryModuleLabel">Inventario y articulos</span>
+            <h3 data-i18n="stockManagementTitle">Gestion de existencias</h3>
           </div>
-          <p data-i18n="stockManagementDesc">Tracks current inventory and handles transactions that affect stock.</p>
+          <p data-i18n="stockManagementDesc">Rastrea inventario actual y administra transacciones que afectan las existencias.</p>
           <ul>
-            <li data-i18n="stockManagementCap1">Support a basic warehouse stock model</li>
-            <li data-i18n="stockManagementCap2">Use stock adjustment APIs</li>
-            <li data-i18n="stockManagementCap3">Reserve inventory for sales orders</li>
+            <li data-i18n="stockManagementCap1">Soportar un modelo basico de existencias por almacen</li>
+            <li data-i18n="stockManagementCap2">Usar interfaces de ajuste de existencias</li>
+            <li data-i18n="stockManagementCap3">Reservar inventario para ordenes de venta</li>
+            <li data-i18n="stockManagementCap4">Permite la administracion de kits de ventas y recetas para empresas de alimentos y bebidas</li>
           </ul>
         </article>
         <article class="module-feature-row" data-module-card="inventory">
           <div>
-            <span data-i18n="inventoryModuleLabel">Inventory & Items</span>
-            <h3 data-i18n="inventoryLedgerTitle">Inventory Ledger</h3>
+            <span data-i18n="inventoryModuleLabel">Inventario y articulos</span>
+            <h3 data-i18n="inventoryLedgerTitle">Libro de inventario</h3>
           </div>
-          <p data-i18n="inventoryLedgerDesc">Maintains a separate ledger to track inventory valuation and Cost of Goods Sold (COGS).</p>
+          <p data-i18n="inventoryLedgerDesc">Mantiene un libro separado para rastrear valuacion de inventario y costo de ventas.</p>
           <ul>
-            <li data-i18n="inventoryLedgerCap1">Record inventory ledger updates</li>
-            <li data-i18n="inventoryLedgerCap2">Post COGS during sales workflows</li>
-            <li data-i18n="inventoryLedgerCap3">Hook valuation updates into procurement flows</li>
+            <li data-i18n="inventoryLedgerCap1">Registrar actualizaciones del libro de inventario</li>
+            <li data-i18n="inventoryLedgerCap2">Contabilizar el costo de ventas durante flujos de venta</li>
+            <li data-i18n="inventoryLedgerCap3">Conectar actualizaciones de valuacion con flujos de compras</li>
           </ul>
         </article>
         <article class="module-feature-row" data-module-card="finance">
           <div>
-            <span data-i18n="financeModuleLabel">Finance Core & Reporting</span>
-            <h3 data-i18n="generalLedgerTitle">General Ledger (GL)</h3>
+            <span data-i18n="financeModuleLabel">Nucleo financiero y reportes</span>
+            <h3 data-i18n="generalLedgerTitle">Libro mayor</h3>
           </div>
-          <p data-i18n="generalLedgerDesc">The backbone of all financial postings from transactional flows.</p>
+          <p data-i18n="generalLedgerDesc">La base de todas las contabilizaciones financieras desde flujos transaccionales.</p>
           <ul>
-            <li data-i18n="generalLedgerCap1">Manage Chart of Accounts (COA)</li>
-            <li data-i18n="generalLedgerCap2">Map postings from subledgers</li>
-            <li data-i18n="generalLedgerCap3">Post and reverse manual or automated Journal Entries</li>
+            <li data-i18n="generalLedgerCap1">Administrar catalogo de cuentas</li>
+            <li data-i18n="generalLedgerCap2">Mapear contabilizaciones desde submayores</li>
+            <li data-i18n="generalLedgerCap3">Registrar y revertir polizas manuales o automatizadas</li>
           </ul>
         </article>
         <article class="module-feature-row" data-module-card="finance">
           <div>
-            <span data-i18n="financeModuleLabel">Finance Core & Reporting</span>
-            <h3 data-i18n="financialReportsTitle">Financial Reports</h3>
+            <span data-i18n="financeModuleLabel">Nucleo financiero y reportes</span>
+            <h3 data-i18n="financialReportsTitle">Reportes financieros</h3>
           </div>
-          <p data-i18n="financialReportsDesc">Provides on-demand and scheduled reports for financial analysis.</p>
+          <p data-i18n="financialReportsDesc">Proporciona reportes bajo demanda y programados para analisis financiero.</p>
           <ul>
-            <li data-i18n="financialReportsCap1">Trial Balance, Profit & Loss and Balance Sheet</li>
-            <li data-i18n="financialReportsCap2">COGS reports</li>
-            <li data-i18n="financialReportsCap3">Export capabilities for finance teams</li>
+            <li data-i18n="financialReportsCap1">Balanza de comprobacion, Estado de resultados y Balance general</li>
+            <li data-i18n="financialReportsCap2">Reportes de costo de ventas</li>
+            <li data-i18n="financialReportsCap3">Capacidades de exportacion para equipos financieros</li>
           </ul>
         </article>
         <article class="module-feature-row" data-module-card="finance">
           <div>
-            <span data-i18n="financeModuleLabel">Finance Core & Reporting</span>
-            <h3 data-i18n="auditTrailTitle">Audit Trail</h3>
+            <span data-i18n="financeModuleLabel">Nucleo financiero y reportes</span>
+            <h3 data-i18n="auditTrailTitle">Rastro de auditoria</h3>
           </div>
-          <p data-i18n="auditTrailDesc">Comprehensive logging of all transactional and system changes.</p>
+          <p data-i18n="auditTrailDesc">Registro completo de todos los cambios transaccionales y del sistema.</p>
           <ul>
-            <li data-i18n="auditTrailCap1">Log who, what, when and why for transactional changes</li>
-            <li data-i18n="auditTrailCap2">Track system changes and agent actions</li>
-            <li data-i18n="auditTrailCap3">Enable quick audit queries</li>
+            <li data-i18n="auditTrailCap1">Registrar quien, que, cuando y por que en cambios transaccionales</li>
+            <li data-i18n="auditTrailCap2">Rastrear cambios del sistema y acciones de agentes</li>
+            <li data-i18n="auditTrailCap3">Habilitar consultas rapidas de auditoria</li>
           </ul>
         </article>
       </div>
@@ -313,45 +326,48 @@
 
     <section class="home-section home-pricing reveal" id="pricing">
       <div class="home-section-heading">
-        <span class="section-label" data-i18n="pricingLabel">Pricing</span>
-        <h2 data-i18n="pricingTitle">Simple licenses, clear CFDI stamp packages.</h2>
+        <span class="section-label" data-i18n="pricingLabel">Precio</span>
+        <h2 data-i18n="pricingTitle">Licencias simples y paquetes claros de timbres de facturacion electronica.</h2>
         <div class="home-toggle" aria-label="Periodo de pago">
-          <span class="active" data-i18n="monthly">Monthly</span>
-          <span data-i18n="annual">Annual -1 mo</span>
+          <button type="button" class="active" data-billing-period="monthly" data-i18n="monthly" aria-pressed="true">Mensual</button>
+          <button type="button" data-billing-period="annual" data-i18n="annual" aria-pressed="false">Anual</button>
         </div>
       </div>
       <div class="home-price-grid">
-        <article class="home-price-card">
+        <article class="home-price-card plan-option" tabindex="0">
           <h3>Plus</h3>
-          <div class="home-price">$43<span>/mo</span></div>
+          <span class="price-currency">Precios en USD</span>
+          <div class="home-price" data-monthly-price="$43" data-annual-price="$473">$43<span>/mes</span></div>
           <ul>
-            <li data-i18n="plusPoint1">1 user included</li>
-            <li data-i18n="plusPoint2">+ $20/mo per extra user</li>
-            <li data-i18n="plusPoint3">For service businesses</li>
-            <li data-i18n="plusPoint4">Minimum 2 users</li>
+            <li data-i18n="plusPoint1">1 usuario incluido</li>
+            <li data-i18n="plusPoint2">+ $20/mes por usuario extra</li>
+            <li data-i18n="plusPoint3">Para negocios de servicios</li>
+            <li data-i18n="plusPoint4">Minimo 2 usuarios</li>
           </ul>
-          <a class="btn btn-secondary" id="pricingCta" href="#contact" data-contact-action data-plan="Plus" data-i18n="getStarted">Get started</a>
+          <a class="btn btn-secondary" id="pricingCta" href="#contact" data-contact-action data-plan="Plus" data-i18n="getStarted">Empezar</a>
         </article>
-        <article class="home-price-card featured">
-          <span class="plan-badge" data-i18n="mostPopular">Most popular</span>
+        <article class="home-price-card featured plan-option" tabindex="0">
+          <span class="plan-badge" data-i18n="mostPopular">Mas popular</span>
           <h3>Premium</h3>
-          <div class="home-price">$80<span>/mo</span></div>
+          <span class="price-currency">Precios en USD</span>
+          <div class="home-price" data-monthly-price="$80" data-annual-price="$880">$80<span>/mes</span></div>
           <ul>
-            <li data-i18n="premiumPoint1">1 user included</li>
-            <li data-i18n="premiumPoint2">+ $80/mo per extra user</li>
-            <li data-i18n="premiumPoint3">For commercial businesses</li>
-            <li data-i18n="premiumPoint4">Minimum 5 users</li>
+            <li data-i18n="premiumPoint1">1 usuario incluido</li>
+            <li data-i18n="premiumPoint2">+ $80/mes por usuario extra</li>
+            <li data-i18n="premiumPoint3">Para negocios comerciales</li>
+            <li data-i18n="premiumPoint4">Minimo 5 usuarios</li>
           </ul>
-          <a class="btn btn-primary" id="premiumCta" href="#contact" data-contact-action data-plan="Premium" data-i18n="getStarted">Get started</a>
+          <a class="btn btn-primary" id="premiumCta" href="#contact" data-contact-action data-plan="Premium" data-i18n="getStarted">Empezar</a>
         </article>
         <article class="home-price-card stamp">
-          <h3 data-i18n="stampTitle">Stamp packages</h3>
+          <h3 data-i18n="stampTitle">Paquetes de timbres (CFDI 4.0)</h3>
+          <span class="price-currency">Precios en MXN</span>
           <div class="stamp-list">
-            <span>100 stamps <strong>$180</strong></span>
-            <span>250 stamps <strong>$390</strong></span>
-            <span>500 stamps <strong>$680</strong></span>
-            <span>1,000 stamps <strong>$1,200</strong></span>
-            <span data-i18n-html="stampMore">... up to 100k <strong>Contact sales</strong></span>
+            <span>100 timbres <strong>$180</strong></span>
+            <span>250 timbres <strong>$390</strong></span>
+            <span>500 timbres <strong>$680</strong></span>
+            <span>1,000 timbres <strong>$1,200</strong></span>
+            <span data-i18n-html="stampMore">... hasta 100k <strong>Contactar ventas</strong></span>
           </div>
         </article>
       </div>
@@ -359,30 +375,30 @@
 
     <section class="home-section home-technical reveal">
       <div class="home-section-heading">
-        <span class="section-label" data-i18n="technicalLabel">Technical Implementation</span>
-        <h2 data-i18n="technicalTitle">Modern standards for scalability, security and development efficiency.</h2>
-        <p data-i18n="technicalCopy">Majjun ERP is built on robust technology choices that support high-performance APIs, multi-tenant data isolation, containerized deployment and AI-powered agents.</p>
+        <span class="section-label" data-i18n="technicalLabel">Implementacion tecnica</span>
+        <h2 data-i18n="technicalTitle">Estandares modernos para escalabilidad, seguridad y eficiencia de desarrollo.</h2>
+        <p data-i18n="technicalCopy">Majjun ERP se construye con decisiones tecnologicas robustas que soportan interfaces de alto rendimiento, aislamiento de datos entre clientes, despliegue contenerizado y agentes impulsados por IA.</p>
       </div>
       <div class="technical-grid">
         <article>
-          <span data-i18n="backendComponent">Backend Framework</span>
-          <h3 data-i18n="backendTech">.NET 10 (LTS), ASP.NET Core MVC</h3>
-          <p data-i18n="backendDesc">Provides a modern, high-performance foundation for web applications and APIs.</p>
+          <span data-i18n="backendComponent">Marco de trabajo del servidor</span>
+          <h3 data-i18n="backendTech">.NET, ASP.NET Core Modelo-Vista-Controlador</h3>
+          <p data-i18n="backendDesc">Proporciona una base moderna y de alto rendimiento para aplicaciones web e interfaces de programacion de aplicaciones.</p>
         </article>
         <article>
-          <span data-i18n="databaseComponent">Database</span>
-          <h3 data-i18n="databaseTech">PostgreSQL 15+</h3>
-          <p data-i18n="databaseDesc">Optimized for concurrent operations, supporting multi-tenant isolation through row-level security checks.</p>
+          <span data-i18n="databaseComponent">Base de datos</span>
+          <h3 data-i18n="databaseTech">PostgreSQL</h3>
+          <p data-i18n="databaseDesc">Optimizada para operaciones concurrentes, con aislamiento multi-tenant mediante revisiones de seguridad por fila.</p>
         </article>
         <article>
-          <span data-i18n="deploymentComponent">Deployment</span>
-          <h3 data-i18n="deploymentTech">Render / Azure Services</h3>
-          <p data-i18n="deploymentDesc">Uses a containerized CI/CD pipeline for automated and consistent deployment.</p>
+          <span data-i18n="deploymentComponent">Despliegue</span>
+          <h3 data-i18n="deploymentTech">Render / Servicios de Azure</h3>
+          <p data-i18n="deploymentDesc">Usa una canalizacion contenerizada de integracion continua y entrega continua para despliegues automatizados y consistentes.</p>
         </article>
         <article>
-          <span data-i18n="aiIntegrationComponent">AI Integration</span>
-          <h3 data-i18n="aiIntegrationTech">OpenAI API or Azure OpenAI</h3>
-          <p data-i18n="aiIntegrationDesc">Powers Large Language Model integration for both Business Intelligence and Code Generation agents.</p>
+          <span data-i18n="aiIntegrationComponent">Integracion de IA</span>
+          <h3 data-i18n="aiIntegrationTech">OpenAI o Gemini (integraciones en expansión)</h3>
+          <p data-i18n="aiIntegrationDesc">Impulsa la integracion de modelos de lenguaje para los agentes de inteligencia de negocio y generacion de codigo.</p>
         </article>
       </div>
     </section>
@@ -391,44 +407,41 @@
       <div class="cta-box">
         <div>
           <h2 data-i18n="ctaTitle">Ve Majjun ERP en accion con tus procesos reales.</h2>
-          <p data-i18n="ctaCopy">Agenda una demo, revisa usuarios, modulos y paquetes de timbres CFDI, y define el plan que encaja con tu operacion.</p>
+          <p data-i18n="ctaCopy">Agenda una demo, revisa usuarios, modulos y paquetes de timbres de facturacion electronica, y define el plan que encaja con tu operacion.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-secondary" id="finalCta" href="#about" data-i18n="watchDemo">Watch demo</a>
-          <a class="btn btn-primary" href="#contact" data-contact-action data-plan="Start free trial" data-i18n="startTrial">Start free trial</a>
+          <a class="btn btn-secondary" id="finalCta" href="#about" data-i18n="watchDemo">Ver demo</a>
+          <a class="btn btn-primary" href="#contact" data-contact-action data-plan="Iniciar prueba gratis" data-i18n="startTrial">Iniciar prueba gratis</a>
         </div>
       </div>
     </section>
 
     <section class="home-section home-contact reveal" id="contact">
-      <form class="contact-card" id="homeContactForm">
-        <input type="text" name="name" placeholder="Name" aria-label="Name" required data-i18n-placeholder="namePlaceholder">
-        <input type="email" name="email" placeholder="Email" aria-label="Email" required data-i18n-placeholder="emailPlaceholder">
-        <input type="text" name="company" placeholder="Company" aria-label="Company" data-i18n-placeholder="companyPlaceholder">
+      <form class="contact-card" id="homeContactForm" action="{% url 'contact_message' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="name" maxlength="120" placeholder="Nombre" aria-label="Nombre" required data-i18n-placeholder="namePlaceholder">
+        <input type="email" name="email" maxlength="254" placeholder="Correo electronico" aria-label="Correo electronico" required data-i18n-placeholder="emailPlaceholder">
+        <input type="text" name="company" maxlength="160" placeholder="Empresa" aria-label="Empresa" data-i18n-placeholder="companyPlaceholder">
         <select name="plan" id="selectedPlan" aria-label="Plan de interes">
-          <option value="Request demo" data-i18n="requestDemo">Request demo</option>
-          <option value="Start free trial" data-i18n="startTrial">Start free trial</option>
           <option value="Plus">Plus</option>
           <option value="Premium">Premium</option>
-          <option value="AI workflow demo" data-i18n="aiWorkflowDemo">AI workflow demo</option>
-          <option value="Schedule a call" data-i18n="scheduleCall">Schedule a call</option>
         </select>
-        <textarea name="message" placeholder="Message" aria-label="Message" required data-i18n-placeholder="messagePlaceholder"></textarea>
-        <button class="btn btn-primary" type="submit" id="sendHomeMessage" data-i18n="sendMessage">Send message</button>
+        <textarea name="message" maxlength="5000" placeholder="Mensaje" aria-label="Mensaje" required data-i18n-placeholder="messagePlaceholder"></textarea>
+        <button class="btn btn-primary" type="submit" id="sendHomeMessage" data-i18n="sendMessage">Enviar mensaje</button>
       </form>
       <div class="home-copy-block">
-        <span class="section-label" data-i18n="contactLabel">Contact</span>
-        <h2 data-i18n="contactTitle">Talk with the team that will help you implement.</h2>
+        <span class="section-label" data-i18n="contactLabel">Contacto</span>
+        <h2 data-i18n="contactTitle">Habla con el equipo que te ayudara a implementar.</h2>
         <p data-i18n="contactCopy">Cuentanos usuarios, modulos y volumen de timbres. Te ayudamos a dimensionar el plan y el proceso de arranque.</p>
-        <a class="btn btn-secondary" href="#contact" data-contact-action data-plan="Schedule a call" data-i18n="scheduleCallArrow">Schedule a call -></a>
+        <a class="btn btn-secondary" href="#contact" data-contact-action data-plan="Agendar llamada" data-i18n="scheduleCallArrow">Agendar llamada -></a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-      <span data-i18n="footerReady">© 2026 Majjun ERP · Mexico CFDI 4.0 ready</span>
-      <span><a href="#features" data-i18n="featuresLabel">Features</a> · <a href="#pricing" data-i18n="pricingLabel">Pricing</a> · <span data-i18n="privacy">Privacy</span> · <span data-i18n="terms">Terms</span> · <a href="#contact" data-i18n="requestDemo">Request demo</a></span>
+      <span data-i18n="footerReady">© 2026 Majjun ERP · Listo para facturacion electronica 4.0 en Mexico</span>
+      <span><a href="#features" data-i18n="featuresLabel">Enfoque central</a> · <a href="#pricing" data-i18n="pricingLabel">Precio</a> · <span data-i18n="privacy">Privacidad</span> · <span data-i18n="terms">Terminos</span> · <a href="#contact" data-i18n="requestDemo">Solicitar demo</a></span>
     </div>
   </footer>
 

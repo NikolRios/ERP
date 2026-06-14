@@ -20,6 +20,11 @@
   --inv-cream:       var(--bg,   #f4f5f7);
   --inv-line:        var(--line, #d7dbe3);
   --inv-white:       var(--paper, #ffffff);
+  --inv-final-bg:    #eef5ff;
+  --inv-final-ink:   #172554;
+  --inv-final-muted: #52657a;
+  --inv-final-card:  rgba(255, 255, 255, .72);
+  --inv-final-line:  rgba(37, 99, 235, .2);
   --inv-r:           12px;
   --inv-rs:          8px;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -307,7 +312,15 @@
   background:
     radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--inv-sky) 38%, transparent), transparent 34%),
     radial-gradient(circle at 88% 100%, color-mix(in srgb, var(--inv-violet) 34%, transparent), transparent 36%),
-    var(--inv-ink);
+    var(--inv-final-bg);
+}
+
+html.dark .inv-page {
+  --inv-final-bg:    #080f1c;
+  --inv-final-ink:   #ffffff;
+  --inv-final-muted: rgba(255, 255, 255, .76);
+  --inv-final-card:  rgba(255, 255, 255, .08);
+  --inv-final-line:  rgba(147, 197, 253, .22);
 }
 
 /* ── Contenedor central ─────────────────────────── */
@@ -805,13 +818,13 @@
 
 /* ── CTA FINAL ──────────────────────────────────── */
 /* Fondo full-width; contenido centrado por margin:auto de los hijos */
-.inv-final {
-  background: var(--inv-ink);
-  color: #fff;
+.inv-page .inv-final {
+  color: var(--inv-final-ink);
   padding: 96px clamp(20px, 4vw, 48px);
   text-align: center;
 }
-.inv-final h2 {
+.inv-page .inv-final h2 {
+  color: var(--inv-final-ink);
   font-size: clamp(26px, 3.5vw, 40px);
   font-weight: 900;
   letter-spacing: -0.025em;
@@ -820,14 +833,14 @@
   margin-left: auto;
   margin-right: auto;
 }
-.inv-final > p {
+.inv-page .inv-final > p {
   font-size: 16px;
-  color: rgba(255,255,255,.6);
+  color: var(--inv-final-muted);
   max-width: 440px;
   margin: 0 auto 40px;
   line-height: 1.65;
 }
-.inv-final-cols {
+.inv-page .inv-final-cols {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
@@ -835,13 +848,21 @@
   margin: 0 auto;
   text-align: left;
 }
-.inv-fcol {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+.inv-page .inv-fcol {
+  background: var(--inv-final-card);
+  border: 1px solid var(--inv-final-line);
   border-radius: var(--inv-r);
   padding: 28px 30px;
+  transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
-.inv-fcol-tag {
+.inv-page .inv-fcol:hover,
+.inv-page .inv-fcol:focus-within {
+  border-color: var(--inv-blue);
+  background: color-mix(in srgb, var(--inv-blue) 16%, var(--inv-final-card));
+  box-shadow: 0 18px 42px color-mix(in srgb, var(--inv-blue) 18%, transparent);
+  transform: translateY(-5px);
+}
+.inv-page .inv-fcol-tag {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .08em;
@@ -850,12 +871,22 @@
   margin-bottom: 12px;
   display: block;
 }
-.inv-fcol h4 { font-size: 16px; font-weight: 700; margin: 0 0 8px; }
-.inv-fcol p  { font-size: 14px; color: rgba(255,255,255,.55); line-height: 1.6; margin: 0 0 16px; }
-.inv-fcol a  {
+.inv-page .inv-fcol h4 {
+  color: var(--inv-final-ink);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+.inv-page .inv-fcol p  {
+  font-size: 14px;
+  color: var(--inv-final-muted);
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+.inv-page .inv-fcol a  {
   font-size: 13px;
   font-weight: 600;
-  color: #fff;
+  color: var(--inv-final-ink);
   text-decoration: none;
   border-bottom: 1.5px solid var(--inv-blue);
   padding-bottom: 2px;

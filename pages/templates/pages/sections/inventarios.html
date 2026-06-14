@@ -18,7 +18,7 @@
       <span class="op-pill-thumb" aria-hidden="true"></span>
       <a href="#inv-catalogo"    class="inv-anchor-link active">Catalogo</a>
       <a href="#inv-existencias" class="inv-anchor-link">Existencias</a>
-      <a href="#inv-casos"       class="inv-anchor-link">Kits y ensamblaje</a>
+      <a href="#inv-casos"       class="inv-anchor-link">Paquetes y ensamblaje</a>
       <a href="#inv-capacidades" class="inv-anchor-link">Capacidades</a>
       <a href="#inv-faq"         class="inv-anchor-link">Preguntas</a>
       <a href="#inv-empezar"     class="inv-anchor-link">Empezar</a>
@@ -56,7 +56,7 @@
             </div>
             <div class="inv-bvs">
               <div class="inv-bvs-n">4</div>
-              <div class="inv-bvs-t"><h4>Configura el stock minimo</h4><p>El sistema te avisa cuando comprar.</p></div>
+              <div class="inv-bvs-t"><h4>Configura las existencias minimas</h4><p>El sistema te avisa cuando comprar.</p></div>
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@
     <div class="inv-wrap">
       <div class="inv-sec-head">
         <h2>Siempre sabes cuanto tienes y cuanto puedes vender</h2>
-        <p>Tres cifras clave en la Lista de Inventario te dan visibilidad total del stock en tiempo real.</p>
+        <p>Tres cifras clave en la Lista de Inventario te dan visibilidad total de las existencias en tiempo real.</p>
       </div>
       <div class="inv-metrics">
         {% for m in sec.metrics %}
@@ -153,27 +153,27 @@
   </section>
   {% endwith %}
 
-  <!-- SECCIÓN 3: TABS (kits / ajustes / armado) -->
+  <!-- SECCIÓN 3: TABS (paquetes / ajustes / armado) -->
   <section id="inv-casos" class="inv-section">
     <div class="inv-wrap">
       <div class="inv-sec-head">
-        <h2>De kits a produccion, sin perder el control</h2>
-        <p>Agrupa productos, calcula margenes y ensambla kits &mdash; el inventario se ajusta solo.</p>
+        <h2>De paquetes a produccion, sin perder el control</h2>
+        <p>Agrupa productos, calcula margenes y ensambla paquetes &mdash; el inventario se ajusta solo.</p>
       </div>
 
       <div class="inv-uc-tabs">
-        <button class="inv-uc-tab active" data-uc="0">Kits y recetas</button>
+        <button class="inv-uc-tab active" data-uc="0">Paquetes y recetas</button>
         <button class="inv-uc-tab" data-uc="1">Ajustes y transferencias</button>
         <button class="inv-uc-tab" data-uc="2">Armado de productos</button>
       </div>
 
-      <!-- Panel 0: Kits -->
+      <!-- Panel 0: Paquetes -->
       {% with sec=section.module_sections.1 %}
       <div class="inv-uc-panel active" data-panel="0">
         <div class="inv-uc-content">
-          <span class="inv-uc-tag">Listas de materiales (BOM)</span>
-          <h3>Agrupa varios articulos en un solo kit vendible</h3>
-          <p>Crea un articulo de tipo Kit o Receta y agrega sus componentes en la pestana BOM. El boton Aplicar Precios suma el costo de todos los componentes y sugiere un precio de venta segun el margen que desees ganar.</p>
+          <span class="inv-uc-tag">Listas de materiales (lista de materiales)</span>
+          <h3>Agrupa varios articulos en un solo paquete vendible</h3>
+          <p>Crea un articulo de tipo Paquete o Receta y agrega sus componentes en la pestana lista de materiales. El boton Aplicar Precios suma el costo de todos los componentes y sugiere un precio de venta segun el margen que desees ganar.</p>
           <a href="#inv-empezar" class="inv-uc-link">Ver pasos completos &rarr;</a>
         </div>
         <div class="inv-uc-visual">
@@ -192,7 +192,7 @@
         <div class="inv-uc-content">
           <span class="inv-uc-tag">Correcciones rapidas</span>
           <h3>Manten tu inventario al dia ante cualquier imprevisto</h3>
-          <p>Corrige mercancia danada o sobrante con un ajuste manual, o mueve stock entre ubicaciones con transferencias. Todo queda registrado con usuario y fecha para trazabilidad total.</p>
+          <p>Corrige mercancia danada o sobrante con un ajuste manual, o mueve existencias entre ubicaciones con transferencias. Todo queda registrado con usuario y fecha para trazabilidad total.</p>
           <a href="#inv-empezar" class="inv-uc-link">Ver pasos completos &rarr;</a>
         </div>
         <div class="inv-uc-visual">
@@ -210,15 +210,15 @@
       <div class="inv-uc-panel" data-panel="2">
         <div class="inv-uc-content">
           <span class="inv-uc-tag">Ensamblaje</span>
-          <h3>Produce kits antes de venderlos y actualiza stock solo</h3>
-          <p>Si tu negocio arma los kits antes de ponerlos en venta, ve a Inventario &rsaquo; Ensamblajes y crea un ensamblaje. Al completarlo, el sistema resta los componentes y suma los kits terminados automaticamente.</p>
+          <h3>Produce paquetes antes de venderlos y actualiza las existencias automaticamente</h3>
+          <p>Si tu negocio arma los paquetes antes de ponerlos en venta, ve a Inventario &rsaquo; Ensamblajes y crea un ensamblaje. Al completarlo, el sistema resta los componentes y suma los paquetes terminados automaticamente.</p>
           <a href="#inv-empezar" class="inv-uc-link">Ver pasos completos &rarr;</a>
         </div>
         <div class="inv-uc-visual">
           <div class="inv-uc-stat-cards">
             <div class="inv-usc"><div class="inv-usc-tag">Paso 1</div><div class="inv-usc-val">Crear</div><div class="inv-usc-desc">Crea el ensamblaje.</div></div>
-            <div class="inv-usc"><div class="inv-usc-tag">Paso 2</div><div class="inv-usc-val">Definir</div><div class="inv-usc-desc">Kit y cantidad a armar.</div></div>
-            <div class="inv-usc"><div class="inv-usc-tag">Paso 3</div><div class="inv-usc-val">Completar</div><div class="inv-usc-desc">Resta y suma stock solo.</div></div>
+            <div class="inv-usc"><div class="inv-usc-tag">Paso 2</div><div class="inv-usc-val">Definir</div><div class="inv-usc-desc">Paquete y cantidad a armar.</div></div>
+            <div class="inv-usc"><div class="inv-usc-tag">Paso 3</div><div class="inv-usc-val">Completar</div><div class="inv-usc-desc">Resta y suma existencias automaticamente.</div></div>
           </div>
         </div>
       </div>
@@ -240,13 +240,13 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/></svg>
           </div>
           <h4>Catalogo de productos</h4>
-          <p>Registra articulos de inventario y servicios con codigo, precio y stock minimo.</p>
+          <p>Registra articulos de inventario y servicios con codigo, precio y existencias minimas.</p>
         </a>
         <a href="#inv-casos" class="inv-cap">
           <div class="inv-cap-ic">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3a2 2 0 0 1 4 0c0 .6.4 1 1 1h2a1 1 0 0 1 1 1v2c0 .6.4 1 1 1a2 2 0 0 1 0 4c-.6 0-1 .4-1 1v3a1 1 0 0 1-1 1h-3c-.6 0-1-.4-1-1a2 2 0 0 0-4 0c0 .6-.4 1-1 1H6a1 1 0 0 1-1-1v-3c0-.6-.4-1-1-1a2 2 0 0 1 0-4c.6 0 1-.4 1-1V5a1 1 0 0 1 1-1h2c.6 0 1-.4 1-1z"/></svg>
           </div>
-          <h4>Kits y recetas (BOM)</h4>
+          <h4>Paquetes y recetas (lista de materiales)</h4>
           <p>Agrupa componentes y calcula precios de venta segun el margen deseado.</p>
         </a>
         <a href="#inv-existencias" class="inv-cap">
@@ -254,7 +254,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg>
           </div>
           <h4>Control de existencias</h4>
-          <p>En mano, reservado y disponible &mdash; visibilidad de stock en tiempo real.</p>
+          <p>En mano, reservado y disponible &mdash; visibilidad de existencias en tiempo real.</p>
         </a>
         <a href="#inv-existencias" class="inv-cap">
           <div class="inv-cap-ic">
@@ -268,14 +268,14 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
           </div>
           <h4>Ajustes y transferencias</h4>
-          <p>Corrige stock y mueve mercancia entre ubicaciones en segundos.</p>
+          <p>Corrige existencias y mueve mercancia entre ubicaciones en segundos.</p>
         </a>
         <a href="#inv-casos" class="inv-cap">
           <div class="inv-cap-ic">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l6 4V9l6 4V5l6 4v12H3z"/><path d="M7 21v-4"/><path d="M13 21v-4"/></svg>
           </div>
           <h4>Armado de productos</h4>
-          <p>Ensambla kits y actualiza el inventario terminado automaticamente.</p>
+          <p>Ensambla paquetes y actualiza el inventario terminado automaticamente.</p>
         </a>
       </div>
     </div>
@@ -311,7 +311,7 @@
       <div class="inv-fcol">
         <div class="inv-fcol-tag">Configura</div>
         <h4>Crea tu catalogo</h4>
-        <p>Registra productos, servicios, codigos y niveles de alerta de stock minimo.</p>
+        <p>Registra productos, servicios, codigos y niveles de alerta de existencias minimas.</p>
         <a href="#inv-catalogo">Ir al catalogo &rarr;</a>
       </div>
       <div class="inv-fcol">
@@ -322,9 +322,9 @@
       </div>
       <div class="inv-fcol">
         <div class="inv-fcol-tag">Escala</div>
-        <h4>Arma kits y produce</h4>
+        <h4>Arma paquetes y produce</h4>
         <p>Crea paquetes, calcula margenes y ensambla productos con un clic.</p>
-        <a href="#inv-casos">Ver kits &rarr;</a>
+        <a href="#inv-casos">Ver paquetes &rarr;</a>
       </div>
     </div>
   </section>

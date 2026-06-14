@@ -4,9 +4,9 @@
       <div class="eyebrow" style="background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.24);color:#fff;">{{ section.eyebrow }}</div>
       <h2>{{ section.title }}</h2>
       <p style="margin-top:18px;">{{ section.description }}</p>
-      <div class="pricing-toggle" aria-label="Billing period">
-        <button type="button" class="active">Monthly</button>
-        <button type="button">Annual <span>save 1 month</span></button>
+      <div class="pricing-toggle" aria-label="Periodo de facturación">
+        <button type="button" class="active">Mensual</button>
+        <button type="button">Anual <span>ahorra 1 mes</span></button>
       </div>
       <div class="pricing-notes">
         {% for note in section.notes %}
@@ -19,7 +19,7 @@
         {% for plan in section.plans %}
           <article class="price-card{% if plan.featured %} featured{% endif %}">
             {% if plan.featured %}
-              <span class="plan-badge">Most popular</span>
+              <span class="plan-badge">Más popular</span>
             {% endif %}
             <strong>{{ plan.name }}</strong>
             <small>{{ plan.secondary_cta }}</small>

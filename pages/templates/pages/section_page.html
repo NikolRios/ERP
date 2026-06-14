@@ -5,6 +5,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UniSuite - {{ section.title }}</title>
+  <script>
+    (() => {
+      let savedTheme = null;
+      try {
+        savedTheme = localStorage.getItem('majjunTheme');
+      } catch (error) {
+        savedTheme = null;
+      }
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
   <link rel="stylesheet" href="{% static 'pages/css/nav.css' %}">
   <link rel="stylesheet" href="{% static 'pages/css/section_page.css' %}?v=2">

@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.urls import path
 
-from pages.views import home, section_page
+from pages.views import contact_message, home, section_page
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", home, name="home"),
+    path("contacto/enviar/", contact_message, name="contact_message"),
     path("operacion/", section_page, {"slug": "features", "nav_slug": "operacion"}, name="operation"),
     path(
         "operacion/inventarios/",

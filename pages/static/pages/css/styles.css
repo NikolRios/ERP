@@ -25,6 +25,11 @@
 
     html {
       scroll-behavior: smooth;
+      color-scheme: light;
+    }
+
+    html.dark {
+      color-scheme: dark;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -44,12 +49,15 @@
       color: var(--ink);
     }
 
+    html.dark,
     body.dark {
       --bg: #0d1117;
       --paper: #151b23;
       --ink: #eef6ff;
       --muted: #a9b1bd;
       --line: #2d3542;
+      --green: #60a5fa;
+      --green-dark: #93c5fd;
       --mint: #102b4d;
       --sage: #111820;
       --shadow: 0 22px 70px rgba(0, 0, 0, .35);
@@ -97,6 +105,37 @@
       font-size: 21px;
       font-weight: 850;
       letter-spacing: 0;
+    }
+
+    .majjun-logo {
+      display: inline-flex;
+      align-items: flex-start;
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .logo-main {
+      color: #1b3a5c;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .logo-erp {
+      margin-top: 1px;
+      margin-left: 3px;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    html.dark .logo-main {
+      color: #eef6ff;
+    }
+
+    html.dark .logo-erp {
+      color: #93c5fd;
     }
 
     .brand-mark {
@@ -156,6 +195,7 @@
 
     .nav-actions {
       display: flex;
+      justify-self: end;
       align-items: center;
       gap: 10px;
     }
@@ -195,6 +235,17 @@
       border: 1px solid var(--line);
       background: var(--paper);
       color: var(--ink);
+    }
+
+    .theme-toggle {
+      transition: color .18s ease, border-color .18s ease, background-color .18s ease, transform .18s ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--green);
+      background: var(--mint);
+      color: var(--green-dark);
+      transform: translateY(-1px);
     }
 
     .menu-btn {
@@ -1867,15 +1918,37 @@
       font-weight: 850;
     }
 
-    .home-toggle span {
+    .home-toggle button {
       padding: 7px 12px;
+      border: 0;
       border-radius: 999px;
+      background: transparent;
       color: var(--muted);
+      font: inherit;
+      cursor: pointer;
+      transition: color .18s ease, background-color .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+
+    .home-toggle button:hover {
+      color: var(--ink);
+      background: color-mix(in srgb, var(--ink) 10%, transparent);
+      transform: translateY(-1px);
+    }
+
+    .home-toggle button:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 2px;
     }
 
     .home-toggle .active {
       color: #fff;
       background: var(--ink);
+    }
+
+    .home-toggle .active:hover {
+      color: #fff;
+      background: color-mix(in srgb, var(--ink) 88%, var(--green));
+      box-shadow: 0 4px 12px color-mix(in srgb, var(--ink) 22%, transparent);
     }
 
     .home-price-grid {
@@ -1893,9 +1966,47 @@
       padding: 28px;
     }
 
+    .home-price-card.plan-option {
+      cursor: pointer;
+      transition: border-color .22s ease, background-color .22s ease, box-shadow .22s ease, transform .22s ease;
+    }
+
+    .home-price-card.plan-option:hover,
+    .home-price-card.plan-option:focus-within,
+    .home-price-card.plan-option:focus-visible {
+      z-index: 1;
+      border-color: color-mix(in srgb, var(--green) 64%, var(--line));
+      background: color-mix(in srgb, var(--mint) 50%, var(--paper));
+      box-shadow: 0 18px 40px color-mix(in srgb, var(--ink) 16%, transparent);
+      transform: translateY(-6px);
+      outline: none;
+    }
+
+    .home-price-card.plan-option:hover .btn,
+    .home-price-card.plan-option:focus-within .btn,
+    .home-price-card.plan-option:focus-visible .btn {
+      border-color: var(--green);
+      background: var(--green);
+      color: #fff;
+    }
+
     .home-price-card.featured {
       border-color: color-mix(in srgb, var(--green) 48%, var(--line));
       box-shadow: var(--shadow);
+    }
+
+    .price-currency {
+      display: block;
+      width: fit-content;
+      margin-top: 8px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--green) 12%, transparent);
+      color: var(--green-dark);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .04em;
+      text-transform: uppercase;
     }
 
     .home-price {
@@ -2543,4 +2654,55 @@
       .home-feature-grid {
         grid-template-columns: 1fr;
       }
+    }
+
+    html.dark body.home-page {
+      background:
+        linear-gradient(180deg, #0d1117 0%, #101827 46%, #0d1117 100%);
+    }
+
+    html.dark .home-page .site-header {
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+    }
+
+    html.dark .hero {
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--paper) 84%, transparent), color-mix(in srgb, var(--bg) 94%, transparent)),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 80px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, .02) 0 1px, transparent 1px 80px);
+    }
+
+    html.dark .home-hero {
+      background:
+        radial-gradient(circle at 50% 8%, rgba(96, 165, 250, .18), transparent 31%),
+        linear-gradient(180deg, var(--bg) 0%, #10213a 100%);
+    }
+
+    html.dark .home-screenshot {
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--mint) 78%, var(--paper)), color-mix(in srgb, var(--paper) 72%, transparent));
+    }
+
+    html.dark .screen-layout {
+      background: color-mix(in srgb, var(--paper) 86%, transparent);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .32);
+    }
+
+    html.dark .screen-kpis strong {
+      background: var(--paper);
+    }
+
+    html.dark .home-pricing {
+      background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--mint) 62%, transparent) 50%, transparent);
+    }
+
+    html.dark .home-price-card.plan-option:hover,
+    html.dark .home-price-card.plan-option:focus-within,
+    html.dark .home-price-card.plan-option:focus-visible {
+      background: color-mix(in srgb, var(--mint) 62%, var(--paper));
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .32);
+    }
+
+    html.dark .home-price-card.featured {
+      background: linear-gradient(180deg, color-mix(in srgb, var(--mint) 70%, transparent), transparent);
     }
