@@ -2130,13 +2130,13 @@
     .contact-card input,
     .contact-card select {
       min-height: 46px;
-      padding: 0 14px;
+      padding: 0 22px;
     }
 
     .contact-card textarea {
       min-height: 108px;
       resize: vertical;
-      padding: 13px 14px;
+      padding: 16px 22px;
     }
 
     .contact-card .btn {
@@ -2585,7 +2585,7 @@
       border-width: 0 0 1px;
       border-radius: 0;
       background: transparent;
-      padding-inline: 0;
+      padding-inline: 22px;
     }
 
     .contact-card textarea {

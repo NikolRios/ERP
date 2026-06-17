@@ -305,6 +305,15 @@
       window.setTimeout(() => nameInput.focus({ preventScroll: true }), 250);
     }
 
+    function clearContactSection() {
+      if (!contactForm) return;
+      contactForm.reset();
+      contactForm.querySelectorAll('input:not([type="hidden"]), textarea').forEach(field => {
+        field.value = '';
+      });
+      if (selectedPlan) selectedPlan.value = 'Plus';
+    }
+
     function setTheme(theme) {
       const isDark = theme === 'dark';
       document.documentElement.classList.toggle('dark', isDark);
@@ -425,8 +434,7 @@
 
         showToast(result.message || 'No fue posible enviar el mensaje.');
         if (response.ok) {
-          contactForm.reset();
-          if (selectedPlan) selectedPlan.value = 'Plus';
+          clearContactSection();
         }
       } catch (error) {
         showToast('No fue posible enviar el mensaje. Intenta de nuevo.');
