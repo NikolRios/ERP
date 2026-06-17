@@ -53,7 +53,7 @@
         ctaTitle: 'Ve Majjun ERP en accion con tus procesos reales.',
         backendComponent: 'Marco de trabajo del servidor',
         backendDesc: 'Proporciona una base moderna y de alto rendimiento para aplicaciones web e interfaces de programacion de aplicaciones.',
-        backendTech: '.NET, ASP.NET Core Modelo-Vista-Controlador',
+        backendTech: '.NET',
         customerMasterCap1: 'Crear registros de cliente',
         customerMasterCap2: 'Leer, actualizar y eliminar registros de cliente',
         customerMasterCap3: 'Mantener informacion de contacto y terminos de facturacion',
@@ -91,13 +91,12 @@
         featureFinancePoint2: 'Menos capacitacion y menos friccion',
         featureFinancePoint3: 'Soporte de IA dentro de la experiencia',
         featureFinanceTitle: 'Experiencia de usuario',
-        featureProcurementCopy: 'Usa generacion de codigo con IA para acelerar el desarrollo de funciones y mantenimiento del sistema.',
-        featureProcurementPoint1: 'Entrega de funciones mas rapida',
-        featureProcurementPoint2: 'Ciclos de mantenimiento mas eficientes',
-        featureProcurementPoint3: 'Flujos de desarrollo asistidos por IA',
+        featureProcurementCopy: 'Construccion de agentes de manera dinamica conforme al uso de la aplicacion.',
+        featureProcurementPoint1: 'Niveles de seguridad por Modulos y Roles',
+        featureProcurementPoint2: 'Niveles de probacion para la gobernanza de los agentes.',
         featureProcurementTitle: 'Eficiencia de desarrollo',
         featuresLabel: 'Enfoque central',
-        featuresTitle: 'Un sistema de planificacion de recursos empresariales con doble IA, enfocado en operaciones de negocio y eficiencia de desarrollo.',
+        featuresTitle: 'Un ERP con doble IA, enfocado en operaciones de negocio y eficiencia de desarrollo.',
         financeModuleLabel: 'Nucleo financiero y reportes',
         financialReportsCap1: 'Balanza de comprobacion, Estado de resultados y Balance general',
         financialReportsCap2: 'Reportes de costo de ventas',
@@ -105,6 +104,7 @@
         financialReportsDesc: 'Proporciona reportes bajo demanda y programados para analisis financiero.',
         financialReportsTitle: 'Reportes financieros',
         footerReady: '\u00a9 2026 Majjun ERP · Listo para facturacion electronica 4.0 en Mexico',
+        freeMonthNote: 'Un mes gratis',
         generalLedgerCap1: 'Administrar catalogo de cuentas',
         generalLedgerCap2: 'Mapear contabilizaciones desde submayores',
         generalLedgerCap3: 'Registrar y revertir polizas manuales o automatizadas',
@@ -112,9 +112,9 @@
         generalLedgerTitle: 'Libro mayor',
         getDemo: 'Ver demo',
         getStarted: 'Empezar',
-        heroCopy: 'Majjun ERP es un nuevo sistema de planificacion empresarial disenado para resolver la complejidad, el alto costo y la captura manual tediosa.',
-        heroEyebrow: 'Planificacion de recursos empresariales en la nube con IA · Facturacion electronica 4.0',
-        heroTitle: 'Planificacion de recursos empresariales moderna para empresas modernas',
+        heroCopy: 'Majjun ERP es un nuevo sistema de administracion de negocios diseñado para resolver la complejibilidad, el alto costo y los procesos manuales tediosos.',
+        heroEyebrow: 'ERP en la nube con IA · Facturacion electronica 4.0',
+        heroTitle: '<span>Software para administracion de negocios</span><span>impulsado por IA</span><span>para empresas modernas</span>',
         inventoryLedgerCap1: 'Registrar actualizaciones del libro de inventario',
         inventoryLedgerCap2: 'Contabilizar el costo de ventas durante flujos de venta',
         inventoryLedgerCap3: 'Conectar actualizaciones de valuacion con flujos de compras',
@@ -140,14 +140,17 @@
         orderFlowCap3: 'Generar factura y registrar recibo de efectivo',
         orderFlowDesc: 'Administra el proceso estandar de ingresos, incluyendo revision de inventario, facturacion y pago.',
         orderFlowTitle: 'Flujo de orden a pago',
-        plusPoint1: '1 usuario incluido',
-        plusPoint2: '+ $20/mes por usuario extra',
-        plusPoint3: 'Para negocios de servicios',
-        plusPoint4: 'Minimo 2 usuarios',
-        premiumPoint1: '1 usuario incluido',
-        premiumPoint2: '+ $80/mes por usuario extra',
-        premiumPoint3: 'Para negocios comerciales',
-        premiumPoint4: 'Minimo 5 usuarios',
+        plusPoint1: 'CRM: Crea prospectos, oportunidades y cotizacion',
+        plusPoint2: 'Ventas y Cuentas por Cobrar: Crea ordenes de servicios, facturas y cobranza',
+        plusPoint3: 'Servicios: Crear y administrar proyectos y contratos de servicios',
+        plusPoint4: 'Cuentas por Pagar: Gestiona gastos y pagos a provedores',
+        plusPoint5: 'Finanzas: Gestiona la contabilidad, impuestos, tipos de cambio y reportes finacieros',
+        plusPoint6: '<strong>Agentes de IA para gestion de transacciones y reportes analiticos</strong>',
+        plusPoint7: '<strong>+ $20/mes por usuario extra</strong>',
+        premiumPointIntro: 'Lo mismo que en plus mas:',
+        premiumPoint1: 'Compras: Crea y administra compras, importaciones y recepcion de mercancias',
+        premiumPoint2: 'Inventarios: Gestiona Inventarios y costos',
+        premiumPoint3: '<strong>+ $20/mes por usuario extra</strong>',
         privacy: 'Privacidad',
         procurementModuleLabel: 'Compras y Cuentas por Pagar',
         procurementWorkflowCap1: 'Crear requisiciones de compra',
@@ -156,6 +159,7 @@
         procurementWorkflowDesc: 'Soporta el proceso completo de requisicion, orden de compra y recepcion de bienes para compras y reabastecimiento de inventario.',
         procurementWorkflowTitle: 'Flujo de compras',
         pricingLabel: 'Precio',
+        pricingAiNote: '**Requiere de Suscripcion de OpenAI O Google Gemini y su API Key',
         pricingTitle: 'Licencias simples y paquetes claros de timbres de facturacion electronica.',
         requestDemo: 'Solicitar demo',
         scheduleCall: 'Agendar llamada',
@@ -163,6 +167,7 @@
         seeAction: 'Ver en accion ->',
         salesModuleLabel: 'Ventas y Cuentas por Cobrar',
         sendMessage: 'Enviar mensaje',
+        stampSupport: 'Soportamos CDFI 4.0 para tu facturacion Electronica',
         stampMore: '... hasta 100k <strong>Contactar ventas</strong>',
         stampTitle: 'Paquetes de timbres (CFDI 4.0)',
         startTrial: 'Iniciar prueba gratis',
@@ -179,17 +184,17 @@
         technicalLabel: 'Implementacion tecnica',
         technicalTitle: 'Estandares modernos para escalabilidad, seguridad y eficiencia de desarrollo.',
         trustAi: 'Asistencia con IA',
-        trustAiCopy: 'Sugiere informacion para agilizar la creacion y revision de transacciones recurrentes.',
+        trustAiCopy: 'Utiliza lenguaje natural para la consulta de informacion de tu sistema y la generacion de transaciones recurrentes (Chat).',
         trustFinance: 'Finanzas',
         trustFinanceCopy: 'Libro mayor, reportes financieros, auditoria y visibilidad clara del estado del negocio.',
         trustInvoicing: 'Facturacion',
-        trustInvoicingCopy: 'Crea clientes, ordenes, facturas directas y registra pagos del flujo de orden a pago.',
+        trustInvoicingCopy: 'Crea clientes, ordenes, facturas directas y registra pagos del flujo de orden a cobranza.',
         trustProcurement: 'Compras',
         trustProcurementCopy: 'Gestiona requisiciones, aprobaciones, ordenes de compra, recepciones y pagos a proveedores.',
         watchDemo: 'Ver demo',
-        whyCopy: 'Majjun ERP esta disenado para empresas modernas que necesitan una alternativa mas simple e inteligente a los sistemas tradicionales de planificacion de recursos empresariales. Reduce complejidad, costo operativo y captura manual repetitiva mediante un enfoque innovador de doble IA.',
+        whyCopy: 'Majjun ERP esta diseñado para empresas modernas que necesitan una alternativa mas simple e inteligente a los sistemas ERP tradicionales. Reduce complejidad, costo operativo y captura manual repetitiva mediante un enfoque innovador de doble IA.',
         whyLabel: 'Descripcion del sistema',
-        whyTitle: 'Un sistema moderno de planificacion de recursos empresariales creado para quitar friccion a las operaciones de negocio.',
+        whyTitle: 'Un ERP moderno creado para quitar friccion a las operaciones de negocio.',
       },
     };
 
@@ -286,7 +291,11 @@
       billingPrices.forEach(price => {
         const periodLabel = price.querySelector('span');
         price.firstChild.textContent = isAnnual ? price.dataset.annualPrice : price.dataset.monthlyPrice;
-        if (periodLabel) periodLabel.textContent = isAnnual ? '/año' : '/mes';
+        if (periodLabel) periodLabel.textContent = isAnnual ? '/ Año' : '/ Mes';
+      });
+
+      document.querySelectorAll('.free-month-note').forEach(note => {
+        note.hidden = !isAnnual;
       });
     }
 
@@ -354,7 +363,6 @@
       try {
         localStorage.setItem('majjunTheme', nextTheme);
       } catch (error) {
-        // The theme still works for the current page when storage is unavailable.
       }
       setTheme(nextTheme);
     });

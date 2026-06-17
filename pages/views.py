@@ -63,7 +63,7 @@ def contact_message(request):
 
     try:
         EmailMessage(
-            subject=f"Nueva solicitud de contacto: {name}",
+            subject="Quiero informacion sobre el ERP Majjun",
             body=email_body,
             from_email=settings.DEFAULT_FROM_EMAIL,
             to=[settings.CONTACT_TEAM_EMAIL],
