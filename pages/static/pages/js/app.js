@@ -299,6 +299,12 @@
       });
     }
 
+    function focusContactName() {
+      const nameInput = contactForm?.querySelector('input[name="name"]');
+      if (!nameInput) return;
+      window.setTimeout(() => nameInput.focus({ preventScroll: true }), 250);
+    }
+
     function setTheme(theme) {
       const isDark = theme === 'dark';
       document.documentElement.classList.toggle('dark', isDark);
@@ -394,6 +400,7 @@
         }
         const preparedText = 'Formulario preparado para ' + (action.dataset.plan || 'tu demo') + '.';
         showToast(preparedText);
+        focusContactName();
       });
     });
 
@@ -437,3 +444,4 @@
     setLanguage(currentLanguage);
     if (moduleTabs.length) setActiveModule(moduleTabs[0].dataset.moduleTab);
     if (billingPeriodButtons.length) setBillingPeriod('monthly');
+    if (window.location.hash === '#contact') focusContactName();
